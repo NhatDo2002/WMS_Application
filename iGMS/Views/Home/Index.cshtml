@@ -1,0 +1,262 @@
+﻿@{ ViewBag.Title = Resources.Resource.home;}
+
+<link href="~/assets/css/dashboard.css" rel="stylesheet" />
+
+<style>
+    .custom-apex-download-btn {
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 30px;
+    }
+
+    .custom-apex-download-menu {
+        position: absolute; /* Vị trí tương đối với nút */
+        top: 100%; /* Ngay dưới nút */
+        left: 0;
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px 0;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        min-width: 120px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .custom-apex-download-item {
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .custom-apex-download-menu.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .custom-apex-download-item:hover {
+        background: #f5f5f5;
+        color: #007bff;
+    }
+
+    .custom-apex-icon {
+        font-size: 20px;
+        color: #333;
+    }
+
+    .custom-apex-download-icon {
+        font-size: 20px;
+        color: #007bff;
+    }
+
+    .custom-apex-download-btn-chart3 {
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 30px;
+    }
+
+    .custom-apex-download-menu-chart3 {
+        position: absolute; /* Vị trí tương đối với nút */
+        top: 100%; /* Ngay dưới nút */
+        left: 0;
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px 0;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        min-width: 120px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .custom-apex-download-item-chart3 {
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .custom-apex-download-menu-chart3.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .custom-apex-download-item-chart3:hover {
+        background: #f5f5f5;
+        color: #007bff;
+    }
+</style>
+
+<!--begin::Content-->
+<!--begin::Entry-->
+<div class="">
+    <!--begin::Container-->
+    <div class="container" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <!--begin::Dashboard-->
+        <!--begin::Top quick access-->
+        <div style="width: fit-content; align-items: center; display: flex; justify-content: center; flex-direction: column; margin-bottom: -40px">
+            <div class="top-content">
+            </div>
+            <div class="top-icon-container">
+                <a class="card-scale" id="showListWarehouse" href="/WarehouseManagement/WareHouse/ShowList">
+                    <div class="icon-trans">
+                        <div class="icon-trans-child">
+                            <span class="svg-icon svg-icon-primary svg-icon-2x">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24" />
+                                        <path d="M3.95709826,8.41510662 L11.47855,3.81866389 C11.7986624,3.62303967 12.2013376,3.62303967 12.52145,3.81866389 L20.0429,8.41510557 C20.6374094,8.77841684 21,9.42493654 21,10.1216692 L21,19.0000642 C21,20.1046337 20.1045695,21.0000642 19,21.0000642 L4.99998155,21.0000673 C3.89541205,21.0000673 2.99998155,20.1046368 2.99998155,19.0000673 L2.99999828,10.1216672 C2.99999935,9.42493561 3.36258984,8.77841732 3.95709826,8.41510662 Z M10,13 C9.44771525,13 9,13.4477153 9,14 L9,17 C9,17.5522847 9.44771525,18 10,18 L14,18 C14.5522847,18 15,17.5522847 15,17 L15,14 C15,13.4477153 14.5522847,13 14,13 L10,13 Z" fill="#000000" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column text-trans">
+                        <p name="PurchaseManager" class="text-dark text-hover-primary font-weight-bold font-size-h4 text-content">@Resources.Resource.warehouse_detail_list</p>
+                    </div>
+                </a>
+
+                <a class="card-scale" id="goodDetailList" href="/MasterData/Goods/Index">
+                    <div class="icon-trans">
+                        <div class="icon-trans-child">
+                            <span class="svg-icon svg-icon-warning svg-icon-2x">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24" />
+                                        <path d="M4,7 L20,7 L20,19.5 C20,20.3284271 19.3284271,21 18.5,21 L5.5,21 C4.67157288,21 4,20.3284271 4,19.5 L4,7 Z M10,10 C9.44771525,10 9,10.4477153 9,11 C9,11.5522847 9.44771525,12 10,12 L14,12 C14.5522847,12 15,11.5522847 15,11 C15,10.4477153 14.5522847,10 14,10 L10,10 Z" fill="#000000" />
+                                        <rect fill="#000000" opacity="0.3" x="2" y="3" width="20" height="4" rx="1" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column text-trans">
+                        <p name="PurchaseManager"  class="text-dark text-hover-warning font-weight-bold font-size-h4 text-content">@Resources.Resource.goods_detail_list</p>
+                    </div>
+                </a>
+
+                <a class="card-scale" id="assetShowList" href="/WarehouseManagement/Warehouse/SetupBarcodeStructure/">
+                    <div class="icon-trans">
+                        <div class="icon-trans-child">
+                            <span class="svg-icon svg-icon-info svg-icon-2x">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24" />
+                                        <path d="M15.9497475,3.80761184 L13.0246125,6.73274681 C12.2435639,7.51379539 12.2435639,8.78012535 13.0246125,9.56117394 L14.4388261,10.9753875 C15.2198746,11.7564361 16.4862046,11.7564361 17.2672532,10.9753875 L20.1923882,8.05025253 C20.7341101,10.0447871 20.2295941,12.2556873 18.674559,13.8107223 C16.8453326,15.6399488 14.1085592,16.0155296 11.8839934,14.9444337 L6.75735931,20.0710678 C5.97631073,20.8521164 4.70998077,20.8521164 3.92893219,20.0710678 C3.1478836,19.2900192 3.1478836,18.0236893 3.92893219,17.2426407 L9.05556629,12.1160066 C7.98447038,9.89144078 8.36005124,7.15466739 10.1892777,5.32544095 C11.7443127,3.77040588 13.9552129,3.26588995 15.9497475,3.80761184 Z" fill="#000000" />
+                                        <path d="M16.6568542,5.92893219 L18.0710678,7.34314575 C18.4615921,7.73367004 18.4615921,8.36683502 18.0710678,8.75735931 L16.6913928,10.1370344 C16.3008685,10.5275587 15.6677035,10.5275587 15.2771792,10.1370344 L13.8629656,8.7228208 C13.4724413,8.33229651 13.4724413,7.69913153 13.8629656,7.30860724 L15.2426407,5.92893219 C15.633165,5.5384079 16.26633,5.5384079 16.6568542,5.92893219 Z" fill="#000000" opacity="0.3" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column text-trans">
+                        <p name="PurchaseManager"  class="text-dark text-hover-info font-weight-bold font-size-h4 text-content">@Resources.Resource.manage_printers_labels</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--end::Top quick access-->
+
+        <div class="row d-flex" style="width: 100%; flex-wrap: wrap">
+            <div class="col-lg-7">
+                <!--begin::Card-->
+                <div class="card card-custom gutter-b" style="box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3); border-radius: 15px">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="card-label">@Resources.Resource.list_charts</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!--begin::Chart-->
+                        <div id="chart_2"></div>
+                        <!--end::Chart-->
+                    </div>
+                </div>
+                <!--end::Card-->
+            </div>
+            <div class="col-lg-5">
+                <!--begin::Card-->
+                <div class="card card-custom gutter-b" style="box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3); border-radius: 15px">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="card-label">@Resources.Resource.inventory_chart</h3>
+                        </div>
+                    </div>
+                    <div class="card-body" style="height: 417px; align-items: center; justify-content: center; display: flex">
+                        <!--begin::Chart-->
+                        <div id="chart_12" class="d-flex justify-content-center"></div>
+                        <!--end::Chart-->
+                    </div>
+                </div>
+                <!--end::Card-->
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <!--begin::Card-->
+            <div class="card card-custom gutter-b" style="box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3); border-radius: 15px">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h3 class="card-label">@Resources.Resource.import_export_chart</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!--begin::Chart-->
+                    <div id="chart_3"></div>
+                    <!--end::Chart-->
+                </div>
+            </div>
+            <!--end::Card-->
+        </div>
+
+        <div class="col-lg-12 mt-5 mb-5">
+            <div class="top-container leaderboard-container" id="rank">
+                <h1>@Resources.Resource.top_3_product</h1>
+
+            </div>
+        </div>
+
+
+        <!--end::Row-->
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Entry-->
+<!--end::Content-->
+@section scripts{
+    <script>
+        var headerChart2 = [{
+            name: '@Html.Raw(@Resources.Resource.Import)',
+        }, {
+                name: '@Html.Raw(@Resources.Resource.outbound)',
+            }, {
+                name: '@Html.Raw(@Resources.Resource.stock_take_chart)',
+            }]
+
+        var headerChart3 = [{
+            name: '@Html.Raw(@Resources.Resource.Import)',
+        }, {
+            name: '@Html.Raw(@Resources.Resource.outbound)',
+        }]
+    </script>
+    <script src="~/assets/js/Home/home.js"></script>
+}

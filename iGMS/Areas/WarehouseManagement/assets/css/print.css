@@ -1,0 +1,52 @@
+﻿
+@media print {
+
+    .printContainer {
+        height: fit-content !important;
+        overflow: visible !important;
+    }
+
+    body * {
+        visibility: hidden; /* Ẩn toàn bộ nội dung */
+    }
+
+    #printArea, #printArea * {
+        visibility: visible; /* Chỉ hiển thị nội dung cần in */
+    }
+
+    #printArea {
+        position: fixed;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+        page-break-before: always; /* Đảm bảo phần nội dung bắt đầu từ đầu trang */
+        box-sizing: border-box;
+    }
+
+    /* Điều chỉnh kích thước nội dung in cho phù hợp với kích thước trang */
+    #printArea {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        page-break-before: auto; /* Tự động ngắt trang trước */
+        page-break-after: auto; /* Tự động ngắt trang sau */
+        page-break-inside: avoid; /* Tránh cắt ngang nội dung */
+    }
+
+    table {
+        width: 90%;
+        zoom: 0.95;
+        page-break-inside: auto;
+    }
+
+    th, td {
+        word-wrap: break-word;
+        white-space: nowrap;
+    }
+
+    #printContainer{
+        height: fit-content !important;
+    }
+}

@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "Điều chuyển hàng hóa trong kho";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card card-custom" style="box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3)">
+    <div class="card-header">
+        <h3 class="card-title">
+            Điều chuyển kho
+        </h3>
+    </div>
+    <form id="form">
+        <!--begin::Form-->
+        <div class="card-body">
+            <div class="form-group mb-8">
+                <div class="alert alert-custom alert-default" role="alert">
+                    <div class="alert-icon"><i class="flaticon-warning text-primary"></i></div>
+                    <div class="alert-text">
+                        Vui Lòng Nhập Đúng Tất Cả Dữ Liệu Để Đảm Bảo Hệ Thống
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xl-2 col-lg-2 col-form-label">Mã phiếu xuất điều chuyển <span style="color:red"> (*) </span></label>
+                <div class="col-xl-10">
+                    <input class="form-control" type="text" placeholder="Mã phiếu xuất" id="soNumber" readonly />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">Xuất Tại Kho<span style="color:red"> (*) </span></label>
+                <div class="col-xl-10">
+                    <input class="form-control" type="text" id="warehouse" name="warehouse" readonly />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">Nhập vào kho<span style="color:red"> (*) </span></label>
+                <div class="col-xl-10">
+                    <select class="form-control" id="importWH" name="importWH">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xl-2 col-lg-2 col-form-label">Lý Do Xuất</label>
+                <div class="col-xl-10">
+                    <textarea class="form-control" id="note" type="text" placeholder="Lý do" name="des"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.Hàng_Hóa<span style="color:red"> (*) </span></label>
+                <div class="col-xl-10">
+                    <a onclick="getDataModal()" class="btn btn-primary">Danh sách hàng hóa</a>
+                </div>
+            </div>
+            <div style="max-height: 500px;overflow-y: scroll;">
+                <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable" role="grid" aria-describedby="kt_datatable_info" style="width: 100%;">
+                    <thead>
+                        <tr role="row">
+                            <th>Mã Hàng</th>
+                            <th>Tên Hàng</th>
+                            <th>Số Lượng Xuất</th>
+                            <th>Số Lượng Tồn</th>
+                            <th>Nhóm Hàng</th>
+                            <th>Đơn Vị</th>
+                            <th>Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbd">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-10">
+                    <button type="button" id="add" class="btn btn-success mr-2">@Resources.Resource.Tạo_Đơn</button>
+                    <a href="/SaleOrder/List" type="reset" class="btn btn-secondary">@Resources.Resource.Hủy</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade fixPosition" id="exampleModalLong" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog" style="max-width:1300px" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="exampleModalLabel">Danh sách hàng hóa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="mb-7">
+                        <div class="row align-items-center">
+                            <div class="col-lg-9 col-xl-8">
+                                <div class="row align-items-center">
+                                    <div class="col-md-4 my-2 my-md-0">
+                                        <div class="input-icon">
+                                            <input type="text" class="form-control" placeholder="Tìm mã sản phẩm..." id="kt_datatable_search_query" />
+                                            <span><i class="flaticon2-search-1 text-muted"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--begin: Datatable-->
+                    <div class="datatable datatable-bordered datatable-head-custom" id="goods_datatable"></div>
+                    <!--end: Datatable-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="detailGoodBtn">Thêm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Areas/WarehouseManagement/assets/js/Warehouse/move-goods.js"></script>
+    <script>
+        $('#exportBtn').addClass('menu-item-open');
+        $('#exportFormBtn').addClass('menu-item-active')
+    </script>
+}
+

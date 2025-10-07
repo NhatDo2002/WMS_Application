@@ -1,0 +1,105 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<style>
+    .page_404 {
+        padding: 40px 0;
+        background: #fff;
+        font-family: 'Arvo', serif;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+        .page_404 img {
+            width: 100%;
+        }
+
+    .four_zero_four_bg {
+        background-image: url(/assets/media/bg/dribbble_1.gif);
+        height: 400px;
+        background-position: center;
+    }
+
+
+        .four_zero_four_bg h1 {
+            font-size: 80px;
+        }
+
+        .four_zero_four_bg h3 {
+            font-size: 80px;
+        }
+
+    .link_404 {
+        color: #fff !important;
+        padding: 10px 20px;
+        background: #39ac31;
+        margin: 20px 0;
+        display: inline-block;
+    }
+
+    .contant_box_404 {
+        margin-top: -50px;
+    }
+</style>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="canonical" href="https://keenthemes.com/metronic" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="~/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
+    <!--BOXICON-->
+    <!--end::Layout Themes-->
+    <link rel="icon" href="~/assets/media/error/404-error.png" type="image/x-icon" />
+</head>
+<body>
+    <section class="page_404" style="height: 100%">
+        <div style="display: flex; justify-content: center; flex-direction: row">
+            <div style="width: 100%">
+                <div>
+                    <div class="text-center">
+                        <div class="four_zero_four_bg">
+                            <h1 class="text-center " style="display: flex; justify-content: center; flex-direction: row;">404</h1>
+                        </div>
+
+                        <div class="contant_box_404" style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 10px">
+                            <h3>
+                                @Resources.Resource.Not_Found_Title
+                            </h3>
+
+                            <p>@Resources.Resource.Not_Found_Description</p>
+
+                            <a href="/Home/Index" class="btn btn-success active" style="color: #fff !important; padding: 10px 20px; background: #39ac31 !important; margin: 20px 0; display: inline-block;  " id="navigateBtn">@Resources.Resource.Back_Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="~/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="~/assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
+    <script src="~/assets/js/scripts.bundle.js"></script>
+    <script src="~/assets/js/ErrorPage/not_found.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
+

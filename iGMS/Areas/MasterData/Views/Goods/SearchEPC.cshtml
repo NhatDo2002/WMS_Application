@@ -1,0 +1,249 @@
+﻿
+@{
+    ViewBag.Title = @Resources.Resource.epc_search;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card card-custom">
+    <div class="card-header">
+        <h3 class="card-title">
+            @Resources.Resource.epc_search
+        </h3>
+    </div>
+    <div class="card-body">
+        <div class="row mb-3 form-group">
+            <label class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.epc_code</label>
+            <div class="col-8">
+                <div class="input-group-prepend">
+                    <input id="idEPC" class="form-control" type="text" />
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div class="row mb-3 form-group" style="position: relative;">
+                <canvas id="rfidLocateCanvas" width="100" height="250" style="z-index: 1;"></canvas>
+                <div id="borderFrame" style="position: absolute; top: 0; left: 0; width: 100px; height: 250px; border: 1px solid #000; z-index: 0;"></div>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+            <label class="checkbox checkbox-inline checkbox-primary flex-shrink-0 mr-3">
+                <input type="checkbox" id="beep">
+                <span></span>
+            </label>
+            <div class="font-weight-bolder mr-2">@Resources.Resource.turn_on_sound</div>
+            <div class="mr-4 flex-shrink-0 text-center" style="width: 40px;">
+                <i class="icon-2x text-dark-50 flaticon-sound"></i>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <button type="submit" class="btn btn-success mr-2" onclick="TagLocate()">@Resources.Resource.search</button>
+            <button type="submit" class="btn btn-success mr-2" onclick="cancelLocate()">@Resources.Resource.stop</button>
+        </div>
+    </div>
+    <div id="trigger">
+    </div>
+    <div id="display">
+        RFID Data: <br>
+        Time: <br>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Areas/MasterData/assets/js/ebapi-modules.js"></script>
+    <script src="~/Areas/MasterData/assets/js/elements.js"></script>
+
+    <script type="text/javascript">
+        var displayStr = "";
+        var tagCount = 0;
+        var readstate = false;
+        var triggervalue;
+        var lasttag = 0;
+        var scanning = false;
+        var tstate = false;
+        var istate = false;
+        var clocate = false;
+        var MAX_DISTANCE = 100;
+        var prefilter;
+       /* var currentIdEPC = ""; // Biến toàn cục để lưu trữ giá trị idEPC*/
+
+        $(document).ready(function () {
+            // Lấy giá trị EPC từ localStorage
+            var idEPC = localStorage.getItem("EPC");
+
+            // Kiểm tra xem giá trị có tồn tại không
+            if (idEPC) {
+                // Thiết lập giá trị EPC cho input
+                $('#idEPC').val(idEPC);
+                // Xóa giá trị EPC khỏi localStorage để tránh lưu trữ không cần thiết
+                localStorage.removeItem("EPC");
+            }
+            // gọi hàm connect RFID
+            startIntentListener()
+        });
+
+        function rfidEnumerate() {
+            // selece usb or bluetooth for RFD connection
+            rfid.transport = "serial";
+            rfid.enumerate();
+        }
+        function rfidConnect() {
+            rfid.readerID = "RFID1";
+
+            rfid.connect();
+            rfid.reportUniqueTags = 1;
+
+            rfid.stopTriggerType = "triggerRelease";
+        }
+
+        function rfidDisConnect() {
+            rfid.disconnect();
+        }
+
+        function sleep(milliseconds) {
+            const date = Date.now();
+            let currentDate = null;
+            do {
+                currentDate = Date.now();
+            } while (currentDate - date < milliseconds);
+        }
+
+        function TagLocate() {
+            clocate = false;
+            document.getElementById("display").innerHTML = "@Resources.Resource.start_locating_tags";
+
+            // Lấy giá trị idepc từ input
+            var idepc = document.getElementById('idEPC').value;
+
+            rfid.tagEvent = "TagLocater(%json)";
+            rfid.antennaSelected = 1;
+            rfid.tagID = idepc; // Sử dụng giá trị idepc từ input
+            rfid.locateTag();
+        }
+
+        function TagLocater(tagarray) {
+
+            // Lấy giá trị cự ly từ mảng tagarray
+            const distance = tagarray.TagLocate;
+
+            // Tính phần trăm dựa trên cự ly và giới hạn giá trị trong khoảng 0-100
+            var percentage = Math.max(0, Math.min((distance / MAX_DISTANCE) * 100, 100));
+
+            // bat tieng Beep khi checkbox được bật
+            if (document.getElementById('beep').checked) {
+                if (distance > 90)
+                    EB.Notification.beep({ 'frequency': 1200, 'volume': 3, 'duration': 20 });
+                else if (distance > 70)
+                    EB.Notification.beep({ 'frequency': 900, 'volume': 3, 'duration': 20 });
+                else if (distance > 50)
+                    EB.Notification.beep({ 'frequency': 600, 'volume': 3, 'duration': 20 });
+            }
+            EB.Notification.vibrate(100);
+
+            // Gọi hàm để vẽ thanh màu trên canvas dựa trên phần trăm
+            drawLocateBar(percentage);
+        }
+
+        function cancelLocate() {
+            clocate = false;
+            rfidStopClear();
+            document.getElementById("display").innerHTML = "@Resources.Resource.stop_locating_tags";
+        }
+
+        function rfidStopClear() {
+            rfid.stop();
+            displayStr = "";
+
+        }
+        // RFID Status Event Handler
+        function statusEvent(eventInfo) {
+            if (eventInfo.vendorMessage == "INVENTORY_STOP_EVENT") {
+                displayStr = "";
+                tagCount = 0;
+            }
+            else {
+
+                if (eventInfo.vendorMessage.startsWith("CONNECT"))
+                    document.getElementById("trigger").innerHTML = '<p style="color:green;">Connection Status:<b> CONNECTED</b></p>';
+                else
+                    if (eventInfo.vendorMessage.startsWith("DISCONNECT")) {
+                        document.getElementById("trigger").innerHTML = '<p style="color:red;">Connection Status:<b> DISCONNECTED</b></p>';
+                        document.getElementById("display").innerHTML = "";
+                    }
+                    else
+                        if (eventInfo.vendorMessage.startsWith("Reader"))
+                            document.getElementById("trigger").innerHTML = '<p style="color:orange;">Connection Status:<b> ' + eventInfo.vendorMessage + '</b></p>';
+                        else
+                            document.getElementById("trigger").innerHTML = eventInfo.vendorMessage;
+
+
+                if (eventInfo.vendorMessage.startsWith("HANDHELD_TRIGGER") && (scanning == true)) {
+                    if (tstate == true) {
+                        // trigger release
+                        tstate = false;
+                    }
+                    else {
+                        // trigger press
+                        tstate = true;
+                    }
+                }
+            }
+        }
+
+        function startIntentListener() {
+
+            // define tag event handlers
+            rfid.statusEvent = "statusEvent(%json)";
+            rfid.tagEvent = "TagHandler(%json)";
+            rfid.enableTagRSSI = true;
+
+            // get connected reader details
+            rfidEnumerate();
+            rfidStopClear()
+            // ensure current connection is reset
+            rfidDisConnect();
+
+            // delay for enumerate to complete
+            sleep(2000);
+
+            // connect to reader
+            rfidConnect();
+        }
+
+        // canvas
+        function drawLocateBar(percentage) {
+
+            const canvas = document.getElementById('rfidLocateCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Tạo Gradient từ trên xuống dưới
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, 'rgba(255, 0, 0, 1)');
+
+            // Áp dụng Gradient cho ngữ cảnh fillStyle của Canvas
+            ctx.fillStyle = gradient;
+
+            // Tính toán chiều cao dựa trên phần trăm
+            const barHeight = canvas.height * (percentage / 100);
+
+            // Vẽ hình chữ nhật sử dụng Gradient
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(0, canvas.height - barHeight, canvas.width, barHeight);
+
+            // Hiển thị phần trăm trên thanh
+            ctx.fillStyle = 'black';
+            ctx.font = '12px Arial';
+
+            // Tính toán vị trí dọc của chữ số để đảm bảo nằm chính giữa
+            const textY = canvas.height - barHeight + (barHeight / 2) + 6;
+
+            // Tính toán chiều rộng của chữ số để căn giữa
+            const textWidth = ctx.measureText(percentage + '%').width;
+            const textX = (canvas.width - textWidth) / 2;
+
+            ctx.fillText(percentage + '%', textX, textY);
+        }
+    </script>
+}
+
+

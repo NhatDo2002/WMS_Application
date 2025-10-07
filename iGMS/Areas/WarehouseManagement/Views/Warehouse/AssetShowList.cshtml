@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = @Resources.Resource.assets_detail_list;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card card-custom">
+    <div class="card-header">
+        <h3 class="card-title">
+            @Resources.Resource.assets_detail_list
+        </h3>
+    </div>
+    <div class="card-body">
+        <div class="form-group row">
+            <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.Hiển_Thị_Danh_Sách_Vật_Tư_Theo</label>
+            <div class="col-xl-8">
+                <select class="form-control" id="assetlist" name="assetlist">
+                    <option value="all">@Resources.Resource.all</option>
+                    <option value="asset">@Resources.Resource.Theo_Vật_Tư</option>
+                    <option value="department">@Resources.Resource.Theo_Phòng_Ban</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.start_date</label>
+            <div class="col-xl-3">
+                <input class="form-control" id="tungay" placeholder="Select time" type="date" onchange="onDateSelected()">
+            </div>
+            <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.end_date</label>
+            <div class="col-xl-3">
+                <input class="form-control" id="denngay" placeholder="Select time" type="date" onchange="onDateSelected()">
+            </div>
+            <div class="col-xl-2">
+                <div id="message" class="fv-plugins-message-container" style="display:none">
+                    <div data-field="communication" data-validator="choice" class="fv-help-block">@Resources.Resource.Vui_lòng_chọn_hiển_thị_danh_sách_vật_tư_theo_tất_cả_</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 500px;overflow-y: scroll; display:none" id="asset">
+            <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable" role="grid" aria-describedby="kt_datatable_info">
+                <thead>
+                    <tr role="row">
+                        <th>STT</th>
+                        <th>@Resources.Resource.Tên_Vật_Tư</th>
+                        <th>@Resources.Resource.quantity</th>
+                        <th>@Resources.Resource.Chi_Tiết</th>
+                    </tr>
+                </thead>
+                <tbody id="tbd">
+                </tbody>
+            </table>
+        </div>
+        <div style="height: 500px;overflow-y: scroll; display:none" id="department">
+            <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable" role="grid" aria-describedby="kt_datatable_info">
+                <thead>
+                    <tr role="row">
+                        <th>STT</th>
+                        <th>@Resources.Resource.Phòng_Ban</th>
+                        <th>@Resources.Resource.assets_quantity</th>
+                        <th>@Resources.Resource.Chi_Tiết</th>
+                    </tr>
+                </thead>
+                <tbody id="tbd2">
+                </tbody>
+            </table>
+        </div>
+        <div style="height: 500px;overflow-y: scroll;" id="all">
+            <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable" role="grid" aria-describedby="kt_datatable_info">
+                <thead>
+                    <tr role="row">
+                        <th>STT</th>
+                        <th>@Resources.Resource.Tên_Vật_Tư</th>
+                        <th>@Resources.Resource.Phòng_Ban</th>
+                        <th>@Resources.Resource.Người_Sở_Hữu</th>
+                        <th>@Resources.Resource.Mục_Đích</th>
+                        <th>@Resources.Resource.status</th>
+                        <th>@Resources.Resource.Thương_Hiệu</th>
+                        <th>@Resources.Resource.create_date</th>
+                        <th>@Resources.Resource.epc_code</th>
+                        <th>@Resources.Resource.search</th>
+                    </tr>
+                </thead>
+                <tbody id="tbd3">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@*modal*@
+<div class="modal fade show" id="AssetShowListEPC" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">@Resources.Resource.Chi_Tiết_Vật_Tư</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body" style="height: 300px; overflow-y: scroll;">
+                <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable" role="grid" aria-describedby="kt_datatable_info">
+                    <thead>
+                        <tr role="row">
+                            <th>STT</th>
+                            <th>@Resources.Resource.Tên_Vật_Tư</th>
+                            <th>@Resources.Resource.Phòng_Ban</th>
+                            <th>@Resources.Resource.Người_Sở_Hữu</th>
+                            <th>@Resources.Resource.Mục_Đích</th>
+                            <th>@Resources.Resource.status</th>
+                            <th>@Resources.Resource.Ngày_Mua</th>
+                            <th>@Resources.Resource.create_date</th>
+                            <th>@Resources.Resource.epc_code</th>
+                            <th>@Resources.Resource.search</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbd1">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">@Resources.Resource.close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Areas/WarehouseManagement/assets/js/Assets/list-asset.js"></script>
+}

@@ -1,0 +1,566 @@
+﻿@model WMS.Models.Good
+@{
+    ViewBag.Title = @Resources.Resource.edit_good;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/assets/css/pages/wizard/wizard-2.css" rel="stylesheet" type="text/css" />
+<div style="display:flex; align-items: center; justify-content:center; width: 100%; height: 100px; border-bottom: 1px solid #ebedf3; background-color: white">
+    <h2 class="text-capitalize">
+        @Resources.Resource.edit_good
+    </h2>
+</div>
+<div class="card card-custom shadow-sm">
+    <div class="wizard wizard-2" id="edit_good_wizard" data-wizard-state="step-first" data-wizard-clickable="false">
+        <!--begin: Wizard Nav-->
+        <div class="wizard-nav border-right py-8 px-8 py-lg-20 px-lg-10">
+            <!--begin::Wizard Step 1 Nav-->
+            <div class="wizard-steps">
+                <div class="wizard-step" data-wizard-type="step" data-wizard-state="current">
+                    <div class="wizard-wrapper">
+                        <div class="wizard-icon">
+                            <span class="svg-icon svg-icon-2x">
+                                <!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
+                                <i class="wizard-icon flaticon-edit-1"></i>
+                                <!--end::Svg Icon-->
+                            </span>
+                        </div>
+                        <div class="wizard-label">
+                            <h3 class="wizard-title">@Resources.Resource.goods_infor</h3>
+                            <div class="wizard-desc">@Resources.Resource.edit_good_infor</div>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Wizard Step 1 Nav-->
+                <!--begin::Wizard Step 2 Nav-->
+                <!--<div class="wizard-step" data-wizard-type="step">
+                    <div class="wizard-wrapper">
+                        <div class="wizard-icon">
+
+                            <span class="svg-icon svg-icon-2x">-->
+                <!--begin::Svg Icon | path:assets/media/svg/icons/Map/Compass.svg-->
+                <!--<i class="wizard-icon flaticon2-layers-2"></i>-->
+                <!--end::Svg Icon-->
+                <!--</span>
+                        </div>
+                        <div class="wizard-label">
+                            <h3 class="wizard-title">@Resources.Resource.goods_quantity</h3>
+                            <div class="wizard-desc">@Resources.Resource.update_good_quantity</div>
+                        </div>
+                    </div>
+                </div>-->
+                <!--end::Wizard Step 2 Nav-->
+            </div>
+        </div>
+        <!--end: Wizard Nav-->
+        <!--begin: Wizard Body-->
+        <div class="wizard-body py-8 px-8 py-lg-20 px-lg-10">
+            <!--begin: Wizard Form-->
+            <div class="row">
+                <div class="" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center">
+                    <form class="form" style="width:65%" id="edit-good-form">
+                        <!--begin: Wizard Step 1-->
+                        <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
+                            <h2 class="mb-10 font-weight-bold text-darkc text-center text-capitalize">
+                                @Resources.Resource.goods_infor
+                            </h2>
+                            <!--begin::Input Group-->
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>@Resources.Resource.good_id <span class="text-danger"> (*) </span></label>
+                                        <input type="text" class="form-control form-control-lg" id="idgood" name="idgood" value="@Model.Id" placeholder="Nhập mã hàng hóa" readonly />
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>@Resources.Resource.reference</label>
+                                        <input type="text" class="form-control form-control-lg" id="identifier" name="identifier" value="@Model.Identifier" placeholder="@Resources.Resource.enter_reference" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>@Resources.Resource.good_name <span class="text-danger"> (*) </span></label>
+                                        <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Nhập tên hàng hóa" value="@Model.Name" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            @*<div class="row">
+            <div class="col-xl-6">
+                <div class="form-group">
+                    <label>@Resources.Resource.good_id <span class="text-danger"> (*) </span></label>
+                    <input type="text" class="form-control form-control-lg" id="idgood" name="idgood" value="@Model.Id" placeholder="Nhập mã hàng hóa" readonly />
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="form-group">
+                    <label>@Resources.Resource.good_name <span class="text-danger"> (*) </span></label>
+                    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Nhập tên hàng hóa" value="@Model.Name" />
+                </div>
+            </div>
+        </div>*@
+
+                            <!--end::Input Group-->
+                            <!--begin::Input Group-->
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <!--begin::Input-->
+                                    <div class="form-group">
+                                        <label>@Resources.Resource.good_group</label>
+                                        <select class="form-control" data-id="kt_select2_1" id="groupgoods" name="groupgoods" value="@Model.IdGroupGood">
+                                        </select>
+                                    </div>
+                                    <!--end::Input-->
+                                </div>
+                                <div class="col-xl-6">
+                                    <!--begin::Input-->
+                                    <div class="form-group">
+                                        <label>@Resources.Resource.unit</label>
+                                        <select class="form-control" data-id="kt_select2_1" name="unit" value="@Model.IdUnit">
+                                        </select>
+                                    </div>
+                                    <!--end::Input-->
+                                </div>
+                            </div>
+                            <!--end::Input Group-->
+                            <!--begin::Input-->
+                            <div class="form-group">
+                                <label>@Resources.Resource.note</label>
+                                <textarea class="form-control" rows="3" placeholder="@Resources.Resource.good_note" id="note">@Model.Description</textarea>
+                            </div>
+                            <!--end::Input-->
+                        </div>
+                    </form>
+                    <!--end: Wizard Step 1-->
+                    <!--begin: Wizard Actions-->
+                    <div class="d-flex justify-content-between border-top mt-5 pt-10" style="width:100%">
+                        <div class="mr-2">
+                            @*<button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">@Resources.Resource.previous</button>*@
+                        </div>
+                        <div class="w-100 d-flex justify-content-end">
+                            <a style="width: 100px" href="/MasterData/Goods/Index" class="btn btn-secondary mr-2">@Resources.Resource.Hủy</a>
+                            <button style="width: 100px" type="button" class="btn btn-success" id="submit">@Resources.Resource.submit</button>
+                            @*<button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">@Resources.Resource.next</button>*@
+                        </div>
+                    </div>
+                    <!--end: Wizard Actions-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Areas/MasterData/assets/js/paho_mqtt.js"></script>
+    <script src="~/Areas/MasterData/assets/js/elements.js"></script>
+    <script>
+        var infoWH = [];
+        var warehouses = [];
+        var errorEPC = [];
+        var epcshow = [];
+        var arrayepc = [];
+        var IdGoodsForHANDHELD = ""
+            function Edit() {
+                //lấy thông tin khi nhập vào input....
+                var idGoods = $('#idgood').val();
+                var NameGoods = $('#name').val();
+                var GroupGoods = $('#groupgoods').val();
+                var UnitGoods = $('select[name="unit"]').val();
+                var NoteGoods = $('#note').val();
+                var CreateDateG = $('#date').val();
+                var InventoryG = $('#inventory').val();
+                var Identifier = $("#identifier").val();
+                var good = {
+                    Id: idGoods,
+                    Name: NameGoods,
+                    IdGroupGood: GroupGoods,
+                    IdUnit: UnitGoods,
+                    Description: NoteGoods,
+                    CreateDate: CreateDateG,
+                    Inventory: InventoryG,
+                    Identifier: Identifier
+                }
+                //let filteredData = epcshow.filter(item1 => {
+                //    // Kiểm tra xem mỗi phần tử trong data1 có trùng với bất kỳ phần tử nào trong data2 không
+                //    return !errorEPC.includes(item1.IdEPC);
+                //});
+                var confirmWarehouse = [];
+                $.ajax({
+                    url: '/MasterData/Goods/Edit',
+                    type: 'Post',
+                    data: { good },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            toastr.success(data.msg)
+                            setTimeout(function () { window.location.href = "/MasterData/Goods/Index" }, 1000)
+                        } else {
+                            toastr.error(data.msg)
+                        }
+                    },
+                })
+                //var filteredData = arrayepc;
+                //var string = "Các kho sẽ cập nhật lại số lượng là ";
+                //for (var i = 0; i < warehouses.length; i++) {
+                //    if ($(`input[name='confirmEdit_${warehouses[i]}']`).prop("checked")) {
+                //        confirmWarehouse.push(warehouses[i]);
+                //        string += $(`#name_${warehouses[i]}`).html() + ", ";
+                //    }
+                //}
+
+                //if (confirmWarehouse.length > 0) {
+                //    Swal.fire({
+                //        title: "Bạn Có Chắc Chắn Muốn Cập Nhật Số Lượng Hàng Hóa?",
+                //        text: string + "\n" + `Hãy Kiểm Tra Lại Nếu Cần Thiết!`,
+                //        icon: "warning",
+                //        showCancelButton: true,
+                //        confirmButtonColor: "#3085d6",
+                //        cancelButtonColor: "#d33",
+                //        cancelButtonText: "Hủy",
+                //        confirmButtonText: "Đồng Ý!"
+                //    }).then((result) => {
+                //        if (result.isConfirmed) {
+                //            $.ajax({
+                //                type: "POST",
+                //                url: "/MasterData/Goods/Edit",
+                //                data: { good, filteredData, confirmWarehouse },
+                //                success: function (data) {
+                //                    if (data.code == 200) {
+                //                        toastr.success(data.msg)
+                //                        setTimeout(function () { window.location.href = "/MasterData/Goods/Index" }, 1000)
+                //                    } else {
+                //                        toastr.error(data.msg)
+                //                    }
+                //                },
+                //                error: function () {
+                //                    toastr.error('Đã có lỗi xảy ra, vui lòng thử lại!')
+                //                }
+                //            })
+                //        }
+                //    });
+                //} else {
+                    
+                //}
+        }
+        $(document).ready(function () {
+            // Lấy id từ URL
+
+            var id = $('#idgood').val();
+            $.ajax({
+                url: '/MasterData/Goods/showtbd',
+                type: 'get',
+                data: { id: id }, // Sử dụng id được trích xuất từ URL
+                success: function (data) {
+                    $("#tbd").empty();
+                    if (data.code == 200) {
+                        $.each(data.e, function (k, v) {
+                            infoWH.push({
+                                id: v.IdWareHouse,
+                                name: v.wareHouse
+                            })
+                            warehouses.push(v.IdWareHouse);
+                            var table = '<tr id="' + v.id + '" role="table">';
+                            table += '<td>' + (k + 1) + '</td>';
+                            table += '<td>' + v.id + '</td>';
+                            table += '<td>' + v.name + '</td>';
+                            table += '<td id="name_' + v.IdWareHouse +'">' + v.wareHouse + '</td>';
+                            table += '<td><input type="number" id="inventoryWarehouse' + v.IdWareHouse + '" disabled value="' + v.inventory + '" /></td>';
+                            table += '<td><input type="number" id="inventoryScan' + v.IdWareHouse + '" disabled value="0" class="mb-2"/> <button onclick="ResetInventory(`' + v.IdWareHouse +'`)" class="btn btn-outline-primary ml-2">Reset</button></td>';
+                            table += `<td><div class="col-1" name="desktopRfid">
+                                          <button type="submit" class="btn btn-success mr-2 on" id="scan${v.IdWareHouse}" onclick="RFID('${v.IdWareHouse}')">@Resources.Resource.scan</button>
+                                          <button type="submit" class="btn btn-secondary off" id="notscan${v.IdWareHouse}" style="display:none;width: 100px;" onclick="Stop()">@Resources.Resource.stop_scanning</button>
+                                      </div>
+                                      </td>`;
+                            table += '</tr>';
+                            $('#tbd').append(table);
+                        });
+                        if (/Android/i.test(navigator.userAgent)) {
+                            $('div[name="HandheldRfid"]').show()
+                            $('div[name="desktopRfid"]').hide()
+                        } else {
+                            $('div[name="HandheldRfid"]').hide()
+                            $('div[name="desktopRfid"]').show()
+                        }
+
+                    }
+                },
+                error: function () {
+                    toastr.error('Lỗi.');
+                }
+            });
+        });
+
+        var start;
+        var stt = 0;
+        function CompareReceipt(epc,id) {
+            CheckIdGoodsInSystem(epc)
+                .then(function (data) {
+                    var idGood = $("#idgood").val().trim();
+                    // Xử lý dữ liệu thành công
+                    if (data.code === 200 && data.status == false) {
+                        if (data.checkEpc.IdGoods === idGood && data.checkEpc.IdWareHouse === id) {
+                            stt += 1;
+                            var tr = `<tr class="more" data-id="${idGood + "_" + id}" id="more${data.checkEpc.IdGoods}">
+                              <td>${stt}</td>
+                              <td>${epc}</td>
+                              <td id="${epc + "_" + data.checkEpc.IdGoods}">${data.checkEpc.IdGoods}</td>
+                              <td id="${epc + "_" + data.checkEpc.IdWareHouse}">${data.checkEpc.Name}</td>
+                              </tr>`
+                            $('#readEPC').append(tr)
+                            //$('#inventory').val(Number($('#inventory').val()) + 1);
+                            $('#inventoryScan' + id + '').val(Number($('#inventoryScan' + id + '').val()) + 1);
+                            arrayepc.push({
+                                IdEPC: epc,
+                                IdGood: idGood,
+                                IdWareHouse: id
+                            })
+                        } else {
+                            var more = $('.more').map(function () {
+                                return this.id;
+                            }).get();
+                            stt += 1;
+                            var tr = `<tr class="more" id="more${data.checkEpc.IdGoods}">
+                              <td>${stt}</td>
+                              <td>${epc}</td>
+                              <td id="${epc + "_" + data.checkEpc.IdGoods}">${data.checkEpc.IdGoods}</td>
+                              <td id="${epc + "_" + data.checkEpc.IdWareHouse}">${data.checkEpc.Name}</td>
+                              </tr>`
+                            $('#readEPC').append(tr)
+                            var barcodes = data.checkEpc.IdGoods
+                            if (more.includes("more" + barcodes + "")) {
+                                $('#amountmore' + barcodes + '').text(Number($('#amountmore' + barcodes + '').text()) + 1)
+                            } else {
+                                var tr = `<tr class="more" id="more${barcodes}">
+                               <td>${barcodes}</td>
+                               <td>${data.checkEpc.Name}</td>
+                               <td id="amountmore${barcodes}">1</td>
+                               </tr>`
+                                $('#des').append(tr)
+                            }
+                            errorEPC.push(
+                                epc
+                            );
+                        }
+                    } else {
+                        var more = $('.more').map(function () {
+                            return this.id;
+                        }).get();
+                        stt += 1;
+                        var nameWH = '';
+                        infoWH.forEach(item => {
+                            if (item.id === id) {
+                                nameWH = item.name;
+                            }
+                        })
+                        var tr = `<tr class="more" id="moreEPCUndifined">
+                          <td>${stt}</td>
+                          <td>${epc}</td>
+                          <td id="${epc + "_undifined"}">Undifined</td>
+                          <td id="${epc + "_" + id}">${nameWH}</td>
+                          </tr>`
+                        $('#readEPC').append(tr)
+                        if (more.includes(`moreUndifined${id}`)) {
+                            $(`#amountmoreundifined${id}`).text(Number($(`#amountmoreundifined${id}`).text()) + 1)
+                        } else {
+                            var tr = `<tr class="more" id="moreUndifined${id}">
+                                <td>Undifined</td>
+                                <td>${nameWH}</td>
+                                <td id="amountmoreundifined${id}">1</td>
+                                </tr>`
+                            $('#des').append(tr)
+                        }
+                    }
+                })
+                .catch(function (error) {
+                    // Xử lý lỗi
+                    toastr.error(error);
+                });
+        }
+
+        //kiểm tra mã hàng đã có trong hệ thống
+        function CheckIdGoodsInSystem(epc) {
+            return new Promise(function (resolve, reject) {
+                $.ajax({
+                    url: '/EPCs/Epc/CheckIdGoodsInSystem',
+                    type: 'get',
+                    data: { epc },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            resolve(data);
+                        }
+                        else {
+                            reject(data.msg);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        reject(error);
+                    }
+                });
+            });
+        }
+
+        function ResetInventory(warehouse) {
+            var idGood = $("#idgood").val().trim();
+            var listEPC = $(`tr[data-id="${idGood}_${warehouse}"]`);
+            $("#totalEPC").html(Number($("#totalEPC").html()) - listEPC.length);
+            $(`tr[data-id="${idGood}_${warehouse}"]`).remove()
+            $(`#inventoryScan${warehouse}`).val(0);
+            var listDelEPC = arrayepc.filter(x => x.IdWareHouse === warehouse && x.IdGood === idGood);
+            arrayepc = arrayepc.filter(x => x.IdWareHouse !== warehouse);
+            for (var i = 0; i < listDelEPC.length; i++) {
+                epcshow = epcshow.filter(x => x.IdEPC !== listDelEPC[i].IdEPC);
+            }
+        }
+
+        function RFID(id) {
+            DeleteEpc()
+            $('.on').css('display', 'none')
+            $('.off').css('display', 'none')
+            $(`#notscan${id}`).css('display', 'block')
+            start = setInterval(function () { AllShowEPC(id) }, 200);
+        }
+        //stop scanner
+        function Stop() {
+            $('.on').css('display', 'block')
+            $('.off').css('display', 'none')
+            clearInterval(start);
+        }
+
+        function StopHH() {
+            $('.on').css('display', 'block')
+            $('.off').css('display', 'none')
+            rfid.disconnect();
+        }
+
+        function AllShowEPC(id) {
+            $.ajax({
+                url: '/WarehouseMangement/rfid/AllShowEPC',
+                type: 'get',
+                success: function (data) {
+                    if (data.code == 200) {
+                        $.each(data.a, function (k, v) {
+                            $.ajax({
+                                url: '/WarehouseMangement/rfid/falseEPC',
+                                type: 'post',
+                                data: { epc: v.id },
+                                success: function (data) {
+                                    if (data.code == 200) {
+                                        if (!epcshow.some(item => item.IdEPC === v.id)) {
+
+                                            epcshow.push({
+                                                IdEPC: v.id,
+                                                IdWareHouse:id
+                                            })
+                                            $("#totalEPC").html(epcshow.length);
+                                            CompareReceipt(v.id,id)
+                                        }
+                                    }
+                                }
+                            })
+                        })
+                    }
+                }
+            })
+        }
+
+        function DeleteEpc() {
+            $.ajax({
+                url: '/WarehouseManagement/rfid/DeleteEPC',
+                type: 'post',
+            })
+        }
+        $(function Unit() {
+            $.ajax({
+                url: '/MasterData/Unit/GetAll',
+                type: 'get',
+                success: function (data) {
+                    $('select[name="unit"]').empty();
+                    if (data.code == 200) {
+                        let table = '<option value="-1">@Resources.Resource.Thuộc_Đơn_Vị</option>'
+                        $.each(data.c, function (k, v) {
+                            table += '<option value="' + v.Id + '">' + v.Name + '</option>'
+                        });
+                        $('select[name="unit"]').append(table);
+                        var value = "@Model.IdUnit";
+                        if (value !== "") {
+                            $('select[name="unit"]').val(value)
+                        } else {
+                            $('select[name="unit"]').val("-1")
+                        }
+
+                    } else {
+                        alert(data.msg)
+                    }
+                }
+            })
+        })
+
+        GroupGoods()
+        function GroupGoods() {
+            $.ajax({
+                url: '/MasterData/GroupGoods/GetAll',
+                type: 'get',
+                success: function (data) {
+                    $('#groupgoods').empty();
+                    if (data.code == 200) {
+                        let table = '<option value="-1">@Resources.Resource.Thuộc_Nhóm_Hàng</option>'
+                        $.each(data.c, function (k, v) {
+                            table += '<option value="' + v.Id + '">' + v.Name + '</option>'
+                        });
+                        $('#groupgoods').append(table);
+                        var value = "@Model.IdGroupGood";
+                        if (value !== "") {
+                            $('#groupgoods').val(value)
+                        } else {
+                            $('#groupgoods').val("-1")
+                        }
+                    } else {
+                        alert(data.msg)
+                    }
+                }
+            })
+        }
+
+        function RFIDHandHeld(id) {
+            $('.on').css('display', 'none')
+            $('.off').css('display', 'none')
+            $(`#notscanHH${id}`).css('display', 'block')
+            IdGoodsForHANDHELD = id
+            rfid.statusEvent = "statusEvent(%json)";
+            rfid.tagEvent = "TagHandler(%json)";
+            RFIDEnumrate();
+        }
+        async function TagHandler(tagarray) {
+            for (i = 0; i < tagarray.TagData.length; i++) {
+                var epc = tagarray.TagData[i].tagID
+                if (!epcshow.some(item => item.IdEPC === epc)) {
+                    epcshow.push({
+                        IdEPC: epc,
+                        IdWareHouse: IdGoodsForHANDHELD
+                    })
+                    await CompareReceipt(epc, IdGoodsForHANDHELD)
+                }
+            }
+        }
+        function RFIDEnumrate() {
+            rfid.transport = 'serial'
+            rfid.readerID = 'RFID1';
+            rfid.enumerate();
+            setTimeout(function () {
+                rfid.connect();
+                rfid.startTriggerType = "triggerPress";
+                rfid.performInventory();
+                rfid.beepOnRead = 1;
+            }, 1000);
+        }
+
+        var resource = {
+            goods_exist: "@Html.Raw(Resources.Resource.goods_exist)",
+            enter_product_code: "@Html.Raw(Resources.Resource.enter_product_code)",
+            enter_product_name: "@Html.Raw(Resources.Resource.enter_product_name)",
+
+        }
+    </script>
+    <script src="~/Areas/MasterData/assets/js/Good/edit-good.js"></script>
+
+}

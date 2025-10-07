@@ -1,0 +1,3192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account Create" xml:space="preserve">
+    <value>Account Create</value>
+  </data>
+  <data name="account_list" xml:space="preserve">
+    <value>Account List</value>
+  </data>
+  <data name="add_function" xml:space="preserve">
+    <value>Add function</value>
+  </data>
+  <data name="add_goods" xml:space="preserve">
+    <value>Add New Goods</value>
+  </data>
+  <data name="add_good_group" xml:space="preserve">
+    <value>Add new goods group</value>
+  </data>
+  <data name="Add Type Customer" xml:space="preserve">
+    <value>Add Type Customer</value>
+  </data>
+  <data name="add_warehouses" xml:space="preserve">
+    <value>Add New Warehouse</value>
+  </data>
+  <data name="atline" xml:space="preserve">
+    <value>at line</value>
+  </data>
+  <data name="start_rfid_scanning" xml:space="preserve">
+    <value>Start RFID scanning</value>
+  </data>
+  <data name="turn_on_sound" xml:space="preserve">
+    <value>Turn on Sound</value>
+  </data>
+  <data name="start_locating_tags" xml:space="preserve">
+    <value>Start locating tags</value>
+  </data>
+  <data name="Bỏ Qua" xml:space="preserve">
+    <value>Skip</value>
+  </data>
+  <data name="CancelInfo" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Chi Tiết" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Chi Tiết Hàng Hóa" xml:space="preserve">
+    <value>Goods Details</value>
+  </data>
+  <data name="Chi Tiết Hàng Hóa Trong Kho" xml:space="preserve">
+    <value>Details of Goods in Stock</value>
+  </data>
+  <data name="warehouse_detail" xml:space="preserve">
+    <value>Warehouse detail</value>
+  </data>
+  <data name="Chi Tiết Phiếu Kiểm Kê" xml:space="preserve">
+    <value>Detail of Stock Take</value>
+  </data>
+  <data name="import_form_detail" xml:space="preserve">
+    <value>Import form detail</value>
+  </data>
+  <data name="Chi Tiết Phiếu Xuất" xml:space="preserve">
+    <value>Goods Issue Detail</value>
+  </data>
+  <data name="Chi Tiết Vật Tư" xml:space="preserve">
+    <value>Asset Detail</value>
+  </data>
+  <data name="hi_user" xml:space="preserve">
+    <value>Hi,</value>
+  </data>
+  <data name="no_good_selected" xml:space="preserve">
+    <value>No good selected</value>
+  </data>
+  <data name="Chưa Có EPC" xml:space="preserve">
+    <value>Not EPC</value>
+  </data>
+  <data name="Chưa Có Mã Hàng" xml:space="preserve">
+    <value>No Product Code yet</value>
+  </data>
+  <data name="Chưa Có Tài Khoản" xml:space="preserve">
+    <value>Do You Not Have an Account ?</value>
+  </data>
+  <data name="uncheked" xml:space="preserve">
+    <value>Unchecked</value>
+  </data>
+  <data name="quantity_not_entered_for_scanning" xml:space="preserve">
+    <value>Quantity not entered for scanning</value>
+  </data>
+  <data name="not_scanned_yet" xml:space="preserve">
+    <value>Not scanned yet</value>
+  </data>
+  <data name="not_completed_scanning" xml:space="preserve">
+    <value>Not completed scanning</value>
+  </data>
+  <data name="choose_file" xml:space="preserve">
+    <value>Choose file</value>
+  </data>
+  <data name="Chọn Hàng Hóa" xml:space="preserve">
+    <value>Choose Goods</value>
+  </data>
+  <data name="select_warehouses" xml:space="preserve">
+    <value>Select warehouses</value>
+  </data>
+  <data name="Chọn Kho Hàng Để Tiếp Tục" xml:space="preserve">
+    <value>Select warehouse to continue!</value>
+  </data>
+  <data name="select_customers" xml:space="preserve">
+    <value>Select customers</value>
+  </data>
+  <data name="Chọn Khách Hàng Để Tiếp Tục" xml:space="preserve">
+    <value>Select Customer To Continue</value>
+  </data>
+  <data name="Chọn Mã TK Hạch Toán" xml:space="preserve">
+    <value>Select Accounting Account Code</value>
+  </data>
+  <data name="Chọn Nguồn KH" xml:space="preserve">
+    <value>Select Customer Source</value>
+  </data>
+  <data name="Chọn Ngành Nghề" xml:space="preserve">
+    <value>Choose A Career</value>
+  </data>
+  <data name="Chọn Nhân Viên Kiểm Hàng" xml:space="preserve">
+    <value>Select goods inspection staff</value>
+  </data>
+  <data name="Chọn NV Phụ Trách" xml:space="preserve">
+    <value>Select Staff in Charge</value>
+  </data>
+  <data name="Chọn Phương Thức TT" xml:space="preserve">
+    <value>Select Payment Method</value>
+  </data>
+  <data name="Chọn Thẻ Thành Viên" xml:space="preserve">
+    <value>Select Membership Card</value>
+  </data>
+  <data name="function" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="ConfirmDeleteWarning" xml:space="preserve">
+    <value>This action will not be rolled back !!</value>
+  </data>
+  <data name="Create Business Customer" xml:space="preserve">
+    <value>Create Business Customer</value>
+  </data>
+  <data name="CreateSucess" xml:space="preserve">
+    <value>Create Successfully !!!</value>
+  </data>
+  <data name="system_configuration" xml:space="preserve">
+    <value>System Configuration</value>
+  </data>
+  <data name="personal" xml:space="preserve">
+    <value>Personal</value>
+  </data>
+  <data name="duplicate_codes" xml:space="preserve">
+    <value>Duplicate codes</value>
+  </data>
+  <data name="Còn" xml:space="preserve">
+    <value>remains</value>
+  </data>
+  <data name="Có Mã EPC Là" xml:space="preserve">
+    <value>Has EPC Code Is</value>
+  </data>
+  <data name="database" xml:space="preserve">
+    <value>Database Name</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="catalog" xml:space="preserve">
+    <value>Catalog</value>
+  </data>
+  <data name="Danh Mục Chính" xml:space="preserve">
+    <value>Main Category</value>
+  </data>
+  <data name="Danh Sách" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="assets_detail_list" xml:space="preserve">
+    <value>Assets detail list</value>
+  </data>
+  <data name="customer_list" xml:space="preserve">
+    <value>Customer List</value>
+  </data>
+  <data name="Danh Sách Khách Hàng Doanh Nghiệp" xml:space="preserve">
+    <value>List of Business Customer</value>
+  </data>
+  <data name="good_group_list" xml:space="preserve">
+    <value>Goods Group List</value>
+  </data>
+  <data name="stock_take_list" xml:space="preserve">
+    <value>Stock Count List</value>
+  </data>
+  <data name="import_form_list" xml:space="preserve">
+    <value>Goods Receipt List</value>
+  </data>
+  <data name="export_form_list" xml:space="preserve">
+    <value>Goods Issue List</value>
+  </data>
+  <data name="backup_list" xml:space="preserve">
+    <value>Backup data list</value>
+  </data>
+  <data name="Danh Sách Tài Khoản" xml:space="preserve">
+    <value>Account List</value>
+  </data>
+  <data name="units_catalog" xml:space="preserve">
+    <value>Units of Measurement</value>
+  </data>
+  <data name="data_management" xml:space="preserve">
+    <value>Data Management</value>
+  </data>
+  <data name="DeleteInfo" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteWarning" xml:space="preserve">
+    <value>Do You Want To Delete ?</value>
+  </data>
+  <data name="Delivery Bill" xml:space="preserve">
+    <value>Delivery Bill</value>
+  </data>
+  <data name="goods_detail_list" xml:space="preserve">
+    <value>Detailed Goods List</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>Duplicate Id !!!</value>
+  </data>
+  <data name="DuplicateName" xml:space="preserve">
+    <value>Duplicate Name !!!</value>
+  </data>
+  <data name="excess" xml:space="preserve">
+    <value>Excess</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="stop_scanning" xml:space="preserve">
+    <value>Stop scanning</value>
+  </data>
+  <data name="stop_rfid_scanning" xml:space="preserve">
+    <value>Stop RFID scanning</value>
+  </data>
+  <data name="Dừng Quét HandHeld" xml:space="preserve">
+    <value>Stop HandHeld Scan</value>
+  </data>
+  <data name="Dữ Liệu Nhập Kho" xml:space="preserve">
+    <value>Receipt Data</value>
+  </data>
+  <data name="Dữ Liệu Xuất Kho" xml:space="preserve">
+    <value>Delivery Data</value>
+  </data>
+  <data name="data_in_use" xml:space="preserve">
+    <value>Data in Use</value>
+  </data>
+  <data name="login_data" xml:space="preserve">
+    <value>Login Data</value>
+  </data>
+  <data name="edit_business_customer" xml:space="preserve">
+    <value>Edit Business Customer</value>
+  </data>
+  <data name="Edit Group Goods" xml:space="preserve">
+    <value>Edit Group Goods</value>
+  </data>
+  <data name="Edit Type Customer" xml:space="preserve">
+    <value>Edit Type Customer</value>
+  </data>
+  <data name="edit_warehouse" xml:space="preserve">
+    <value>Edit warehouse</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="enter group goods" xml:space="preserve">
+    <value>Please Enter Group Goods Name !!!</value>
+  </data>
+  <data name="enterwarehouse" xml:space="preserve">
+    <value>Please Enter Warehouse Name !!!</value>
+  </data>
+  <data name="entries" xml:space="preserve">
+    <value>entries</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value> Error</value>
+  </data>
+  <data name="export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="FailCreate" xml:space="preserve">
+    <value>Create Failure!!!</value>
+  </data>
+  <data name="FailDelete" xml:space="preserve">
+    <value>Delete Failed!</value>
+  </data>
+  <data name="FailEdit" xml:space="preserve">
+    <value>Edit Failed !!!</value>
+  </data>
+  <data name="false" xml:space="preserve">
+    <value>False</value>
+  </data>
+  <data name="fasle add group goods" xml:space="preserve">
+    <value>Product Group Name Already In The System !!!</value>
+  </data>
+  <data name="function_configuration" xml:space="preserve">
+    <value>Function Configuration</value>
+  </data>
+  <data name="note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="Ghi Đè" xml:space="preserve">
+    <value>Overwrite</value>
+  </data>
+  <data name="Goods Issue List" xml:space="preserve">
+    <value>Goods Issue List</value>
+  </data>
+  <data name="Goods Receipt List" xml:space="preserve">
+    <value>Goods Receipt List</value>
+  </data>
+  <data name="groupgoods sucess" xml:space="preserve">
+    <value>Create Group Goods Success</value>
+  </data>
+  <data name="Gửi" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Hiển Thị Danh Sách Vật Tư Theo" xml:space="preserve">
+    <value>Show Assets List By</value>
+  </data>
+  <data name="recent_activities" xml:space="preserve">
+    <value>Recent activities</value>
+  </data>
+  <data name="Hoặc Chưa Có Trong Hệ Thống" xml:space="preserve">
+    <value>Or Not Yet In The System</value>
+  </data>
+  <data name="Hàng Hóa" xml:space="preserve">
+    <value>Goods</value>
+  </data>
+  <data name="Hàng tồn kho cao nhất" xml:space="preserve">
+    <value>Maximum inventory</value>
+  </data>
+  <data name="Hàng tồn kho thấp nhất" xml:space="preserve">
+    <value>Minimum Inventory</value>
+  </data>
+  <data name="actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Hôm nay:" xml:space="preserve">
+    <value>Today:</value>
+  </data>
+  <data name="debt_limit" xml:space="preserve">
+    <value>Debt limit</value>
+  </data>
+  <data name="system" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="full_name" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+  <data name="Hủy" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Inbound</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="data_declaration" xml:space="preserve">
+    <value>Data Declaration</value>
+  </data>
+  <data name="warehouse" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Khách Hàng Không Tồn Tại" xml:space="preserve">
+    <value>Customers Don't Exist !!!</value>
+  </data>
+  <data name="no_file_selected" xml:space="preserve">
+    <value>No file selected!</value>
+  </data>
+  <data name="Không Có Sẵn" xml:space="preserve">
+    <value>Unavailable</value>
+  </data>
+  <data name="Không Nhận Được Tất Cả Dữ Liệu" xml:space="preserve">
+    <value>Not receiving all data</value>
+  </data>
+  <data name="Không Tồn Tại" xml:space="preserve">
+    <value>Does Not Exist !!!</value>
+  </data>
+  <data name="Không Tồn Tại Trong Kho" xml:space="preserve">
+    <value>Does Not Exist In Warehouse</value>
+  </data>
+  <data name="unsatisfactory" xml:space="preserve">
+    <value>Unsatisfactory</value>
+  </data>
+  <data name="Không Đủ Để Xuất" xml:space="preserve">
+    <value>Not enough Exports</value>
+  </data>
+  <data name="Kiểm Kho" xml:space="preserve">
+    <value>Check Inventory</value>
+  </data>
+  <data name="stock_take" xml:space="preserve">
+    <value>Stock-take Operations</value>
+  </data>
+  <data name="customer_type" xml:space="preserve">
+    <value>Customer type</value>
+  </data>
+  <data name="result" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="stop_locating_tags" xml:space="preserve">
+    <value>Stop locating tags</value>
+  </data>
+  <data name="bussiness_customer_list" xml:space="preserve">
+    <value>List of Business customer</value>
+  </data>
+  <data name="customer_type_list" xml:space="preserve">
+    <value>Customer Types List</value>
+  </data>
+  <data name="goods_list" xml:space="preserve">
+    <value>Goods List</value>
+  </data>
+  <data name="List of Group Goods" xml:space="preserve">
+    <value>List of Group Goods</value>
+  </data>
+  <data name="List Of Stock Take" xml:space="preserve">
+    <value>List Of Stock Take</value>
+  </data>
+  <data name="units_list" xml:space="preserve">
+    <value>Units List</value>
+  </data>
+  <data name="warehouse_list" xml:space="preserve">
+    <value>Warehouse List</value>
+  </data>
+  <data name="Liên Hệ Quản Trị Viên Để Được Cấp Lại Mật Khẩu" xml:space="preserve">
+    <value>Contact Administrator To Reissue Password ^-^</value>
+  </data>
+  <data name="Liên Hệ Quản Trị Viên Để Được Cấp Tài Khoản" xml:space="preserve">
+    <value>Contact Administrator To Get Account ^-^</value>
+  </data>
+  <data name="Lên Phiếu Kiểm Kê" xml:space="preserve">
+    <value>Up on the Inventory Form</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Lưu Thành Công" xml:space="preserve">
+    <value>Saved Successfully</value>
+  </data>
+  <data name="Lưu Tạm Thời" xml:space="preserve">
+    <value>Temporary Save</value>
+  </data>
+  <data name="Lượng Tồn Của Hàng Hóa" xml:space="preserve">
+    <value>The inventory of </value>
+  </data>
+  <data name="Lập Phiếu" xml:space="preserve">
+    <value>Create import and export slips</value>
+  </data>
+  <data name="create_stock_take_form" xml:space="preserve">
+    <value>Create Stock-take Form</value>
+  </data>
+  <data name="Lập Phiếu Nhập" xml:space="preserve">
+    <value>Goods Receipt</value>
+  </data>
+  <data name="Lập Phiếu Xuất" xml:space="preserve">
+    <value>Goods Issue</value>
+  </data>
+  <data name="create_export_form" xml:space="preserve">
+    <value>Create Goods Issue</value>
+  </data>
+  <data name="Lỗi Chi Tiết Phiếu Kiểm" xml:space="preserve">
+    <value>Check Voucher Details Error</value>
+  </data>
+  <data name="server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="id" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="epc_code" xml:space="preserve">
+    <value>EPC</value>
+  </data>
+  <data name="Mã HH" xml:space="preserve">
+    <value>Goods id</value>
+  </data>
+  <data name="good_id" xml:space="preserve">
+    <value>Goods ID</value>
+  </data>
+  <data name="Mã Hàng Hoặc Kho hàng Không Tồn Tại" xml:space="preserve">
+    <value>Product Code or Inventory Does Not Exist</value>
+  </data>
+  <data name="Mã Hàng Hóa" xml:space="preserve">
+    <value>Goods Id</value>
+  </data>
+  <data name="mã hàng không tồn tại" xml:space="preserve">
+    <value>Goods Id Does Not Exist !!!</value>
+  </data>
+  <data name="Mã Hàng Trong Danh Sách Chưa Có Trong Phiếu Xuất" xml:space="preserve">
+    <value>The Goods Id in the List is not yet included in the Sale Order !!!</value>
+  </data>
+  <data name="Mã Hàng Trong Danh Sách Không Có Trong Phiếu Nhập" xml:space="preserve">
+    <value>The Goods Id in The List is Not Included in The Order</value>
+  </data>
+  <data name="Mã Hàng Trong Danh Sách Không Có Trong Phiếu Xuất" xml:space="preserve">
+    <value>The Goods Id in The List is Not Included in The Delivery</value>
+  </data>
+  <data name="mã hàng tồn tại" xml:space="preserve">
+    <value>Goods id is aready added in system!!!</value>
+  </data>
+  <data name="customer_code" xml:space="preserve">
+    <value>Customer ID</value>
+  </data>
+  <data name="customer_type_id" xml:space="preserve">
+    <value>Customer type ID</value>
+  </data>
+  <data name="Mã Phiếu Kiểm Không Tồn Tại" xml:space="preserve">
+    <value>Check Voucher Code Does Not Exist</value>
+  </data>
+  <data name="valid_po" xml:space="preserve">
+    <value>Valid purchase order id!</value>
+  </data>
+  <data name="Mã Phiếu Nhập Đã Quét" xml:space="preserve">
+    <value>Scanned Purchase Order Id !!!</value>
+  </data>
+  <data name="Mã Phiếu Nhập Đã Tồn Tại" xml:space="preserve">
+    <value>Receipt Id Already Exists !!!</value>
+  </data>
+  <data name="Mã Phiếu Xuất Hợp Lệ" xml:space="preserve">
+    <value>Valid Sale Order Id !!!</value>
+  </data>
+  <data name="Mã Phiếu Xuất Không Tồn Tại" xml:space="preserve">
+    <value>Sale order ID does not exist !!!</value>
+  </data>
+  <data name="Mã Phiếu Xuất Đã Quét" xml:space="preserve">
+    <value>Scanned Sale Order Id !!!</value>
+  </data>
+  <data name="Mã Phiếu Xuất Đã Tồn Tại" xml:space="preserve">
+    <value>Sale Order Id Already Exits !!!</value>
+  </data>
+  <data name="Mã Phòng Ban" xml:space="preserve">
+    <value>Department Id</value>
+  </data>
+  <data name="tax_code" xml:space="preserve">
+    <value>Tax code</value>
+  </data>
+  <data name="accounting_account_code" xml:space="preserve">
+    <value>Accounting account code</value>
+  </data>
+  <data name="Mã trùng" xml:space="preserve">
+    <value>Duplicate code</value>
+  </data>
+  <data name="Mã Vật Tư" xml:space="preserve">
+    <value>Asset Id</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Mô Tả Nếu Có Hàng Dư hoặc Khác" xml:space="preserve">
+    <value>Description If There Is Excess Stock or Other</value>
+  </data>
+  <data name="sample" xml:space="preserve">
+    <value>Sample</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Mục Đích" xml:space="preserve">
+    <value>Purpose</value>
+  </data>
+  <data name="customer_resources" xml:space="preserve">
+    <value>Customer resources</value>
+  </data>
+  <data name="career" xml:space="preserve">
+    <value>Career</value>
+  </data>
+  <data name="datetime" xml:space="preserve">
+    <value>Datetime</value>
+  </data>
+  <data name="Ngày Mua" xml:space="preserve">
+    <value>Date Buy</value>
+  </data>
+  <data name="Ngày Sinh" xml:space="preserve">
+    <value>Date Of Birth</value>
+  </data>
+  <data name="modify_date" xml:space="preserve">
+    <value>Modify date</value>
+  </data>
+  <data name="create_date" xml:space="preserve">
+    <value>Create date</value>
+  </data>
+  <data name="Ngày Tạo Đơn Hàng" xml:space="preserve">
+    <value>Order Creation Date</value>
+  </data>
+  <data name="export_date" xml:space="preserve">
+    <value>Export date</value>
+  </data>
+  <data name="deliver" xml:space="preserve">
+    <value>Deliver</value>
+  </data>
+  <data name="backup_operator" xml:space="preserve">
+    <value>Backup_operator</value>
+  </data>
+  <data name="Người Sở Hữu" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="modify_by" xml:space="preserve">
+    <value>Modify by</value>
+  </data>
+  <data name="create_by" xml:space="preserve">
+    <value>Create by</value>
+  </data>
+  <data name="NhapKhoQuaSL" xml:space="preserve">
+    <value>The quantity of imported goods exceeds the allowable quantity of</value>
+  </data>
+  <data name="staff" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="stock_auditor" xml:space="preserve">
+    <value>Stock auditor</value>
+  </data>
+  <data name="Nhân Viên Kiểm Hàng 1" xml:space="preserve">
+    <value>Goods Inspection Staff 1</value>
+  </data>
+  <data name="Nhân Viên Kiểm Hàng 2" xml:space="preserve">
+    <value>Goods Inspection Staff 2</value>
+  </data>
+  <data name="staff_in_charge" xml:space="preserve">
+    <value>Staff in charge</value>
+  </data>
+  <data name="Nhóm Hàng" xml:space="preserve">
+    <value>Group Goods</value>
+  </data>
+  <data name="Nhóm Hàng Hóa" xml:space="preserve">
+    <value>Group of goods</value>
+  </data>
+  <data name="press_the_button" xml:space="preserve">
+    <value>Press the button</value>
+  </data>
+  <data name="import_file" xml:space="preserve">
+    <value>Import file</value>
+  </data>
+  <data name="Nhập Kho Vượt Quá" xml:space="preserve">
+    <value>Warehouse In Excess</value>
+  </data>
+  <data name="nhập mã hàng" xml:space="preserve">
+    <value>Please Enter Goods Id !!!</value>
+  </data>
+  <data name="enter_good_id" xml:space="preserve">
+    <value>Enter good ID</value>
+  </data>
+  <data name="nhập số lượng cao nhất" xml:space="preserve">
+    <value>Please Enter The Maximum Quantity !!!</value>
+  </data>
+  <data name="Nhập Số Lượng Hàng Tồn Kho Cao Nhất" xml:space="preserve">
+    <value>Enter The Maximum Inventory</value>
+  </data>
+  <data name="Nhập Số Lượng Hàng Tồn Kho Thấp Nhất" xml:space="preserve">
+    <value>Enter The Minimum Inventory</value>
+  </data>
+  <data name="nhập số lượng thấp nhất" xml:space="preserve">
+    <value>Please Enter The Minimum Quantity !!!</value>
+  </data>
+  <data name="enter_inventory_quantity" xml:space="preserve">
+    <value>Enter inventory quantity</value>
+  </data>
+  <data name="Nhập thông tin chi tiết của bạn để đăng nhập vào tài khoản của bạn" xml:space="preserve">
+    <value>Enter Your Details To Login To Your Account:</value>
+  </data>
+  <data name="nhập tên hàng" xml:space="preserve">
+    <value>Please Enter Goods Name !!!</value>
+  </data>
+  <data name="Nhập Tên Hàng Hóa" xml:space="preserve">
+    <value>Enter Goods Name</value>
+  </data>
+  <data name="nhập tên nhóm hàng" xml:space="preserve">
+    <value>Please Enter Group Goods Name !!!</value>
+  </data>
+  <data name="nhập tên đơn vị" xml:space="preserve">
+    <value>Please Enter Unit Name !!!</value>
+  </data>
+  <data name="Nhập Tại Kho" xml:space="preserve">
+    <value>At Warehouse</value>
+  </data>
+  <data name="import_export" xml:space="preserve">
+    <value>Inbound - Outbound</value>
+  </data>
+  <data name="Nhập Đủ Số Phiếu Nhập" xml:space="preserve">
+    <value>Enter Enough Number of Receipt !!!</value>
+  </data>
+  <data name="Nhập Đủ Số Phiếu Xuất" xml:space="preserve">
+    <value>Enter Enough Number of Sale Order!!!</value>
+  </data>
+  <data name="Phiếu Kiểm" xml:space="preserve">
+    <value>Stock-take ID</value>
+  </data>
+  <data name="import_form" xml:space="preserve">
+    <value>Import form</value>
+  </data>
+  <data name="Phiếu Nhập Kho" xml:space="preserve">
+    <value>Receipt</value>
+  </data>
+  <data name="Phiếu Xuất" xml:space="preserve">
+    <value>Goods Issue</value>
+  </data>
+  <data name="Phiếu Xuất Kho" xml:space="preserve">
+    <value>Delivery Bill</value>
+  </data>
+  <data name="export_form" xml:space="preserve">
+    <value>Export form</value>
+  </data>
+  <data name="Phân Quyền Chức Năng" xml:space="preserve">
+    <value>Decentralization of Functions</value>
+  </data>
+  <data name="Phân Quyền Quản Lý" xml:space="preserve">
+    <value>Decentralization of Management</value>
+  </data>
+  <data name="Phòng Ban" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="scanning_method" xml:space="preserve">
+    <value>Scanning method</value>
+  </data>
+  <data name="payment_methods" xml:space="preserve">
+    <value>Payment methods</value>
+  </data>
+  <data name="Phụ Lục" xml:space="preserve">
+    <value>Addendum</value>
+  </data>
+  <data name="Purchase Order" xml:space="preserve">
+    <value>Purchase Order</value>
+  </data>
+  <data name="system_permissions_and_functions" xml:space="preserve">
+    <value>System Permissions and Functions</value>
+  </data>
+  <data name="scan" xml:space="preserve">
+    <value>Scan</value>
+  </data>
+  <data name="Quét HandHeld" xml:space="preserve">
+    <value>HandHeld Scan</value>
+  </data>
+  <data name="rescan_duplicate_code" xml:space="preserve">
+    <value>Rescan duplicate code</value>
+  </data>
+  <data name="rescan_all" xml:space="preserve">
+    <value>Rescan All</value>
+  </data>
+  <data name="Quên Mật Khẩu" xml:space="preserve">
+    <value>Forgot password ?</value>
+  </data>
+  <data name="warehouse_catalog" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="Quản Lý Danh Mục Sản Phẩm" xml:space="preserve">
+    <value>Manage Main Categories</value>
+  </data>
+  <data name="Quản Lý Danh Mục Tài Khoản" xml:space="preserve">
+    <value>Account Manager</value>
+  </data>
+  <data name="Quản Lý Hệ Thống" xml:space="preserve">
+    <value>System Management</value>
+  </data>
+  <data name="Quản Lý Kho" xml:space="preserve">
+    <value>Warehouse Management</value>
+  </data>
+  <data name="warehouse_management" xml:space="preserve">
+    <value>Warehouse Management</value>
+  </data>
+  <data name="Quản Lý Nhập Hàng" xml:space="preserve">
+    <value>Purchase Manager</value>
+  </data>
+  <data name="account_management" xml:space="preserve">
+    <value>Account Management</value>
+  </data>
+  <data name="Quản Lý Xuất Hàng" xml:space="preserve">
+    <value>Sales Manager</value>
+  </data>
+  <data name="Receip Data" xml:space="preserve">
+    <value>Receip Data</value>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>Receipt</value>
+  </data>
+  <data name="remains" xml:space="preserve">
+    <value>Remains</value>
+  </data>
+  <data name="Sales Order" xml:space="preserve">
+    <value>Sales Order</value>
+  </data>
+  <data name="backup" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="sql_server_backup" xml:space="preserve">
+    <value>SQL server backup</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="serial_number" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="SucessDelete" xml:space="preserve">
+    <value>Delete Successfully!</value>
+  </data>
+  <data name="SucessEdit" xml:space="preserve">
+    <value>Update Sucessfully!</value>
+  </data>
+  <data name="system_functions" xml:space="preserve">
+    <value>System functions</value>
+  </data>
+  <data name="fax_number" xml:space="preserve">
+    <value>Fax number</value>
+  </data>
+  <data name="quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Số Lượng Hàng Hóa Trong Kho Không Đủ Để Xuất" xml:space="preserve">
+    <value>The Quantity of Goods in Warehouse is Not Enough for Export!!!</value>
+  </data>
+  <data name="Số Lượng Hàng Nhập Kho" xml:space="preserve">
+    <value>Quantity Of Imported Goods</value>
+  </data>
+  <data name="stock_take_quantity" xml:space="preserve">
+    <value>Stock-take quantity</value>
+  </data>
+  <data name="Số Lượng Nhập Vượt Quá Số Lượng Cho Phép Của Kho" xml:space="preserve">
+    <value>Imported Quantity Exceeds the Warehouse's Allowed Quantity</value>
+  </data>
+  <data name="Số Lượng Tương Đồng" xml:space="preserve">
+    <value>Similar Quantities</value>
+  </data>
+  <data name="quantity_of_inventory" xml:space="preserve">
+    <value>Quantity of inventory</value>
+  </data>
+  <data name="assets_quantity" xml:space="preserve">
+    <value>Asset quantity</value>
+  </data>
+  <data name="number_of_scanned_goods" xml:space="preserve">
+    <value>Number of scanned goods</value>
+  </data>
+  <data name="Số Lượng, Vui Lòng Giảm" xml:space="preserve">
+    <value>Quantities, Please Reduce it.</value>
+  </data>
+  <data name="Số Lượng, Vui Lòng Nhập Thêm" xml:space="preserve">
+    <value>Quantities Left, Please enter more !!!</value>
+  </data>
+  <data name="number_of_days allowed_for_debt" xml:space="preserve">
+    <value>Number of days allowed for debt</value>
+  </data>
+  <data name="number_of_unscanned_import_forms" xml:space="preserve">
+    <value>Number of unscanned Import forms</value>
+  </data>
+  <data name="Số Phiếu Nhập Kho" xml:space="preserve">
+    <value>Goods Receipt Id</value>
+  </data>
+  <data name="number_of_unscanned_export_forms" xml:space="preserve">
+    <value>Number of unscanned Export forms</value>
+  </data>
+  <data name="export_form_code" xml:space="preserve">
+    <value>Export form ID</value>
+  </data>
+  <data name="Số Phiếu Yêu Cầu Nhập" xml:space="preserve">
+    <value>Purchase Order Id</value>
+  </data>
+  <data name="sale_order_id" xml:space="preserve">
+    <value>Sale Order ID</value>
+  </data>
+  <data name="account_number_1" xml:space="preserve">
+    <value>Account number 1</value>
+  </data>
+  <data name="account_number_2" xml:space="preserve">
+    <value>Account number 2</value>
+  </data>
+  <data name="phone_number" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="edit_good" xml:space="preserve">
+    <value>Edit goods</value>
+  </data>
+  <data name="Sửa Kho Hàng" xml:space="preserve">
+    <value>Edit Warehouse</value>
+  </data>
+  <data name="edit_customer_infor" xml:space="preserve">
+    <value>Edit Customer information</value>
+  </data>
+  <data name="Sửa Khách Hàng Doanh Nghiệp" xml:space="preserve">
+    <value>Edit Business Customers</value>
+  </data>
+  <data name="Sửa Loại Khách Hàng" xml:space="preserve">
+    <value>Edit Type Customer</value>
+  </data>
+  <data name="edit_good_group" xml:space="preserve">
+    <value>Edit goods group</value>
+  </data>
+  <data name="edit_unit" xml:space="preserve">
+    <value>Edit unit</value>
+  </data>
+  <data name="The inventory of good" xml:space="preserve">
+    <value>The inventory of </value>
+  </data>
+  <data name="Theo Phòng Ban" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="Theo Vật Tư" xml:space="preserve">
+    <value>Assets</value>
+  </data>
+  <data name="setup" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="deficiency" xml:space="preserve">
+    <value>Deficiency</value>
+  </data>
+  <data name="Thoát" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Thuộc Nhóm Hàng" xml:space="preserve">
+    <value>Belongs To The Group Goods</value>
+  </data>
+  <data name="Thuộc Đơn Vị" xml:space="preserve">
+    <value>Belongs To The Unit</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Thêm Chức Năng" xml:space="preserve">
+    <value>Add Function</value>
+  </data>
+  <data name="add_new_customer" xml:space="preserve">
+    <value>Add new customer</value>
+  </data>
+  <data name="add_customers_organization" xml:space="preserve">
+    <value>Add new customer (Organization)</value>
+  </data>
+  <data name="add_bussiness_customers" xml:space="preserve">
+    <value>Create New Business Customers</value>
+  </data>
+  <data name="Thêm Loại Khách Hàng" xml:space="preserve">
+    <value>Add Type Customer</value>
+  </data>
+  <data name="Thêm Nhóm Hàng" xml:space="preserve">
+    <value>Add Group Goods</value>
+  </data>
+  <data name="Thêm Tài Khoản" xml:space="preserve">
+    <value>Add User</value>
+  </data>
+  <data name="add_units" xml:space="preserve">
+    <value>Add New Unit</value>
+  </data>
+  <data name="notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="other_info" xml:space="preserve">
+    <value>Other information</value>
+  </data>
+  <data name="user_info" xml:space="preserve">
+    <value>User information</value>
+  </data>
+  <data name="Thương Hiệu" xml:space="preserve">
+    <value>Brands</value>
+  </data>
+  <data name="membership_card" xml:space="preserve">
+    <value>Membership card</value>
+  </data>
+  <data name="Thừa" xml:space="preserve">
+    <value>Excess</value>
+  </data>
+  <data name="messages" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="Total goods inventory" xml:space="preserve">
+    <value>Total goods inventory</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Trong" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="recent_access" xml:space="preserve">
+    <value>Recent access</value>
+  </data>
+  <data name="trùng tên nhóm hàng" xml:space="preserve">
+    <value>Product Group Name Already In The System !!!</value>
+  </data>
+  <data name="trùng tên đơn vị" xml:space="preserve">
+    <value>Unit Name Already In The System !!!</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Trạng Thái Nhập Kho" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Trạng Thái Phiếu Kiểm" xml:space="preserve">
+    <value>Stock Take Status</value>
+  </data>
+  <data name="inventory_status" xml:space="preserve">
+    <value>Inventory status</value>
+  </data>
+  <data name="Trạng Thái Xuất Kho" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Tài Khoản" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="bank_account" xml:space="preserve">
+    <value>Bank account</value>
+  </data>
+  <data name="Tên" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="data" xml:space="preserve">
+    <value>Data </value>
+  </data>
+  <data name="good_name" xml:space="preserve">
+    <value>Goods name</value>
+  </data>
+  <data name="Tên Hàng Hóa" xml:space="preserve">
+    <value>Goods Name</value>
+  </data>
+  <data name="warehouse_name" xml:space="preserve">
+    <value>Warehouse name</value>
+  </data>
+  <data name="Tên Kho Hàng" xml:space="preserve">
+    <value>Warehouse Name</value>
+  </data>
+  <data name="customer_name" xml:space="preserve">
+    <value>Customer name</value>
+  </data>
+  <data name="Tên Loại Khách Hàng" xml:space="preserve">
+    <value>Customer Type Name</value>
+  </data>
+  <data name="Tên Máy Chủ" xml:space="preserve">
+    <value>Server Name</value>
+  </data>
+  <data name="Tên Nhóm Hàng" xml:space="preserve">
+    <value>Group Goods Name</value>
+  </data>
+  <data name="Tên Vật Tư" xml:space="preserve">
+    <value>Asset Name</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Tên Đơn Vị" xml:space="preserve">
+    <value>Unit Name</value>
+  </data>
+  <data name="name_bank_account" xml:space="preserve">
+    <value>Name, Bank account</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="epc_search" xml:space="preserve">
+    <value>Search for EPC code</value>
+  </data>
+  <data name="Tìm Mã Hàng" xml:space="preserve">
+    <value>Search Goods Id</value>
+  </data>
+  <data name="Tìm Mã Phiếu Kiểm" xml:space="preserve">
+    <value>Search Stock id</value>
+  </data>
+  <data name="Tìm Mã Phiếu Nhập" xml:space="preserve">
+    <value>Search Purchase Order id</value>
+  </data>
+  <data name="Tìm Mã Phiếu Xuất" xml:space="preserve">
+    <value>Search Sale Order id</value>
+  </data>
+  <data name="Tạo Phiếu Nhập Hàng Thành Công" xml:space="preserve">
+    <value>Create Successfullly Purchase Order!</value>
+  </data>
+  <data name="Tạo Phiếu Nhập kho" xml:space="preserve">
+    <value>Create Goods Receipt</value>
+  </data>
+  <data name="Tạo Phiếu Xuất Hàng Thành Công" xml:space="preserve">
+    <value>Create Successful Sales Order</value>
+  </data>
+  <data name="Tạo Phiếu Xuất Kho" xml:space="preserve">
+    <value>Create Goods Delivery</value>
+  </data>
+  <data name="Tạo Đơn" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Tạo Đơn Thất Bại" xml:space="preserve">
+    <value>Order Creation Failed</value>
+  </data>
+  <data name="reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="all" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="organization" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="Tổng Lượng Tồn Hàng Hóa" xml:space="preserve">
+    <value>Total goods inventory</value>
+  </data>
+  <data name="Tổng Số Lượng Tồn Kho" xml:space="preserve">
+    <value>Total Inventory Quantity</value>
+  </data>
+  <data name="start_date" xml:space="preserve">
+    <value>Start date</value>
+  </data>
+  <data name="Vietnamese" xml:space="preserve">
+    <value>Vietnamese</value>
+  </data>
+  <data name="Vui lòng chọn hiển thị danh sách vật tư theo tất cả." xml:space="preserve">
+    <value>Please choose to show property listings by all.</value>
+  </data>
+  <data name="Vui Lòng Nhập Mã Phiếu Nhập" xml:space="preserve">
+    <value>Please enter purchase order id</value>
+  </data>
+  <data name="Vui Lòng Nhập Mã Phiếu Xuất" xml:space="preserve">
+    <value>Please Enter Sale Order Id !!!</value>
+  </data>
+  <data name="Vui Lòng Nhập Số Lượng Cao Nhất" xml:space="preserve">
+    <value>Please Enter Maximum Quantity !!!</value>
+  </data>
+  <data name="Vui Lòng Nhập Số Lượng Thấp Nhất" xml:space="preserve">
+    <value>Please Enter Minimum Quantity !!!</value>
+  </data>
+  <data name="Vui Lòng Nhập Số Lượng Tồn" xml:space="preserve">
+    <value>Please Enter Quantity Inventory !!!</value>
+  </data>
+  <data name="Vui Lòng Nhập Số Lượng Vào Kho" xml:space="preserve">
+    <value>Please Enter Quantity In Warehouse !!!</value>
+  </data>
+  <data name="Vui Lòng Nhập Tên Kho Hàng" xml:space="preserve">
+    <value>Please Enter Warehouse Name !!!</value>
+  </data>
+  <data name="input_require_correctly" xml:space="preserve">
+    <value>Please enter all data correctly to ensure the system</value>
+  </data>
+  <data name="Vui Lòng Tìm Chọn Mã Hàng Hóa Để Lập Phiếu" xml:space="preserve">
+    <value>Please Search the Goods Id to Create a Purchase Order </value>
+  </data>
+  <data name="Vẫn Còn Dư" xml:space="preserve">
+    <value>There are</value>
+  </data>
+  <data name="Về Sản Phẩm" xml:space="preserve">
+    <value>About the product</value>
+  </data>
+  <data name="warehouse_detail_list" xml:space="preserve">
+    <value>Warehouse Inventory Details</value>
+  </data>
+  <data name="Xuất File" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="from_warehouse" xml:space="preserve">
+    <value>From warehouse</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="delete_all_duplicate_codes" xml:space="preserve">
+    <value>Delete all Duplicate codes</value>
+  </data>
+  <data name="Đã gửi thành công" xml:space="preserve">
+    <value>Sent Successfully</value>
+  </data>
+  <data name="checked" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="Đã nhận được EPC Thành Công" xml:space="preserve">
+    <value>Successfully received EPC</value>
+  </data>
+  <data name="Đã Nhập Đủ Số Lượng" xml:space="preserve">
+    <value>Enough Quantity Entered !!!</value>
+  </data>
+  <data name="scanned" xml:space="preserve">
+    <value>Scanned</value>
+  </data>
+  <data name="Đã Tồn Tại, Có Mã EPC Là" xml:space="preserve">
+    <value>Already Exists, Has EPC Code Is</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Đăng Kí" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="create_account" xml:space="preserve">
+    <value>Register New Account</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="login_time" xml:space="preserve">
+    <value>Login time</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="unit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="path" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="Đặt Hàng Bán" xml:space="preserve">
+    <value>Sales Order</value>
+  </data>
+  <data name="end_date" xml:space="preserve">
+    <value>End date</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="enough" xml:space="preserve">
+    <value>Enough</value>
+  </data>
+  <data name="export_warehouse" xml:space="preserve">
+    <value>Outbound Operations</value>
+  </data>
+  <data name="Not_Found_Title" xml:space="preserve">
+    <value>The page you are looking for not available!</value>
+  </data>
+  <data name="Not_Found_Description" xml:space="preserve">
+    <value>You will be redirected to Home page in 5 seconds...</value>
+  </data>
+  <data name="Back_Home" xml:space="preserve">
+    <value>Go to Home</value>
+  </data>
+  <data name="import_warehouse" xml:space="preserve">
+    <value>Inbound Operations</value>
+  </data>
+  <data name="create_import_form" xml:space="preserve">
+    <value>Create Goods Receipt</value>
+  </data>
+  <data name="scan_import_form" xml:space="preserve">
+    <value>Scanning Goods Receipt</value>
+  </data>
+  <data name="scan_export_form" xml:space="preserve">
+    <value>Scanning Goods Issue</value>
+  </data>
+  <data name="scan_stock_take_form" xml:space="preserve">
+    <value>Inventory Tracking</value>
+  </data>
+  <data name="inventory" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="good_group_catalog" xml:space="preserve">
+    <value>Goods Group </value>
+  </data>
+  <data name="goods_catalog" xml:space="preserve">
+    <value>Goods</value>
+  </data>
+  <data name="management_catalog" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="customer_management" xml:space="preserve">
+    <value>Customer Management</value>
+  </data>
+  <data name="authorization_management" xml:space="preserve">
+    <value>Authorization Management</value>
+  </data>
+  <data name="update_system" xml:space="preserve">
+    <value>Update Version</value>
+  </data>
+  <data name="update_catalog" xml:space="preserve">
+    <value>Update </value>
+  </data>
+  <data name="update_machine" xml:space="preserve">
+    <value>Update Machine</value>
+  </data>
+  <data name="help_center" xml:space="preserve">
+    <value>Help Center</value>
+  </data>
+  <data name="good_finding_list" xml:space="preserve">
+    <value>Searchable Product List</value>
+  </data>
+  <data name="overall" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="goods_management" xml:space="preserve">
+    <value>Goods Management</value>
+  </data>
+  <data name="units_management" xml:space="preserve">
+    <value>Units Management</value>
+  </data>
+  <data name="scan_status" xml:space="preserve">
+    <value>Scan status</value>
+  </data>
+  <data name="approval_status" xml:space="preserve">
+    <value>Approval status</value>
+  </data>
+  <data name="not_approve" xml:space="preserve">
+    <value>Not yet approved</value>
+  </data>
+  <data name="approved" xml:space="preserve">
+    <value>Approved</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="scan_detail" xml:space="preserve">
+    <value>Scan detail</value>
+  </data>
+  <data name="approve" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="transaction_name" xml:space="preserve">
+    <value>Transaction name</value>
+  </data>
+  <data name="representative_person" xml:space="preserve">
+    <value>Representative person</value>
+  </data>
+  <data name="transaction_account" xml:space="preserve">
+    <value>Transaction account</value>
+  </data>
+  <data name="good_group" xml:space="preserve">
+    <value>Goods Group</value>
+  </data>
+  <data name="min_debt" xml:space="preserve">
+    <value>Minimum debt</value>
+  </data>
+  <data name="max_debt" xml:space="preserve">
+    <value>Maximun debt</value>
+  </data>
+  <data name="detail_bussiness_customer" xml:space="preserve">
+    <value>Detail Business customers</value>
+  </data>
+  <data name="search_by_name" xml:space="preserve">
+    <value>Search by Name</value>
+  </data>
+  <data name="goods" xml:space="preserve">
+    <value>Goods</value>
+  </data>
+  <data name="rfid_scan" xml:space="preserve">
+    <value>RFID scan</value>
+  </data>
+  <data name="tag_registration" xml:space="preserve">
+    <value>Tag registration</value>
+  </data>
+  <data name="enter_function_name" xml:space="preserve">
+    <value>Enter function name</value>
+  </data>
+  <data name="enter_method" xml:space="preserve">
+    <value>Enter method</value>
+  </data>
+  <data name="successful_status" xml:space="preserve">
+    <value>Successful status</value>
+  </data>
+  <data name="successful_value" xml:space="preserve">
+    <value>Successful value</value>
+  </data>
+  <data name="successful_notification_key" xml:space="preserve">
+    <value>Successful notification key</value>
+  </data>
+  <data name="successful_object" xml:space="preserve">
+    <value>Successful object</value>
+  </data>
+  <data name="add_parameter" xml:space="preserve">
+    <value>Add parameter</value>
+  </data>
+  <data name="delete_parameter" xml:space="preserve">
+    <value>Delete parameter</value>
+  </data>
+  <data name="apply_return_value" xml:space="preserve">
+    <value>Apply return value</value>
+  </data>
+  <data name="enter_api_hostname" xml:space="preserve">
+    <value>Enter API Hostname</value>
+  </data>
+  <data name="note_for_api_setup" xml:space="preserve">
+    <value>Note: For API setup, please right-click on setup folder</value>
+  </data>
+  <data name="goods_infor" xml:space="preserve">
+    <value>Goods information</value>
+  </data>
+  <data name="goods_quantity" xml:space="preserve">
+    <value>Goods quantity</value>
+  </data>
+  <data name="confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="enter_good_infor" xml:space="preserve">
+    <value>Enter good information</value>
+  </data>
+  <data name="good_import_quantity" xml:space="preserve">
+    <value>Good import quantity</value>
+  </data>
+  <data name="note_for_inventory_scanning" xml:space="preserve">
+    <value>Perform warehouse scanning to count the quantity of goods being created (if any) to save inventory information</value>
+  </data>
+  <data name="total_scanned_epc" xml:space="preserve">
+    <value>Total scanned EPC</value>
+  </data>
+  <data name="perform_scanning" xml:space="preserve">
+    <value>Perform scanning</value>
+  </data>
+  <data name="scanned_epc_infor" xml:space="preserve">
+    <value>Scanned EPC information</value>
+  </data>
+  <data name="epc_excess_or_wrong" xml:space="preserve">
+    <value>EPC was excessed or wronged</value>
+  </data>
+  <data name="confirm_goods_infor" xml:space="preserve">
+    <value>Confirm goods information</value>
+  </data>
+  <data name="simple_infor" xml:space="preserve">
+    <value>Simple information</value>
+  </data>
+  <data name="previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="create_new" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="good_detail" xml:space="preserve">
+    <value>Goods detail</value>
+  </data>
+  <data name="edit_good_infor" xml:space="preserve">
+    <value>Edit goods information</value>
+  </data>
+  <data name="update_good_quantity" xml:space="preserve">
+    <value>Update good quantity</value>
+  </data>
+  <data name="present_inventory_infor" xml:space="preserve">
+    <value>Present inventory information</value>
+  </data>
+  <data name="scanned_quantity" xml:space="preserve">
+    <value>Scanned quantity</value>
+  </data>
+  <data name="scanning_data" xml:space="preserve">
+    <value>Scanning data</value>
+  </data>
+  <data name="total_inventory" xml:space="preserve">
+    <value>Total inventory</value>
+  </data>
+  <data name="total_scanned_goods" xml:space="preserve">
+    <value>Total scanned goods</value>
+  </data>
+  <data name="scanned_goods" xml:space="preserve">
+    <value>Scanned goods</value>
+  </data>
+  <data name="list_of_items_to_find" xml:space="preserve">
+    <value>List of items to find</value>
+  </data>
+  <data name="check_inventory_in_warehouses" xml:space="preserve">
+    <value>Check inventory in warehouses</value>
+  </data>
+  <data name="good_group_name" xml:space="preserve">
+    <value>Good group name</value>
+  </data>
+  <data name="login_welcome" xml:space="preserve">
+    <value>Welcome to</value>
+  </data>
+  <data name="enter_permission_info" xml:space="preserve">
+    <value>Enter permission information</value>
+  </data>
+  <data name="permission_name" xml:space="preserve">
+    <value>Permission name</value>
+  </data>
+  <data name="select_functions_for_permission" xml:space="preserve">
+    <value>Select functions for permission</value>
+  </data>
+  <data name="find_functions" xml:space="preserve">
+    <value>Find function</value>
+  </data>
+  <data name="edit_permission_info" xml:space="preserve">
+    <value>Edit permission information</value>
+  </data>
+  <data name="permission_list" xml:space="preserve">
+    <value>Permission list</value>
+  </data>
+  <data name="add_permission" xml:space="preserve">
+    <value>Add permission</value>
+  </data>
+  <data name="order_id" xml:space="preserve">
+    <value>Order ID</value>
+  </data>
+  <data name="import_from_warehouse" xml:space="preserve">
+    <value>Import at warehouse</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="import_form_id" xml:space="preserve">
+    <value>Import form ID</value>
+  </data>
+  <data name="import_warehouse_id" xml:space="preserve">
+    <value>Import warehouse ID</value>
+  </data>
+  <data name="retrieve_data_from_file" xml:space="preserve">
+    <value>Retrieve data from File</value>
+  </data>
+  <data name="rfid_scan_data" xml:space="preserve">
+    <value>RFID scan data</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="warehouse_import_data_list" xml:space="preserve">
+    <value>Warehouse import data list</value>
+  </data>
+  <data name="scanning_form" xml:space="preserve">
+    <value>Scanning record</value>
+  </data>
+  <data name="stock_take_id" xml:space="preserve">
+    <value>Stock-take ID</value>
+  </data>
+  <data name="account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="management_permissions" xml:space="preserve">
+    <value>Management permissions</value>
+  </data>
+  <data name="good_catalog_management" xml:space="preserve">
+    <value>Good catalog management</value>
+  </data>
+  <data name="account_catalog" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="delete_warehouse" xml:space="preserve">
+    <value>Delete warehouse</value>
+  </data>
+  <data name="delete_good" xml:space="preserve">
+    <value>Delete goods</value>
+  </data>
+  <data name="delete_good_group" xml:space="preserve">
+    <value>Delete goods group</value>
+  </data>
+  <data name="add_customer" xml:space="preserve">
+    <value>Add new customer</value>
+  </data>
+  <data name="delete_customer" xml:space="preserve">
+    <value>Delete customer</value>
+  </data>
+  <data name="add_customer_type" xml:space="preserve">
+    <value>Add new customer type</value>
+  </data>
+  <data name="edit_customer_type" xml:space="preserve">
+    <value>Edit customer type</value>
+  </data>
+  <data name="delete_customer_type" xml:space="preserve">
+    <value>Delete customer type</value>
+  </data>
+  <data name="add_user" xml:space="preserve">
+    <value>Add new user</value>
+  </data>
+  <data name="edit_user" xml:space="preserve">
+    <value>Edit user</value>
+  </data>
+  <data name="edit_user_password" xml:space="preserve">
+    <value>Edit user password</value>
+  </data>
+  <data name="delete_user" xml:space="preserve">
+    <value>Delete user</value>
+  </data>
+  <data name="change_password" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="current_password" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="new_password" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="confirm_new_password" xml:space="preserve">
+    <value>Confirm new password</value>
+  </data>
+  <data name="edit_account" xml:space="preserve">
+    <value>Edit account</value>
+  </data>
+  <data name="permission" xml:space="preserve">
+    <value>Permission</value>
+  </data>
+  <data name="update_account_info" xml:space="preserve">
+    <value>Update account information</value>
+  </data>
+  <data name="user_fullname" xml:space="preserve">
+    <value>Fullname</value>
+  </data>
+  <data name="date_of_birth" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <data name="update_account_permission" xml:space="preserve">
+    <value>Update account permissions</value>
+  </data>
+  <data name="select_permission" xml:space="preserve">
+    <value>Select permission</value>
+  </data>
+  <data name="select_function" xml:space="preserve">
+    <value>Select function</value>
+  </data>
+  <data name="search_function" xml:space="preserve">
+    <value>Search function</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="personal_info" xml:space="preserve">
+    <value>Personal information</value>
+  </data>
+  <data name="account_info" xml:space="preserve">
+    <value>Account information</value>
+  </data>
+  <data name="confirm_password" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="add_account" xml:space="preserve">
+    <value>Add new account</value>
+  </data>
+  <data name="export_quantity" xml:space="preserve">
+    <value>Export quantity</value>
+  </data>
+  <data name="approve_status" xml:space="preserve">
+    <value>Approve status</value>
+  </data>
+  <data name="stock_take_status" xml:space="preserve">
+    <value>Stock-take status</value>
+  </data>
+  <data name="customer_type_name" xml:space="preserve">
+    <value>Customer type name</value>
+  </data>
+  <data name="Chưa kiểm" xml:space="preserve">
+    <value>Unchecked</value>
+  </data>
+  <data name="Đã kiểm" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="list_charts" xml:space="preserve">
+    <value>List of request form chart</value>
+  </data>
+  <data name="inventory_chart" xml:space="preserve">
+    <value>Inventory chart</value>
+  </data>
+  <data name="rfid_reading" xml:space="preserve">
+    <value>RFID Processing</value>
+  </data>
+  <data name="upload_preasn" xml:space="preserve">
+    <value>Upload PreASN</value>
+  </data>
+  <data name="hod_confirm" xml:space="preserve">
+    <value>HOD/Confirm</value>
+  </data>
+  <data name="group_good_management" xml:space="preserve">
+    <value>Goods Group Management</value>
+  </data>
+  <data name="total_quantity_wh" xml:space="preserve">
+    <value>Total inventory quantity across warehouses</value>
+  </data>
+  <data name="wh_noti" xml:space="preserve">
+    <value>Warehouses</value>
+  </data>
+  <data name="import_noti" xml:space="preserve">
+    <value>Goods receipts</value>
+  </data>
+  <data name="export_noti" xml:space="preserve">
+    <value>Goods issues</value>
+  </data>
+  <data name="issues_review" xml:space="preserve">
+    <value>Goods issue notes pending approval</value>
+  </data>
+  <data name="receipt_review" xml:space="preserve">
+    <value>Goods receipt notes pending approval</value>
+  </data>
+  <data name="current_inventory_noti" xml:space="preserve">
+    <value>Current inventory quantity of goods</value>
+  </data>
+  <data name="search_place_layout" xml:space="preserve">
+    <value>Searching function</value>
+  </data>
+  <data name="import_export_chart" xml:space="preserve">
+    <value>Quantity Inbound / Outbound chart</value>
+  </data>
+  <data name="top_3_product" xml:space="preserve">
+    <value>Top 3 best-selling products</value>
+  </data>
+  <data name="outbound" xml:space="preserve">
+    <value>Outbound</value>
+  </data>
+  <data name="stock_take_chart" xml:space="preserve">
+    <value>Stoke-take</value>
+  </data>
+  <data name="action" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="good_group_list_page" xml:space="preserve">
+    <value>Goods group list</value>
+  </data>
+  <data name="upload_good_group" xml:space="preserve">
+    <value>Add new goods group by uploading Excel file</value>
+  </data>
+  <data name="good_group_search" xml:space="preserve">
+    <value>Searching goods group by name</value>
+  </data>
+  <data name="print_time" xml:space="preserve">
+    <value>Printing Date</value>
+  </data>
+  <data name="account_print" xml:space="preserve">
+    <value>Account's Name</value>
+  </data>
+  <data name="good_group_print" xml:space="preserve">
+    <value>GOODS GROUP LIST</value>
+  </data>
+  <data name="printing" xml:space="preserve">
+    <value>Printing</value>
+  </data>
+  <data name="update_print_btn" xml:space="preserve">
+    <value>Update print format</value>
+  </data>
+  <data name="good_group_warning" xml:space="preserve">
+    <value>Are you sure you want to delete this goods group?</value>
+  </data>
+  <data name="remove_unwanted" xml:space="preserve">
+    <value>Unwanted data loss may happen!</value>
+  </data>
+  <data name="delete_success" xml:space="preserve">
+    <value>Delete data successfully!!!</value>
+  </data>
+  <data name="error_ajax" xml:space="preserve">
+    <value>An error may occur, please try again later!</value>
+  </data>
+  <data name="add_good_group_layout" xml:space="preserve">
+    <value>Add New Goods Group</value>
+  </data>
+  <data name="good_group_line" xml:space="preserve">
+    <value>Goods group's name in line</value>
+  </data>
+  <data name="added_in_system" xml:space="preserve">
+    <value>is already added into system</value>
+  </data>
+  <data name="is_not_empty" xml:space="preserve">
+    <value>cannot be empty</value>
+  </data>
+  <data name="duplicated_line" xml:space="preserve">
+    <value>is duplicated with another line, please check again</value>
+  </data>
+  <data name="good_group_duplicated" xml:space="preserve">
+    <value>Duplicated goods group's id</value>
+  </data>
+  <data name="pdf" xml:space="preserve">
+    <value>Export PDF successfully!!!</value>
+  </data>
+  <data name="csv" xml:space="preserve">
+    <value>Export CSV successfully!!!</value>
+  </data>
+  <data name="excel" xml:space="preserve">
+    <value>Export Excel successfully!!!</value>
+  </data>
+  <data name="from_date" xml:space="preserve">
+    <value>From date</value>
+  </data>
+  <data name="To date" xml:space="preserve">
+    <value>To date</value>
+  </data>
+  <data name="upload_good" xml:space="preserve">
+    <value>Add new goods by uploading Excel file</value>
+  </data>
+  <data name="good_search" xml:space="preserve">
+    <value>Searching goods by name...</value>
+  </data>
+  <data name="good_print" xml:space="preserve">
+    <value>GOODS LIST</value>
+  </data>
+  <data name="good_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="good_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="good_delete_warning" xml:space="preserve">
+    <value>Are you sure you want to delete this product?</value>
+  </data>
+  <data name="to_date_error" xml:space="preserve">
+    <value>The end date must be later than the start date!</value>
+  </data>
+  <data name="from_date_error" xml:space="preserve">
+    <value>The start date must be earlier than the end date!</value>
+  </data>
+  <data name="good_note" xml:space="preserve">
+    <value>Enter a note for this...</value>
+  </data>
+  <data name="good_list_title" xml:space="preserve">
+    <value>Goods list</value>
+  </data>
+  <data name="choose_file_error" xml:space="preserve">
+    <value>Please choose a file!!!</value>
+  </data>
+  <data name="excel_miss" xml:space="preserve">
+    <value>Please choose only Excel file!</value>
+  </data>
+  <data name="not_in_system" xml:space="preserve">
+    <value>is not in system!</value>
+  </data>
+  <data name="unit_line" xml:space="preserve">
+    <value>Unit's name in line</value>
+  </data>
+  <data name="different_line" xml:space="preserve">
+    <value>is different from line</value>
+  </data>
+  <data name="goods_line" xml:space="preserve">
+    <value>Goods name in line</value>
+  </data>
+  <data name="upload_success" xml:space="preserve">
+    <value>Upload file successfully!!!</value>
+  </data>
+  <data name="goods_exist" xml:space="preserve">
+    <value>The goods code is already exist.</value>
+  </data>
+  <data name="goods_invalid" xml:space="preserve">
+    <value>The goods code is invalid</value>
+  </data>
+  <data name="add_goods_page" xml:space="preserve">
+    <value>Add new goods</value>
+  </data>
+  <data name="goods_id_add_placeholder" xml:space="preserve">
+    <value>Enter new goods id...</value>
+  </data>
+  <data name="goods_name_add_placeholder" xml:space="preserve">
+    <value>Enter new goods name...</value>
+  </data>
+  <data name="goods_id" xml:space="preserve">
+    <value>Goods ID</value>
+  </data>
+  <data name="detail" xml:space="preserve">
+    <value>More detail</value>
+  </data>
+  <data name="good_id_search" xml:space="preserve">
+    <value>Searching goods by id...</value>
+  </data>
+  <data name="goods_epc_detail" xml:space="preserve">
+    <value>More EPC detail</value>
+  </data>
+  <data name="goods_detail_page" xml:space="preserve">
+    <value>Detailed goods list</value>
+  </data>
+  <data name="unit_list_page" xml:space="preserve">
+    <value>Unit list</value>
+  </data>
+  <data name="upload_unit" xml:space="preserve">
+    <value>Add new unit by uploading Excel file</value>
+  </data>
+  <data name="unit_search" xml:space="preserve">
+    <value>Searching unit by name...</value>
+  </data>
+  <data name="unit_print" xml:space="preserve">
+    <value>UNIT LIST</value>
+  </data>
+  <data name="unit_name" xml:space="preserve">
+    <value>Unit name</value>
+  </data>
+  <data name="total_print" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="unit_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="unit_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="unit_delete_warning" xml:space="preserve">
+    <value>Are you sure you want to delete this unit?</value>
+  </data>
+  <data name="unit_add_page" xml:space="preserve">
+    <value>Add new unit</value>
+  </data>
+  <data name="unit_duplicated" xml:space="preserve">
+    <value>Duplicated unit id!</value>
+  </data>
+  <data name="warehouse_upload" xml:space="preserve">
+    <value>Add new warehouse by uploading Excel file</value>
+  </data>
+  <data name="warehouse_search" xml:space="preserve">
+    <value>Searching warehouse by name...</value>
+  </data>
+  <data name="warehouse_print" xml:space="preserve">
+    <value>WAREHOUSE LIST</value>
+  </data>
+  <data name="warehouse_min" xml:space="preserve">
+    <value>The lowest stock quantity</value>
+  </data>
+  <data name="warehouse_max" xml:space="preserve">
+    <value>The highest stock quantity</value>
+  </data>
+  <data name="warehouse_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="warehouse_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="warehouse_delete_warning" xml:space="preserve">
+    <value>Are you sure you want to delete this warehouse?</value>
+  </data>
+  <data name="warehouse_list_page" xml:space="preserve">
+    <value>Warehouse list</value>
+  </data>
+  <data name="warehouse_add_page" xml:space="preserve">
+    <value>Add new warehouse</value>
+  </data>
+  <data name="warehouse_line" xml:space="preserve">
+    <value>Warehouse's name in line</value>
+  </data>
+  <data name="warehouse_min_upload" xml:space="preserve">
+    <value>The lowest inventory quantity in line</value>
+  </data>
+  <data name="warehouse_min_max_upload" xml:space="preserve">
+    <value>cannot be larger than the highest inventory quantity</value>
+  </data>
+  <data name="warehouse_max_upload" xml:space="preserve">
+    <value>The highest inventory quantity in line</value>
+  </data>
+  <data name="warehouse_max_min_upload" xml:space="preserve">
+    <value>cannot be smaller than the lowest inventory quantity</value>
+  </data>
+  <data name="warehouse_duplicated_upload" xml:space="preserve">
+    <value>Duplicated warehouse id!</value>
+  </data>
+  <data name="warehouse_error_id" xml:space="preserve">
+    <value>Unvalided warehouse id!</value>
+  </data>
+  <data name="warehouse_error_unknown" xml:space="preserve">
+    <value>Warehouse isn't exist!</value>
+  </data>
+  <data name="warehouse_fw_req_err" xml:space="preserve">
+    <value>Unvalied data requested!</value>
+  </data>
+  <data name="warehouse_fw_create_note" xml:space="preserve">
+    <value>Failed to create the goods issue note due to insufficient stock quantity as required!</value>
+  </data>
+  <data name="warehouse_fw_so_err" xml:space="preserve">
+    <value>The SO id</value>
+  </data>
+  <data name="warehouse_fw_so_contain_err" xml:space="preserve">
+    <value>contain product which id is: </value>
+  </data>
+  <data name="warehouse_fw_so_quantity_err" xml:space="preserve">
+    <value>with quantity is:</value>
+  </data>
+  <data name="warehouse_fw_more" xml:space="preserve">
+    <value>The quantity entered exceeds the warehouse's allowable limit!</value>
+  </data>
+  <data name="warehouse_fw_create_fail" xml:space="preserve">
+    <value>Transfer creation failed!</value>
+  </data>
+  <data name="warehouse_fw_create_success" xml:space="preserve">
+    <value>Transfer created successfully!</value>
+  </data>
+  <data name="approve_auth" xml:space="preserve">
+    <value>You do not have permission to approve this form!</value>
+  </data>
+  <data name="approve_none" xml:space="preserve">
+    <value>There are no forms to approve!</value>
+  </data>
+  <data name="export_success" xml:space="preserve">
+    <value>Transfer issued successfully</value>
+  </data>
+  <data name="inventory_print" xml:space="preserve">
+    <value>INVENTORY LIST</value>
+  </data>
+  <data name="inventory_name" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="inventory_quantity" xml:space="preserve">
+    <value>Stock quantity</value>
+  </data>
+  <data name="inventory_data" xml:space="preserve">
+    <value>Inventory data</value>
+  </data>
+  <data name="inventory_idgood" xml:space="preserve">
+    <value>Goods id</value>
+  </data>
+  <data name="warehouse_detail_list_page" xml:space="preserve">
+    <value>Warehouse inventory details</value>
+  </data>
+  <data name="warehouse_detail_list_note" xml:space="preserve">
+    <value>Check the stock quantity of goods in the warehouses</value>
+  </data>
+  <data name="warehouse_detail_list_header" xml:space="preserve">
+    <value>Information about the quantity of goods</value>
+  </data>
+  <data name="warehouse_detail_list_modal" xml:space="preserve">
+    <value>Goods details in the warehouse</value>
+  </data>
+  <data name="warehouse_detail_list_search" xml:space="preserve">
+    <value>Searching goods by id...</value>
+  </data>
+  <data name="warehouse_detail_list_gepc" xml:space="preserve">
+    <value>Goods details</value>
+  </data>
+  <data name="inventory_header" xml:space="preserve">
+    <value>Inventory details</value>
+  </data>
+  <data name="inventory_transfer" xml:space="preserve">
+    <value>Warehouse transfer</value>
+  </data>
+  <data name="add_search" xml:space="preserve">
+    <value>Items have been added to the search list</value>
+  </data>
+  <data name="Choose_an_option" xml:space="preserve">
+    <value>Choose an action</value>
+  </data>
+  <data name="account_list_page" xml:space="preserve">
+    <value>Account list</value>
+  </data>
+  <data name="account_search" xml:space="preserve">
+    <value>Searching user by name...</value>
+  </data>
+  <data name="account_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="account_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="account_delete_warning" xml:space="preserve">
+    <value>Are you sure you want ot delete this user?</value>
+  </data>
+  <data name="account_create_page" xml:space="preserve">
+    <value>Register new account</value>
+  </data>
+  <data name="account_edit_pass" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="permission_not" xml:space="preserve">
+    <value>You do not have permission to perform this action!</value>
+  </data>
+  <data name="account_error_char" xml:space="preserve">
+    <value>The account must have more than 6 characters!</value>
+  </data>
+  <data name="account_error_contain" xml:space="preserve">
+    <value>The account can only contain letters and numbers!</value>
+  </data>
+  <data name="account_error_pass_length" xml:space="preserve">
+    <value>The password must be more than 8 characters!</value>
+  </data>
+  <data name="account_error_pass_same" xml:space="preserve">
+    <value>Two passwords don't match each other!</value>
+  </data>
+  <data name="account_error_pass_contain" xml:space="preserve">
+    <value>The password must contain at least one special character and one uppercase letter!</value>
+  </data>
+  <data name="account_error_email" xml:space="preserve">
+    <value>Invalid email!</value>
+  </data>
+  <data name="account_error_username" xml:space="preserve">
+    <value>Please enter user's fullname!</value>
+  </data>
+  <data name="account_error_auth" xml:space="preserve">
+    <value>Please choose at least one role for account!</value>
+  </data>
+  <data name="account_error_function" xml:space="preserve">
+    <value>Please choose functions for account!</value>
+  </data>
+  <data name="account_error_username_same" xml:space="preserve">
+    <value>This username is already exist!</value>
+  </data>
+  <data name="data_no" xml:space="preserve">
+    <value>No data requested!</value>
+  </data>
+  <data name="account_error_nofind" xml:space="preserve">
+    <value>Cannot find this account in system!</value>
+  </data>
+  <data name="account_error_lock" xml:space="preserve">
+    <value>The account has been locked. Contact the administrator to unlock it!</value>
+  </data>
+  <data name="account_pass_change" xml:space="preserve">
+    <value>Change password successfully!</value>
+  </data>
+  <data name="account_error_passnew" xml:space="preserve">
+    <value>The new password confirmation is incorrect!</value>
+  </data>
+  <data name="account_error_oldpassnew" xml:space="preserve">
+    <value>The new password is the same as the old password!</value>
+  </data>
+  <data name="account_error_pass_incorrect" xml:space="preserve">
+    <value>The password is incorrect!</value>
+  </data>
+  <data name="account_error_pass_count_lock" xml:space="preserve">
+    <value>The account has entered the wrong password</value>
+  </data>
+  <data name="account_error_pass_time_will" xml:space="preserve">
+    <value>times, it will be locked after</value>
+  </data>
+  <data name="account_error_pass_wrong_more" xml:space="preserve">
+    <value>more incorrect attempts!</value>
+  </data>
+  <data name="account_error_pass_locked" xml:space="preserve">
+    <value>The account has been locked due to 5 consecutive incorrect password attempts!</value>
+  </data>
+  <data name="account_error_no_exist" xml:space="preserve">
+    <value>The account isn't exist!</value>
+  </data>
+  <data name="account_user_list_print" xml:space="preserve">
+    <value>USER LIST</value>
+  </data>
+  <data name="account_require" xml:space="preserve">
+    <value>Please enter all the required information!</value>
+  </data>
+  <data name="account_error_enter_email" xml:space="preserve">
+    <value>Please enter email!</value>
+  </data>
+  <data name="account_error_phone" xml:space="preserve">
+    <value>Please enter phone number!</value>
+  </data>
+  <data name="account_error_phone_invalid" xml:space="preserve">
+    <value>Invalid phone number!</value>
+  </data>
+  <data name="account_choose_role" xml:space="preserve">
+    <value>Choosing role for account...</value>
+  </data>
+  <data name="account_edit_success" xml:space="preserve">
+    <value>User information updated successfully!</value>
+  </data>
+  <data name="account_error_account" xml:space="preserve">
+    <value>Please enter username!</value>
+  </data>
+  <data name="account_error_enter_pass" xml:space="preserve">
+    <value>Please enter password!</value>
+  </data>
+  <data name="account_error_pass_upper" xml:space="preserve">
+    <value>The password must contain at least one uppercase letter!</value>
+  </data>
+  <data name="account_error_pass_syntax" xml:space="preserve">
+    <value>The password must contain at least one special character!</value>
+  </data>
+  <data name="account_error_pass_num" xml:space="preserve">
+    <value>The password must contain at least one number!</value>
+  </data>
+  <data name="account_error_pass_3continue" xml:space="preserve">
+    <value>The password must not contain consecutive characters of 3 or more!</value>
+  </data>
+  <data name="account_error_pass_reenter" xml:space="preserve">
+    <value>Please re-enter password!</value>
+  </data>
+  <data name="account_create_success" xml:space="preserve">
+    <value>Register new account successfully!</value>
+  </data>
+  <data name="customer_type_list_page" xml:space="preserve">
+    <value>Customer types list</value>
+  </data>
+  <data name="customer_type_search" xml:space="preserve">
+    <value>Searching customer type by id...</value>
+  </data>
+  <data name="customer_type_print" xml:space="preserve">
+    <value>CUSTOMER TYPE LIST</value>
+  </data>
+  <data name="customer_type_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="customer_type_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="customer_type_warning" xml:space="preserve">
+    <value>Are you sure you want to delete this customer type?</value>
+  </data>
+  <data name="customer_list_page" xml:space="preserve">
+    <value>Customer list</value>
+  </data>
+  <data name="customer_search" xml:space="preserve">
+    <value>Searching customer by name...</value>
+  </data>
+  <data name="customer_print" xml:space="preserve">
+    <value>CUSTOMER LIST</value>
+  </data>
+  <data name="customer_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="customer_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="customer_warning" xml:space="preserve">
+    <value>Are you sure you want to delete this customer?</value>
+  </data>
+  <data name="customer_work" xml:space="preserve">
+    <value>Still working</value>
+  </data>
+  <data name="customer_end" xml:space="preserve">
+    <value>Collaboration terminated</value>
+  </data>
+  <data name="permission_search" xml:space="preserve">
+    <value>Searching permission by name...</value>
+  </data>
+  <data name="permission_print" xml:space="preserve">
+    <value>PERMISSION LIST</value>
+  </data>
+  <data name="status_work" xml:space="preserve">
+    <value>Still working</value>
+  </data>
+  <data name="status_notwork" xml:space="preserve">
+    <value>Stop working</value>
+  </data>
+  <data name="permission_delete_warning" xml:space="preserve">
+    <value>Are you sure you want to delete this permission?</value>
+  </data>
+  <data name="permission_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="permission_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="error_permission_name" xml:space="preserve">
+    <value>Please enter permission name!</value>
+  </data>
+  <data name="error_function" xml:space="preserve">
+    <value>Please choose at least one function for this permission!</value>
+  </data>
+  <data name="error_add_function" xml:space="preserve">
+    <value>Adding into system has some problems!</value>
+  </data>
+  <data name="error_permission_hasalready" xml:space="preserve">
+    <value>Permission is already exist!</value>
+  </data>
+  <data name="error_permission_notexist" xml:space="preserve">
+    <value>Permission is not exist in system!</value>
+  </data>
+  <data name="error_permission_delete" xml:space="preserve">
+    <value>There is no permission in system to delete!</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>Still in use</value>
+  </data>
+  <data name="no_active" xml:space="preserve">
+    <value>No longer in use</value>
+  </data>
+  <data name="password_enter" xml:space="preserve">
+    <value>Enter password...</value>
+  </data>
+  <data name="password_confirm" xml:space="preserve">
+    <value>Confirm password...</value>
+  </data>
+  <data name="function_name" xml:space="preserve">
+    <value>Function name</value>
+  </data>
+  <data name="function_search" xml:space="preserve">
+    <value>Searching function by name...</value>
+  </data>
+  <data name="name_placeholder" xml:space="preserve">
+    <value>Enter user's name...</value>
+  </data>
+  <data name="email_placeholder" xml:space="preserve">
+    <value>Enter email...</value>
+  </data>
+  <data name="account_placeholder" xml:space="preserve">
+    <value>Enter username...</value>
+  </data>
+  <data name="phone_placeholder" xml:space="preserve">
+    <value>Enter phone number...</value>
+  </data>
+  <data name="address_placeholder" xml:space="preserve">
+    <value>Enter address...</value>
+  </data>
+  <data name="des_placeholder" xml:space="preserve">
+    <value>Enter description...</value>
+  </data>
+  <data name="permission_placeholder" xml:space="preserve">
+    <value>Enter permission's name...</value>
+  </data>
+  <data name="purchase_id_error" xml:space="preserve">
+    <value>Purchase order id is not exist!</value>
+  </data>
+  <data name="purchase_approve" xml:space="preserve">
+    <value>The purchase order is approved!</value>
+  </data>
+  <data name="approve_success" xml:space="preserve">
+    <value>Approve successfully!</value>
+  </data>
+  <data name="delete_form_auth" xml:space="preserve">
+    <value>You don't have permission to delete this form!</value>
+  </data>
+  <data name="scan_form_approve_delete" xml:space="preserve">
+    <value>Approved scan record cannot be deleted!</value>
+  </data>
+  <data name="purchase_delete_error" xml:space="preserve">
+    <value>The receipt has goods added to the warehouse and cannot be deleted!</value>
+  </data>
+  <data name="actual_import" xml:space="preserve">
+    <value>Actual import</value>
+  </data>
+  <data name="purchase_search_id" xml:space="preserve">
+    <value>Searching purchase order by id...</value>
+  </data>
+  <data name="purchase_print" xml:space="preserve">
+    <value>PURCHASE ORDER</value>
+  </data>
+  <data name="purchase_print_id" xml:space="preserve">
+    <value>PO ID:</value>
+  </data>
+  <data name="debit" xml:space="preserve">
+    <value>Debit:</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>Credit:</value>
+  </data>
+  <data name="receipt_id" xml:space="preserve">
+    <value>Receipt ID</value>
+  </data>
+  <data name="scan_process" xml:space="preserve">
+    <value>Data scanning processing</value>
+  </data>
+  <data name="scan_list" xml:space="preserve">
+    <value>Scan record list</value>
+  </data>
+  <data name="approve_po" xml:space="preserve">
+    <value>Approve goods reiceipt</value>
+  </data>
+  <data name="purchase_delete" xml:space="preserve">
+    <value>Delete good receipt</value>
+  </data>
+  <data name="purchase_print_btn" xml:space="preserve">
+    <value>Print goods receipt</value>
+  </data>
+  <data name="purchase_id" xml:space="preserve">
+    <value>Purchase order ID</value>
+  </data>
+  <data name="purchase_scan_ID" xml:space="preserve">
+    <value>Scan record ID</value>
+  </data>
+  <data name="purchase_good_status" xml:space="preserve">
+    <value>Goods receiving status</value>
+  </data>
+  <data name="purchase_receive" xml:space="preserve">
+    <value>Received</value>
+  </data>
+  <data name="purchase_pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="approve_scan" xml:space="preserve">
+    <value>Approve scan record</value>
+  </data>
+  <data name="scan_delete" xml:space="preserve">
+    <value>Delete scan record</value>
+  </data>
+  <data name="purchase_confirm" xml:space="preserve">
+    <value>Confirm to approve this purchase order?</value>
+  </data>
+  <data name="purchase_not_approve" xml:space="preserve">
+    <value>The purchase order is not approved!</value>
+  </data>
+  <data name="purchase_cancle" xml:space="preserve">
+    <value>The purchase order is cancled!</value>
+  </data>
+  <data name="confirm_all_scan" xml:space="preserve">
+    <value>Confirm to approve all the scan records?</value>
+  </data>
+  <data name="confirm_scan" xml:space="preserve">
+    <value>Confirm to approve this scan record?</value>
+  </data>
+  <data name="confirm_delete_scan_data" xml:space="preserve">
+    <value>Confirm to delete this scaned data?</value>
+  </data>
+  <data name="confirm_delete_po" xml:space="preserve">
+    <value>Confirm to delete this purchase order?</value>
+  </data>
+  <data name="export_id" xml:space="preserve">
+    <value>Goods issue ID</value>
+  </data>
+  <data name="approve_so" xml:space="preserve">
+    <value>Approve goods issue</value>
+  </data>
+  <data name="sale_confirm" xml:space="preserve">
+    <value>Confirm to approve this sale order?</value>
+  </data>
+  <data name="sale_delete" xml:space="preserve">
+    <value>Delete goods issue</value>
+  </data>
+  <data name="confirm_delete_so" xml:space="preserve">
+    <value>Confirm to delete this sale order?</value>
+  </data>
+  <data name="sale_print_btn" xml:space="preserve">
+    <value>Print goods issue</value>
+  </data>
+  <data name="sale_search_id" xml:space="preserve">
+    <value>Searching sale order by id...</value>
+  </data>
+  <data name="sale_good_status" xml:space="preserve">
+    <value>Goods exporting status</value>
+  </data>
+  <data name="sale_export" xml:space="preserve">
+    <value>Exported</value>
+  </data>
+  <data name="sale_pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="scan_not_do" xml:space="preserve">
+    <value>Cannot proccess this action</value>
+  </data>
+  <data name="scan_not_approve_yet" xml:space="preserve">
+    <value>This sale order is not approved yet!</value>
+  </data>
+  <data name="appove_all_scan_confirm" xml:space="preserve">
+    <value>Confirm to approve all the scan records?</value>
+  </data>
+  <data name="reciept_noID_error" xml:space="preserve">
+    <value>Scan record ID is required!</value>
+  </data>
+  <data name="reciept_noPOID_error" xml:space="preserve">
+    <value>Purchase order ID is required!</value>
+  </data>
+  <data name="receipt_poIDinvalid_error" xml:space="preserve">
+    <value>Invalided purchase order ID!</value>
+  </data>
+  <data name="receipt_noDataScan_error" xml:space="preserve">
+    <value>No scanned data requested!</value>
+  </data>
+  <data name="receipt_dupicated_error" xml:space="preserve">
+    <value>Duplicated with a tag existed in system!</value>
+  </data>
+  <data name="receipt_exist_error" xml:space="preserve">
+    <value>This scan record ID is existed in system!</value>
+  </data>
+  <data name="receipt_nothing_error" xml:space="preserve">
+    <value>There is no scan record to add to inventory!</value>
+  </data>
+  <data name="receipt_approve_success" xml:space="preserve">
+    <value>Approval successful, inventory has been updated!</value>
+  </data>
+  <data name="receipt_approveAlready_error" xml:space="preserve">
+    <value>The scan record has been approved!</value>
+  </data>
+  <data name="cancle_record" xml:space="preserve">
+    <value>Cancle scan record!</value>
+  </data>
+  <data name="reciept_nodata_error" xml:space="preserve">
+    <value>No data available for the import record!</value>
+  </data>
+  <data name="sale_approve" xml:space="preserve">
+    <value>The sale order is approved!</value>
+  </data>
+  <data name="approve_failed" xml:space="preserve">
+    <value>Approve failed!</value>
+  </data>
+  <data name="delivery_soID_error" xml:space="preserve">
+    <value>The sale order ID is not existed!</value>
+  </data>
+  <data name="delivery_exported_error" xml:space="preserve">
+    <value>The record already has items exported from the warehouse and cannot be deleted!</value>
+  </data>
+  <data name="process_error" xml:space="preserve">
+    <value>There was an error processing the data!</value>
+  </data>
+  <data name="sale_noexist" xml:space="preserve">
+    <value>The sale order does not exist in the system!</value>
+  </data>
+  <data name="scan_add_successfully" xml:space="preserve">
+    <value>Save scan record successfully!</value>
+  </data>
+  <data name="scan_ID_error" xml:space="preserve">
+    <value>This Scan record ID does not exist in system!</value>
+  </data>
+  <data name="sale_wh_error" xml:space="preserve">
+    <value>Please select a warehouse!</value>
+  </data>
+  <data name="sale_inventory_error" xml:space="preserve">
+    <value>Insufficient inventory!</value>
+  </data>
+  <data name="save_success" xml:space="preserve">
+    <value>Save successfully!</value>
+  </data>
+  <data name="sale_lessInven_error" xml:space="preserve">
+    <value>has insufficient inventory!</value>
+  </data>
+  <data name="search_stock" xml:space="preserve">
+    <value>Searching stocktake by id...</value>
+  </data>
+  <data name="stock_unverified_list" xml:space="preserve">
+    <value>List of unverified codes</value>
+  </data>
+  <data name="stock_delete" xml:space="preserve">
+    <value>Delete stock-take</value>
+  </data>
+  <data name="stock_print" xml:space="preserve">
+    <value>Print stock-take</value>
+  </data>
+  <data name="stock_scaned" xml:space="preserve">
+    <value>Scanned quantity</value>
+  </data>
+  <data name="stock_missepc_list" xml:space="preserve">
+    <value>List of goods not scanned</value>
+  </data>
+  <data name="stock_fullcheck" xml:space="preserve">
+    <value>Verified complete</value>
+  </data>
+  <data name="stock_notcomplete" xml:space="preserve">
+    <value>Not completed</value>
+  </data>
+  <data name="stock_confirmDelete" xml:space="preserve">
+    <value>Confirm to delete this stock-take?</value>
+  </data>
+  <data name="stock_list_page" xml:space="preserve">
+    <value>Stock count list</value>
+  </data>
+  <data name="stock_invalid_error" xml:space="preserve">
+    <value>Invalid stock-take ID!</value>
+  </data>
+  <data name="stock_exist_error" xml:space="preserve">
+    <value>This stock-take does not exist in system!</value>
+  </data>
+  <data name="warning_list" xml:space="preserve">
+    <value>List of Warning Goods</value>
+  </data>
+  <data name="stock_create" xml:space="preserve">
+    <value>Create stock-take successfully!</value>
+  </data>
+  <data name="belong_wh" xml:space="preserve">
+    <value>Belongs to warehouse</value>
+  </data>
+  <data name="different_from" xml:space="preserve">
+    <value>different from the warehouse specified in the document!</value>
+  </data>
+  <data name="unidentified" xml:space="preserve">
+    <value>Unidentified!</value>
+  </data>
+  <data name="no_goods_scanned" xml:space="preserve">
+    <value>No items have been scanned to save the scan record!</value>
+  </data>
+  <data name="warning_list_page" xml:space="preserve">
+    <value>List of warning goods</value>
+  </data>
+  <data name="confirm_delete_recordInfo" xml:space="preserve">
+    <value>Are you sure you want to delete this recorded information?</value>
+  </data>
+  <data name="device_name" xml:space="preserve">
+    <value>Device</value>
+  </data>
+  <data name="record_date" xml:space="preserve">
+    <value>Record date</value>
+  </data>
+  <data name="data_noexist" xml:space="preserve">
+    <value>Data does not exist in the system!</value>
+  </data>
+  <data name="noti_po" xml:space="preserve">
+    <value>Purchase order ID</value>
+  </data>
+  <data name="noti_notapprove" xml:space="preserve">
+    <value>is not approved yet.</value>
+  </data>
+  <data name="noti_so" xml:space="preserve">
+    <value>Sale order ID</value>
+  </data>
+  <data name="formisnotinthecorrectformat" xml:space="preserve">
+    <value>is incorrect format!!!</value>
+  </data>
+  <data name="coincide" xml:space="preserve">
+    <value>is coincide with</value>
+  </data>
+  <data name="check_warehouse" xml:space="preserve">
+    <value>From warehouse</value>
+  </data>
+  <data name="barcode_scan" xml:space="preserve">
+    <value>Barcode scan</value>
+  </data>
+  <data name="serial" xml:space="preserve">
+    <value>Identifier code</value>
+  </data>
+  <data name="goods_barcode_detail" xml:space="preserve">
+    <value>More details</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>Stock keeping unit</value>
+  </data>
+  <data name="reference" xml:space="preserve">
+    <value>Reference code</value>
+  </data>
+  <data name="scan_process_data" xml:space="preserve">
+    <value>Scanned Goods Data</value>
+  </data>
+  <data name="not_included_in_form" xml:space="preserve">
+    <value>Not included in the form!</value>
+  </data>
+  <data name="not_know_match_sku" xml:space="preserve">
+    <value>The scanned identifier matches multiple SKUs on the PO! The system cannot determine the correct SKU</value>
+  </data>
+  <data name="empty_barcode" xml:space="preserve">
+    <value>Empty barcode!</value>
+  </data>
+  <data name="quantity_export" xml:space="preserve">
+    <value>The quantity of goods with code</value>
+  </data>
+  <data name="currently_not_enough" xml:space="preserve">
+    <value>currently is not enough to proceed with the outbound operation with this quantity</value>
+  </data>
+  <data name="goods_with_id" xml:space="preserve">
+    <value>Goods with id</value>
+  </data>
+  <data name="not_exists_in_system" xml:space="preserve">
+    <value>does not exist in the system. Please check again.</value>
+  </data>
+  <data name="warehouse_combo" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="inventory_wh_name" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="Thailand" xml:space="preserve">
+    <value>Thai</value>
+  </data>
+  <data name="enter_sku" xml:space="preserve">
+    <value>Enter SKU</value>
+  </data>
+  <data name="enter_reference" xml:space="preserve">
+    <value>Enter product reference code</value>
+  </data>
+  <data name="cannot_proccess_rfid_from_barcode_form" xml:space="preserve">
+    <value>This PO has already been scanned using a barcode! Scanning with RFID is not allowed because the data will not match.</value>
+  </data>
+  <data name="invalid_input_create" xml:space="preserve">
+    <value>Items with invalid input quantities:</value>
+  </data>
+  <data name="please_enter_reference" xml:space="preserve">
+    <value>Please enter the product reference code</value>
+  </data>
+  <data name="please_enter_sku" xml:space="preserve">
+    <value>Please enter the SKU</value>
+  </data>
+  <data name="sku_identifier_exists" xml:space="preserve">
+    <value>This product reference code already exists</value>
+  </data>
+  <data name="stock_valid" xml:space="preserve">
+    <value>Valid inventory check form!</value>
+  </data>
+  <data name="stock_enter" xml:space="preserve">
+    <value>Please enter the inventory check code!</value>
+  </data>
+  <data name="stock_not_exist" xml:space="preserve">
+    <value>The inventory check code does not exist!</value>
+  </data>
+  <data name="enter_product_code" xml:space="preserve">
+    <value>Please enter the product code</value>
+  </data>
+  <data name="enter_product_name" xml:space="preserve">
+    <value>Vui lòng điền tên hàng hóa</value>
+  </data>
+  <data name="print_barcode_module" xml:space="preserve">
+    <value>Print barcode</value>
+  </data>
+  <data name="scanned_record_code" xml:space="preserve">
+    <value>Search scanned record code</value>
+  </data>
+  <data name="import_detail" xml:space="preserve">
+    <value>Inbound form details</value>
+  </data>
+  <data name="not_all_assign_location" xml:space="preserve">
+    <value>Some items have not been assigned a location. Please ensure all items have a complete location selected!</value>
+  </data>
+  <data name="export_detail" xml:space="preserve">
+    <value>Outbound Order Details</value>
+  </data>
+  <data name="number_print_label" xml:space="preserve">
+    <value>Quantity of printed labels</value>
+  </data>
+  <data name="print_function" xml:space="preserve">
+    <value>Print labels for goods</value>
+  </data>
+  <data name="select_print_type" xml:space="preserve">
+    <value>Select connection type</value>
+  </data>
+  <data name="select_printer" xml:space="preserve">
+    <value>Select printer</value>
+  </data>
+  <data name="print_in_network" xml:space="preserve">
+    <value>Network</value>
+  </data>
+  <data name="refesh_printer" xml:space="preserve">
+    <value>Reload printer list</value>
+  </data>
+  <data name="start_print" xml:space="preserve">
+    <value>Perform printing</value>
+  </data>
+  <data name="please_select_printer" xml:space="preserve">
+    <value>Please select a printer</value>
+  </data>
+  <data name="print_success" xml:space="preserve">
+    <value>Print successful!</value>
+  </data>
+  <data name="printer_paused" xml:space="preserve">
+    <value>Cannot print because the printer is paused!</value>
+  </data>
+  <data name="printer_open" xml:space="preserve">
+    <value>Cannot print because the printer head is open!</value>
+  </data>
+  <data name="printer_paper_out" xml:space="preserve">
+    <value>Cannot print because the paper is out!</value>
+  </data>
+  <data name="printer_not_ready" xml:space="preserve">
+    <value>The printer is not ready to print!</value>
+  </data>
+  <data name="printer_not_connect" xml:space="preserve">
+    <value>Cannot connected to the printer!</value>
+  </data>
+  <data name="Chinese" xml:space="preserve">
+    <value>Chinese</value>
+  </data>
+  <data name="sample_text" xml:space="preserve">
+    <value>Sample Text</value>
+  </data>
+  <data name="adjust_parameter" xml:space="preserve">
+    <value>Adjust Parameters</value>
+  </data>
+  <data name="size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="font_size" xml:space="preserve">
+    <value>Font Size</value>
+  </data>
+  <data name="display_text" xml:space="preserve">
+    <value>Display Text</value>
+  </data>
+  <data name="rotation_angle" xml:space="preserve">
+    <value>Rotation Angle</value>
+  </data>
+  <data name="bar_witdh" xml:space="preserve">
+    <value>Bar Width</value>
+  </data>
+  <data name="height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="update_label" xml:space="preserve">
+    <value>Update Label Size</value>
+  </data>
+  <data name="width_inch" xml:space="preserve">
+    <value>Width (inch)</value>
+  </data>
+  <data name="height_inch" xml:space="preserve">
+    <value>Height (inch)</value>
+  </data>
+  <data name="content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="label_review" xml:space="preserve">
+    <value>Preview Label</value>
+  </data>
+  <data name="text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="qr_code" xml:space="preserve">
+    <value>QR Code</value>
+  </data>
+  <data name="barcode" xml:space="preserve">
+    <value>Barcode</value>
+  </data>
+  <data name="select_printer_test_print" xml:space="preserve">
+    <value>Select Printer for Test Print</value>
+  </data>
+  <data name="test_print" xml:space="preserve">
+    <value>Test Print</value>
+  </data>
+  <data name="save_layout" xml:space="preserve">
+    <value>Save Layout</value>
+  </data>
+  <data name="components" xml:space="preserve">
+    <value>Components</value>
+  </data>
+  <data name="design_label" xml:space="preserve">
+    <value>Design Label Template</value>
+  </data>
+  <data name="no_printer_found" xml:space="preserve">
+    <value>No printer available</value>
+  </data>
+  <data name="save_layout_successfully" xml:space="preserve">
+    <value>Layout saved successfully</value>
+  </data>
+  <data name="barcode_structure_analysis" xml:space="preserve">
+    <value>Barcode Structure Analysis</value>
+  </data>
+  <data name="field_segmentation" xml:space="preserve">
+    <value>Field Segmentation</value>
+  </data>
+  <data name="delimiter_detection" xml:space="preserve">
+    <value>Delimiter Detection</value>
+  </data>
+  <data name="data_pattern_recognition" xml:space="preserve">
+    <value>Data Pattern Recognition</value>
+  </data>
+  <data name="setup_barcode_structure" xml:space="preserve">
+    <value>Setup Barcode Structure</value>
+  </data>
+  <data name="content_type" xml:space="preserve">
+    <value>Content type</value>
+  </data>
+  <data name="enter_content_manually" xml:space="preserve">
+    <value>Enter content manually</value>
+  </data>
+  <data name="automatically_fetch_from_PO" xml:space="preserve">
+    <value>Automatically fetch from PO</value>
+  </data>
+  <data name="select_data_field" xml:space="preserve">
+    <value>Select data field</value>
+  </data>
+  <data name="item_code" xml:space="preserve">
+    <value>Item code</value>
+  </data>
+  <data name="item_name" xml:space="preserve">
+    <value>Item name</value>
+  </data>
+  <data name="preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="please_enter_delimiter" xml:space="preserve">
+    <value>Please enter the delimiter character!</value>
+  </data>
+  <data name="inventory_overview" xml:space="preserve">
+    <value>Inventory Overview</value>
+  </data>
+  <data name="goods_data" xml:space="preserve">
+    <value>Goods Data</value>
+  </data>
+  <data name="warehouses_data" xml:space="preserve">
+    <value>Warehouse Data</value>
+  </data>
+  <data name="unit_data" xml:space="preserve">
+    <value>Unit Data</value>
+  </data>
+  <data name="groupgoods_data" xml:space="preserve">
+    <value>Goods Group Data</value>
+  </data>
+  <data name="user" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="account_data" xml:space="preserve">
+    <value>Account Data</value>
+  </data>
+  <data name="lock_account_admin" xml:space="preserve">
+    <value>Your account has been locked. Please contact the administrator to unlock it!!!</value>
+  </data>
+  <data name="login_success" xml:space="preserve">
+    <value>Login successful</value>
+  </data>
+  <data name="processing" xml:space="preserve">
+    <value> Processing...</value>
+  </data>
+  <data name="no_data" xml:space="preserve">
+    <value> No data</value>
+  </data>
+  <data name="showing" xml:space="preserve">
+    <value>Showing</value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="item_product_template" xml:space="preserve">
+    <value>Item Group Template</value>
+  </data>
+  <data name="enter_product_code_excel" xml:space="preserve">
+    <value>Enter product code</value>
+  </data>
+  <data name="enter_product_description_excel" xml:space="preserve">
+    <value>Enter product description</value>
+  </data>
+  <data name="sample_download_success" xml:space="preserve">
+    <value>Sample file downloaded successfully</value>
+  </data>
+  <data name="unit_template" xml:space="preserve">
+    <value>Unit template</value>
+  </data>
+  <data name="unit_name_template" xml:space="preserve">
+    <value>Enter unit name</value>
+  </data>
+  <data name="unit_description" xml:space="preserve">
+    <value>Enter unit description</value>
+  </data>
+  <data name="delete_goodsgrp_already_use" xml:space="preserve">
+    <value>This product group name is currently used by some items. Are you sure you want to delete this information?</value>
+  </data>
+  <data name="delete_unit_already_use" xml:space="preserve">
+    <value>This unit name is currently used by some items. Are you sure you want to delete this information?</value>
+  </data>
+  <data name="warehouse_template" xml:space="preserve">
+    <value>Warehouse template</value>
+  </data>
+  <data name="enter_wh_excel" xml:space="preserve">
+    <value> Enter warehouse name</value>
+  </data>
+  <data name="enter_minimum_qty_excel" xml:space="preserve">
+    <value>Enter minimum quantity</value>
+  </data>
+  <data name="enter_maximum_qty_excel" xml:space="preserve">
+    <value>Enter maximum quantity</value>
+  </data>
+  <data name="enter_wh_des" xml:space="preserve">
+    <value>Enter warehouse description</value>
+  </data>
+  <data name="not_valid_number" xml:space="preserve">
+    <value>is not a valid number</value>
+  </data>
+  <data name="minimum_stock_at_row" xml:space="preserve">
+    <value>Minimum stock quantity at the row</value>
+  </data>
+  <data name="maximum_stock_at_row" xml:space="preserve">
+    <value>Maximum stock quantity at the row</value>
+  </data>
+  <data name="min_more_than_max" xml:space="preserve">
+    <value>The minimum stock quantity cannot be greater than the maximum stock quantity</value>
+  </data>
+  <data name="wh_already_contains_goods" xml:space="preserve">
+    <value>This warehouse already contains detailed information about product quantities and cannot be deleted to ensure system data integrity</value>
+  </data>
+  <data name="production_date" xml:space="preserve">
+    <value>Production Date</value>
+  </data>
+  <data name="enter_product_name_excel" xml:space="preserve">
+    <value>Enter product name</value>
+  </data>
+  <data name="enter_product_quantity_excel" xml:space="preserve">
+    <value>Enter quantity</value>
+  </data>
+  <data name="enter_product_group_excel" xml:space="preserve">
+    <value>Enter product group (if any)</value>
+  </data>
+  <data name="enter_unit_excel" xml:space="preserve">
+    <value>Enter unit (if any)</value>
+  </data>
+  <data name="enter_production_date_excel" xml:space="preserve">
+    <value>Enter production date</value>
+  </data>
+  <data name="enter_notes_excel" xml:space="preserve">
+    <value>Enter notes (if any)</value>
+  </data>
+  <data name="product_template" xml:space="preserve">
+    <value>Product template</value>
+  </data>
+  <data name="goodgroup_line" xml:space="preserve">
+    <value>Item group name at row</value>
+  </data>
+  <data name="goods_id_line" xml:space="preserve">
+    <value>Item code at row</value>
+  </data>
+  <data name="goods_quantity_line" xml:space="preserve">
+    <value>Quantity at row</value>
+  </data>
+  <data name="already_exists" xml:space="preserve">
+    <value>already exists in the system</value>
+  </data>
+  <data name="in_sheet" xml:space="preserve">
+    <value>in sheet</value>
+  </data>
+  <data name="product_code_standard" xml:space="preserve">
+    <value>The product code must not contain special characters or spaces between characters</value>
+  </data>
+  <data name="new_message" xml:space="preserve">
+    <value>You have a new notification</value>
+  </data>
+  <data name="invalid_document_code" xml:space="preserve">
+    <value>Invalid document code</value>
+  </data>
+  <data name="permission_updated_successfully" xml:space="preserve">
+    <value>Permission updated successfully!</value>
+  </data>
+  <data name="permission_added_successfully" xml:space="preserve">
+    <value>Permission added successfully!</value>
+  </data>
+  <data name="delete_cus_relate_po_so" xml:space="preserve">
+    <value>This customer has data associated with previous import or export vouchers. Are you sure you want to delete the data?</value>
+  </data>
+  <data name="delete_typecus_relate_cus" xml:space="preserve">
+    <value>This customer type is currently being used in customer data. Are you sure you want to delete it?</value>
+  </data>
+  <data name="not_empty_po_id" xml:space="preserve">
+    <value>The receipt code must not be empty</value>
+  </data>
+  <data name="invalid_receipt_id" xml:space="preserve">
+    <value>Invalid receipt code</value>
+  </data>
+  <data name="not_empty_so_id" xml:space="preserve">
+    <value>The delivery code must not be empty</value>
+  </data>
+  <data name="invalid_so_id" xml:space="preserve">
+    <value>Invalid delivery code</value>
+  </data>
+  <data name="include_invalid_char" xml:space="preserve">
+    <value>Includes invalid characters</value>
+  </data>
+  <data name="layout_label_not_exist" xml:space="preserve">
+    <value>Layout of label is not exists in system. Please check again</value>
+  </data>
+  <data name="cannot_connect_printer" xml:space="preserve">
+    <value>Cannot connect to the printer, please check again</value>
+  </data>
+  <data name="invalid_quantity_print" xml:space="preserve">
+    <value>The print quantity of some items is incorrect</value>
+  </data>
+  <data name="no_components" xml:space="preserve">
+    <value>No components available for test print</value>
+  </data>
+  <data name="printer_connect_error" xml:space="preserve">
+    <value>Printer connection error</value>
+  </data>
+  <data name="excel_not_correct_format" xml:space="preserve">
+    <value>The Excel file format does not match the required template</value>
+  </data>
+  <data name="name_not_contain_symtax" xml:space="preserve">
+    <value>Must not contain numbers or special characters</value>
+  </data>
+  <data name="invalid_phone_number" xml:space="preserve">
+    <value>Invalid phone number</value>
+  </data>
+  <data name="enter_new_pass" xml:space="preserve">
+    <value>Please enter a new password</value>
+  </data>
+  <data name="enter_renew_pass" xml:space="preserve">
+    <value>Please enter the password confirmation!</value>
+  </data>
+  <data name="enter_current_pass" xml:space="preserve">
+    <value>Enter current password</value>
+  </data>
+  <data name="inventory_code_already_exists" xml:space="preserve">
+    <value>The inventory check code already exists</value>
+  </data>
+  <data name="manage_printer" xml:space="preserve">
+    <value>Manage Printers</value>
+  </data>
+  <data name="list_printer" xml:space="preserve">
+    <value>Printer List</value>
+  </data>
+  <data name="edit_printer" xml:space="preserve">
+    <value>Edit Printer</value>
+  </data>
+  <data name="delete_printer" xml:space="preserve">
+    <value>Delete Printer</value>
+  </data>
+  <data name="printer_name" xml:space="preserve">
+    <value>Printer Name</value>
+  </data>
+  <data name="ip" xml:space="preserve">
+    <value>Network Address (IP)</value>
+  </data>
+  <data name="port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="printer_not_exist" xml:space="preserve">
+    <value>Printer data does not exist in the system</value>
+  </data>
+  <data name="ip_invalid" xml:space="preserve">
+    <value>Invalid network address format</value>
+  </data>
+  <data name="port_invalid" xml:space="preserve">
+    <value>Invalid port format</value>
+  </data>
+  <data name="add_printer" xml:space="preserve">
+    <value>Add Printer</value>
+  </data>
+  <data name="printer_information" xml:space="preserve">
+    <value>Printer Information</value>
+  </data>
+  <data name="cannot_get_list_printer" xml:space="preserve">
+    <value>Cannot retrieve the printer list</value>
+  </data>
+  <data name="no_printer_address" xml:space="preserve">
+    <value>No printer address</value>
+  </data>
+  <data name="manage_printers_labels" xml:space="preserve">
+    <value>Manage Printers &amp; Labels</value>
+  </data>
+  <data name="invalid_size_label" xml:space="preserve">
+    <value>Invalid label size</value>
+  </data>
+  <data name="structure_not_exist" xml:space="preserve">
+    <value>Structure of barcode is not exists in system. Please check again</value>
+  </data>
+  <data name="invalid_seperate_char" xml:space="preserve">
+    <value>The separator character should only be certain special characters; avoid using letters or numbers.</value>
+  </data>
+  <data name="should_use_char" xml:space="preserve">
+    <value>Special characters such as |, /, -... are recommended</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+</root>

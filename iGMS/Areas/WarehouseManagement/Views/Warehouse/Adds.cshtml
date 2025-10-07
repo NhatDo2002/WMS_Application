@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = @Resources.Resource.add_warehouses;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card card-custom">
+    <div class="card-header">
+        <h3 class="card-title">
+            @Resources.Resource.add_warehouses
+        </h3>
+    </div>
+    <!--begin::Form-->
+    <div class="card-body">
+        <div class="form-group mb-8">
+            <div class="alert alert-custom alert-default" role="alert">
+                <div class="alert-icon"><i class="flaticon-warning text-primary"></i></div>
+                <div class="alert-text">
+                    @Resources.Resource.input_require_correctly
+                </div>
+            </div>
+        </div>
+        <!--<div class="form-group row">
+        <label class="col-2 col-form-label">Mã Kho Hàng <span style="color:red"> (*) </span></label>
+        <div class="col-10">
+            <div class="input-group-prepend">-->
+        @*<span class="input-group-text">K</span>*@
+        <!--<input required class="form-control" value="@ViewBag.idNext" type="text" id="id" />
+            </div>
+        </div>
+    </div>-->
+    <form id="form">
+        <div class="form-group row">
+            <label for="example-password-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.warehouse_name<span style="color:red"> (*) </span></label>
+            <div class="col-lg-10 col-xl-10">
+                <div class="input-group ">
+                    <input class="form-control" type="text" placeholder="@Resources.Resource.warehouse_name" id="name" name="name" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-password-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.Hàng_tồn_kho_thấp_nhất<span style="color:red"> (*) </span></label>
+            <div class="col-lg-10 col-xl-10">
+                <div class="input-group ">
+                    <input class="form-control" type="number" placeholder="@Resources.Resource.Nhập_Số_Lượng_Hàng_Tồn_Kho_Thấp_Nhất" id="min" name="min" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-password-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.Hàng_tồn_kho_cao_nhất<span style="color:red"> (*) </span></label>
+            <div class="col-lg-10 col-xl-10">
+                <div class="input-group ">
+                    <input class="form-control" type="number" placeholder="@Resources.Resource.Nhập_Số_Lượng_Hàng_Tồn_Kho_Cao_Nhất" id="max" name="max" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-password-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.description</label>
+            <div class="col-lg-10 col-xl-10">
+                <div class="input-group ">
+                    <textarea class="form-control" type="text" placeholder="@Resources.Resource.description" id="des"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+        
+    </div>
+    <div class="card-footer">
+        <div class="d-flex justify-content-end">
+            <div>
+                <button style="width: 100px" type="button" onclick="Add()" id="btnWH" class="btn btn-success mr-2">@Resources.Resource.submit</button>
+                <a style="width: 100px" href="/WarehouseManagement/WareHouse/Index" type="reset" class="btn btn-secondary">@Resources.Resource.cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        // truyền tài nguyên resources sang js
+        var resourceAddWH = {
+            "nhaptenkho": "@Html.Raw(Resources.Resource.Vui_Lòng_Nhập_Tên_Kho_Hàng)",
+            "nhapslmin": "@Html.Raw(Resources.Resource.Vui_Lòng_Nhập_Số_Lượng_Thấp_Nhất)",
+            "nhapslmax": "@Html.Raw(Resources.Resource.Vui_Lòng_Nhập_Số_Lượng_Cao_Nhất)",
+             is_not_empty: "@Html.Raw(Resources.Resource.is_not_empty)",
+            not_valid_number: "@Html.Raw(Resources.Resource.not_valid_number)",
+            min_more_than_max: "@Html.Raw(Resources.Resource.min_more_than_max)",
+        };
+        //Focus in menu nav
+        $('#warehouseMenuNav').addClass('menu-item-open');
+        $('#addWarehouseNav').addClass('menu-item-active')
+    </script>
+    <script src="~/Areas/WarehouseManagement/assets/js/Warehouse/add-warehouse.js"></script>
+}
+
+

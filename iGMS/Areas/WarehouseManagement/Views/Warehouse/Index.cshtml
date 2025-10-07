@@ -1,0 +1,550 @@
+﻿@{
+    ViewBag.Title = @Resources.Resource.warehouse_list;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Areas/WarehouseManagement/assets/css/dragula/dragula.min.css" rel="stylesheet" />
+<link href="~/Areas/WarehouseManagement/assets/css/print.css" rel="stylesheet" />
+<style>
+    .modal-dialog {
+        max-width: 80%; /* Đặt modal chiếm 90% màn hình */
+        width: auto; /* Để kích thước tự điều chỉnh */
+    }
+
+    .modal-content {
+        border-radius: 8px; /* Thêm bo góc nếu cần */
+    }
+
+    .drag-container {
+        min-height: 30px;
+    }
+
+    .table-container {
+        position: relative;
+        overflow-x: auto;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        white-space: nowrap; /* Ngăn chặn văn bản xuống dòng */
+    }
+
+        th.sticky-column,
+        td.sticky-column {
+            position: -webkit-sticky;
+            position: sticky;
+            background-color: white;
+            left: 0px;
+            z-index: 2; /* Để đảm bảo cột "đóng băng" hiển thị trên cùng */
+        }
+
+        td.sticky-column2 {
+            position: -webkit-sticky;
+            position: sticky;
+            left: 50px;
+            z-index: 2;
+            background-color: white;
+        }
+
+        td.sticky-column3 {
+            position: -webkit-sticky;
+            position: sticky;
+            left: 150px;
+            z-index: 2;
+            background-color: white;
+        }
+
+
+    .edit-text[contenteditable="true"] {
+        border: 1px dashed #007bff;
+        padding: 5px;
+        background-color: #f9f9f9;
+        outline: none;
+    }
+
+    .edit-text {
+        min-width: 50px;
+    }
+</style>
+<!--begin::Card-->
+<div class="card card-custom" id="a">
+    <div class="card-header flex-wrap py-5">
+        <div class="card-title">
+            <h3 class="card-label">
+                @Resources.Resource.warehouse_list_page
+            </h3>
+        </div>
+        <div class="card-toolbar">
+
+            <!--begin::Dropdown-->
+            <div class="dropdown dropdown-inline mr-2">
+                <button type="button" class="btn btn-light-primary font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="svg-icon svg-icon-md">
+                        <!--begin::Svg Icon | path:assets/media/svg/icons/Design/PenAndRuller.svg-->
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"></path>
+                                <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"></path>
+                            </g>
+                        </svg>
+                        <!--end::Svg Icon-->
+                    </span>@Resources.Resource.export
+                </button>
+                <!--begin::Dropdown Menu-->
+                <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                    <!--begin::Navigation-->
+                    <ul class="navi flex-column navi-hover py-2">
+                        @*<li class="navi-header font-weight-bolder text-uppercase font-size-sm text-primary pb-2">@Resources.Resource.Choose_an_option:</li>
+                    <li class="navi-item">
+                        <div class="navi-link" id="printBtn" style="cursor: pointer">
+                            <span class="navi-icon">
+                                <i class="la la-print"></i>
+                            </span>
+                            <span class="navi-text">Print</span>
+                        </div>
+                    </li>*@
+                        <li class="navi-item">
+                            <a onclick="ExportExcel()" class="navi-link" style="cursor: pointer">
+                                <span class="navi-icon">
+                                    <i class="la la-file-excel-o"></i>
+                                </span>
+                                <span class="navi-text">Excel</span>
+                            </a>
+                        </li>
+                        @*<li class="navi-item">
+                        <a onclick="ExportCSV()" class="navi-link" style="cursor: pointer">
+                            <span class="navi-icon">
+                                <i class="la la-file-text-o"></i>
+                            </span>
+                            <span class="navi-text">CSV</span>
+                        </a>
+                    </li>
+                    <li class="navi-item">
+                        <a onclick="ExportPDF()" class="navi-link" style="cursor: pointer">
+                            <span class="navi-icon">
+                                <i class="la la-file-pdf-o"></i>
+                            </span>
+                            <span class="navi-text">PDF</span>
+                        </a>
+                    </li>*@
+                    </ul>
+                    <!--end::Navigation-->
+                </div>
+                <!--end::Dropdown Menu-->
+            </div>
+            <!--end::Dropdown-->
+            <!--begin::Button-->
+            <div class="dropdown dropdown-inline mr-2">
+                <button type="button" class="btn btn-light-info font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="svg-icon svg-icon-md">
+                        <!--begin::Svg Icon | path:assets/media/svg/icons/Design/PenAndRuller.svg-->
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24" />
+                                <rect fill="#000000" x="4" y="5" width="16" height="3" rx="1.5" />
+                                <path d="M5.5,15 L18.5,15 C19.3284271,15 20,15.6715729 20,16.5 C20,17.3284271 19.3284271,18 18.5,18 L5.5,18 C4.67157288,18 4,17.3284271 4,16.5 C4,15.6715729 4.67157288,15 5.5,15 Z M5.5,10 L18.5,10 C19.3284271,10 20,10.6715729 20,11.5 C20,12.3284271 19.3284271,13 18.5,13 L5.5,13 C4.67157288,13 4,12.3284271 4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z" fill="#000000" opacity="0.3" />
+                            </g>
+                        </svg><!--end::Svg Icon-->
+                    </span>@Resources.Resource.action
+                </button>
+                <!--begin::Dropdown Menu-->
+                <div class="dropdown-menu dropdown-menu-md dropdown-menu-right" style="">
+                    <!--begin::Navigation-->
+                    <ul class="navi flex-column navi-hover py-2">
+                        <li class="navi-item">
+                            <a href="/WarehouseManagement/WareHouse/Adds" class="navi-link">
+                                <span class="navi-icon">
+                                    <i class="la la-folder-plus"></i>
+                                </span>
+                                <span class="navi-text">@Resources.Resource.warehouse_add_page</span>
+                            </a>
+                        </li>
+                        <li class="navi-item cursor-pointer">
+                            <a onclick="document.getElementById('csvInput').click();" class="navi-link">
+                                <span class="navi-icon">
+                                    <i class="la la-file-text-o"></i>
+                                </span>
+                                <span class="navi-text">@Resources.Resource.warehouse_upload</span>
+                            </a>
+                            <input style="display: none" type="file" id="csvInput" />
+                        </li>
+                        <li class="navi-item">
+                            <a id="exampleWH" class="navi-link">
+                                <span class="navi-icon">
+                                    <i class="la la-file-excel-o"></i>
+                                </span>
+                                <span class="navi-text">@Resources.Resource.sample</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--end::Navigation-->
+                </div>
+                <!--end::Dropdown Menu-->
+            </div>
+            <!--<a href="/WarehouseManagement/WareHouse/Adds" class="btn btn-primary font-weight-bolder" name="addWareHouse">
+                <span class="svg-icon svg-icon-md">
+                    <i class="fa-solid fa-house-chimney-window"></i>
+                </span>@Resources.Resource.warehouse_add_page
+            </a>
+            <div class="dropzone dropzone-multi row  ml-1 mr-1" id="kt_dropzone_4">
+                <div class="dropzone-panel mb-lg-0 mb-2">-->
+                    @*<a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm p-3 ml-2 w-350">Nhập file</a>*@
+                    <!--<div class="dropzone-select btn btn-success font-weight-bold btn-lg ml-4 d-flex align-items-center" style="height:39px">
+                        <span class="svg-icon svg-icon-md mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                    <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                    <path d="M8.95128003,13.8153448 L10.9077535,13.8153448 L10.9077535,15.8230161 C10.9077535,16.0991584 11.1316112,16.3230161 11.4077535,16.3230161 L12.4310522,16.3230161 C12.7071946,16.3230161 12.9310522,16.0991584 12.9310522,15.8230161 L12.9310522,13.8153448 L14.8875257,13.8153448 C15.1636681,13.8153448 15.3875257,13.5914871 15.3875257,13.3153448 C15.3875257,13.1970331 15.345572,13.0825545 15.2691225,12.9922598 L12.3009997,9.48659872 C12.1225648,9.27584861 11.8070681,9.24965194 11.596318,9.42808682 C11.5752308,9.44594059 11.5556598,9.46551156 11.5378061,9.48659872 L8.56968321,12.9922598 C8.39124833,13.2030099 8.417445,13.5185067 8.62819511,13.6969416 C8.71848979,13.773391 8.8329684,13.8153448 8.95128003,13.8153448 Z" fill="#000000" />
+                                </g>
+                            </svg>
+                        </span>
+                        @Resources.Resource.warehouse_upload
+                    </div>
+                    <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
+                </div>
+                <div class="dropzone-items">
+                    <div class="dropzone-item" style="display:none">
+                        <div class="dropzone-file">
+                            <div class="dropzone-filename" title="some_image_file_name.jpg">
+                                <span data-dz-name="">some_image_file_name.jpg</span>
+                                <strong>
+                                    (
+                                    <span data-dz-size="">340kb</span>)
+                                </strong>
+                            </div>
+                            <div class="dropzone-error" data-dz-errormessage=""></div>
+                        </div>
+                        <div class="dropzone-progress">
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
+                            </div>
+                        </div>
+                        <div class="dropzone-toolbar">
+                            <span class="dropzone-start">
+                                <i class="flaticon2-arrow"></i>
+                            </span>
+                            <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
+                                <i class="flaticon2-cross"></i>
+                            </span>
+                            <span class="dropzone-delete" data-dz-remove="">
+                                <i class="flaticon2-cross"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            @*<a href="#" id="btnOpenModal" class="btn btn-success font-weight-bold btn-lg ml-4 d-flex align-items-center">
+            <span class="svg-icon svg-icon-md mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon points="0 0 24 0 24 24 0 24" />
+                        <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                        <path d="M8.95128003,13.8153448 L10.9077535,13.8153448 L10.9077535,15.8230161 C10.9077535,16.0991584 11.1316112,16.3230161 11.4077535,16.3230161 L12.4310522,16.3230161 C12.7071946,16.3230161 12.9310522,16.0991584 12.9310522,15.8230161 L12.9310522,13.8153448 L14.8875257,13.8153448 C15.1636681,13.8153448 15.3875257,13.5914871 15.3875257,13.3153448 C15.3875257,13.1970331 15.345572,13.0825545 15.2691225,12.9922598 L12.3009997,9.48659872 C12.1225648,9.27584861 11.8070681,9.24965194 11.596318,9.42808682 C11.5752308,9.44594059 11.5556598,9.46551156 11.5378061,9.48659872 L8.56968321,12.9922598 C8.39124833,13.2030099 8.417445,13.5185067 8.62819511,13.6969416 C8.71848979,13.773391 8.8329684,13.8153448 8.95128003,13.8153448 Z" fill="#000000" />
+                    </g>
+                </svg>
+            </span>
+            Thêm mã nhân viên bằng file excel
+        </a>*@
+
+            @*<div class="dropzone-select btn btn-light-primary font-weight-bold btn-sm p-3 ml-2" href="" id="exampleWH" download="" style="height: 39px">@Resources.Resource.sample</div>*@
+            <!--end::Button-->
+        </div>
+    </div>
+    <!--<div class="card flex-wrap py-5" style="padding: 2rem 2.25rem">
+        <form class="row mr-2" id="form">
+            <button type="button" id="exampleWH" class="btn btn-light-primary font-weight-bolder col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 my-2">
+                <span class="svg-icon svg-icon-md">-->
+    <!--begin::Svg Icon | path:assets/media/svg/icons/Design/PenAndRuller.svg-->
+    <!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <rect x="0" y="0" width="24" height="24"></rect>
+            <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"></path>
+            <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"></path>
+        </g>
+    </svg>
+    Mẫu-->
+    <!--end::Svg Icon-->
+    <!--</span>
+    </button>
+    <div class="file-upload col-sm-6 col-md-6 col-lg-10 col-xl-6 col-xxl-6 my-2">
+        <div class="file-select">
+            <div class="file-select-button" id="fileName">@Resources.Resource.choose_file</div>
+            <div class="file-select-name" id="noFile">@Resources.Resource.no_file_selected</div>
+            <input type="file" name="UploadedFile" id="chooseFile">
+        </div>
+    </div>
+    <button type="button" onclick="Import()" name="submit" value="" class="btn btn-light-primary font-weight-bolder col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 my-2">
+        <span class="svg-icon svg-icon-md">-->
+    <!--begin::Svg Icon | path:assets/media/svg/icons/Design/PenAndRuller.svg-->
+    <!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <rect x="0" y="0" width="24" height="24"></rect>
+            <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"></path>
+            <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"></path>
+        </g>
+    </svg>-->
+    <!--end::Svg Icon-->
+    <!--</span>@Resources.Resource.Import
+            </button>
+        </form>
+    </div>-->
+    <div class="card-body">
+        <!--begin: Datatable-->
+        <div id="kt_datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+            <div class="row mb-6">
+                <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.search</label>
+                <div class="input-group col-10">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="la flaticon-search-magnifier-interface-symbol"></i></span>
+                    </div>
+                    <input class="form-control" type="search" placeholder="@Resources.Resource.warehouse_search..." id="kt_datatable_search_query" />
+                </div>
+            </div>
+            <div class="datatable datatable-bordered datatable-head-custom" id="warehouse_datatable"></div>
+        </div>
+        <!--end: Datatable-->
+    </div>
+</div>
+
+<!-- Printing -->
+<div class="modal fade" id="printModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="printModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Resources.Resource.printing</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="printArea" style="font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333;">
+                    <!-- Tiêu đề -->
+                    <div id="drag-container-1" class="drag-container" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
+                        @*<img src="logo.png" alt="Logo" style="height: 40px;">*@
+                        <h1 class="edit-text" data-header="true" style="width: fit-content; font-size: 26px; font-weight: bold; color: #007bff;">CÔNG TY TNHH XYZ</h1>
+                        <p class="edit-text" data-header="true" style="width: fit-content; font-size: 14px; color: #555;">Địa chỉ: 123 Đường ABC, TP. HCM</p>
+                        <h2 class="edit-text" style="width: fit-content; font-size: 22px; color: #007bff; font-weight: 600;">@Resources.Resource.warehouse_print</h2>
+                        <p style="width: fit-content; font-size: 14px; color: #555;">@Resources.Resource.print_time: <span id="timePrint"></span></p>
+                    </div>
+
+                    <!-- Thông tin chung -->
+                    <div id="drag-container-2" class="drag-container" style="margin-bottom: 20px;">
+                        <p style="font-size: 14px; color: #333; font-weight: 500;">@Resources.Resource.account_print: <span id="userPrint"></span></p>
+                        @*<p style="font-size: 14px; color: #333; font-weight: 500;">Người duyệt: Trần Văn B</p>*@
+                    </div>
+                    <div class="printContainer" style="overflow: auto; max-height: 500px; width: 100%; margin-bottom: 20px; ">
+                        <!-- Danh sách hàng hóa -->
+                        <table id="tablePrint" style=" width: 100%; border-collapse: collapse; text-align: left;">
+                            <thead id="theadPrint" style="position: sticky; top: 0; background-color: #f2f2f2; color: black; font-weight: bold; border: 1px solid #ddd; border-top: 1px solid black ">
+                                <tr style="">
+                                    <th style="padding: 12px; border: 1px solid #ddd; ">@Resources.Resource.warehouse_name</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd;">@Resources.Resource.description</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd;">@Resources.Resource.warehouse_min</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd;">@Resources.Resource.warehouse_max</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd;">@Resources.Resource.create_date</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd;">@Resources.Resource.create_by</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd;">@Resources.Resource.modify_date</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd;">@Resources.Resource.modify_by</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyPrint" style="">
+                            </tbody>
+                            @*<tfoot>
+                                    <tr>
+                                        <td colspan="3" style="padding: 12px; font-weight: bold; text-align: right; background-color: #f2f2f2; border: 1px solid #ddd;">Tổng cộng</td>
+                                        <td style="padding: 12px; font-weight: bold; text-align: right; background-color: #f2f2f2; border: 1px solid #ddd;"><span id="countTotal"></span></td>
+                                        <td colspan="4" style="padding: 12px; font-weight: bold; text-align: right; background-color: #f2f2f2; border: 1px solid #ddd;"></td>
+                                    </tr>
+                                </tfoot>*@
+                        </table>
+                    </div>
+
+
+                    <!-- Ghi chú -->
+                    @*<div style="margin-bottom: 20px;">
+                            <p style="font-size: 14px; color: #555;">Ghi chú: Hàng hóa có trong hệ thống.</p>
+                        </div>*@
+
+                    <!-- Chữ ký -->
+                    <!--<div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                        <div style="text-align: center;">
+                            <p style="font-size: 14px; color: #333;">Người lập phiếu</p>
+                            <p style="font-size: 14px; color: #555;">(Ký, ghi rõ họ tên)</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <p style="font-size: 14px; color: #333;">Người duyệt</p>
+                            <p style="font-size: 14px; color: #555;">(Ký, ghi rõ họ tên)</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <p style="font-size: 14px; color: #333;">Giám đốc</p>
+                            <p style="font-size: 14px; color: #555;">(Ký, ghi rõ họ tên)</p>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-warning" style="display:none" id="updateBtn">@Resources.Resource.update_print_btn</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">@Resources.Resource.close</button>
+                <button type="button" class="btn btn-primary" onclick="openAndPrint()">@Resources.Resource.print</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<!--<div class="modal fade" id="importFile" tabindex="-1" role="dialog" aria-labelledby="importFileLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="importFileLabel">Thêm mã nhân viên bằng file excel</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="filename" class="font-weight-bold">Chọn file Excel:</label>
+                    <input type="file" class="form-control-file" id="filename" name="UploadedFile" />
+                    <div id="loading-spinner" style="display:none; text-align: center; margin-top: 15px;">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="sr-only">Đang tải...</span>
+                        </div>
+                        <p>Đang tải...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" id="uploadFile">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- Button trigger modal-->
+@section scripts{
+    <script src="~/PrintDetail/DataBill.js"></script>
+    <script src="~/Areas/WarehouseManagement/assets/js/dragula/dragula.min.js"></script>
+    <script>
+
+        $('#btnOpenModal').click((e) => {
+            e.preventDefault();
+            initUpload();
+        });
+
+        function initUpload() {
+            $("#filename").val("");  // Reset giá trị input file
+            $('#loading-spinner').hide();  // Ẩn spinner lúc khởi động
+            $('#importFile').modal('show'); // Mở modal
+        }
+
+        $('#chooseFile').bind('change', function () {
+            var filename = $("#chooseFile").val();
+            console.log(filename)
+            if (/^\s*$/.test(filename)) {
+                $(".file-upload").removeClass('active'); $("#noFile").empty()
+                $("#noFile").append("@Resources.Resource.no_file_selected...");
+            }
+            else {
+                $(".file-upload").addClass('active');
+                $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+            }
+        });
+        function Import() {
+            try {
+                let fileUpload = $('input[name="UploadedFile"]').get(0);
+                let form = document.getElementById('form')
+                let files = fileUpload.files;
+                let formdata = new FormData(form);
+                formdata.append('file', files[0]);
+                $.ajax({
+                    type: 'post',
+                    url: '/WarehouseManagement/WareHouse/Upload',
+                    contentType: false,
+                    processData: false,
+                    data: formdata,
+                    success: function (data) {
+                        if (data.status == 200) {
+                            Swal.fire(data.msg);
+                            setTimeout(function () { window.location.href = "/WareHouse/Index"; }, 1000);
+                        } else {
+                            Swal.fire(data.msg);
+                        }
+
+                    }
+                })
+            } catch (error) {
+                Swal.fire(error.message, "", "error")
+            }
+        }
+        // truyền tài nguyên resources sang js
+        var resources = {
+            "edit": "@Resources.Resource.warehouse_edit",
+            "delete": "@Resources.Resource.warehouse_delete",
+            "print": "@Resources.Resource.print",
+            "DeleteWarning": "@Resources.Resource.warehouse_delete_warning",
+            "ConfirmDeleteWarning": @Html.Raw(Json.Encode(Resources.Resource.confirm.ToString())), //mã hóa chuỗi tránh gây lỗi ký tự
+            "DeleteInfo": "@Resources.Resource.remove_unwanted",
+            "CancelInfo": "@Resources.Resource.CancelInfo",
+            "DeleteSuccess": "@Resources.Resource.delete_success",
+            "ErrorCall": "@Resources.Resource.error_ajax",
+            "wh_name": "@Resources.Resource.warehouse_name",
+            "description": "@Resources.Resource.description",
+            "min": "@Resources.Resource.warehouse_min",
+            "max": "@Resources.Resource.warehouse_max",
+            "createDate": "@Resources.Resource.create_date",
+            "createBy": "@Resources.Resource.create_by",
+            "modifyDate": "@Resources.Resource.modify_date",
+            "modifyBy": "@Resources.Resource.modify_by",
+            "status": "@Resources.Resource.status",
+            "action": "@Resources.Resource.action",
+            "editPass": "@Resources.Resource.account_edit_pass",
+            "work": "@Resources.Resource.active",
+            "nowork": "@Resources.Resource.no_active"
+        };
+
+        $("#exampleWH").on("click", function () {
+            $.ajax({
+                url: '/WarehouseManagement/WareHouse/DownloadExampleFile',  // Đường dẫn đến action trong controller
+                method: 'GET',
+                success: function (response) {
+                    // Tạo một URL từ blob nhận được
+                    const byteCharacters = atob(response.fileContent);
+                    const byteNumbers = new Array(byteCharacters.length);
+
+                    for (let i = 0; i < byteCharacters.length; i++) {
+                        byteNumbers[i] = byteCharacters.charCodeAt(i);
+                    }
+
+                    const byteArray = new Uint8Array(byteNumbers);
+
+                    // Tạo Blob từ dữ liệu nhị phân
+                    const blob = new Blob([byteArray], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+
+                    // Tạo link để tải xuống mà không cần append vào DOM
+                    const link = document.createElement("a");
+                    const url = window.URL.createObjectURL(blob);
+                    link.href = url;
+                    link.download = response.fileName; // Đặt tên tệp khi tải xuống
+                    link.click();
+
+                    // Giải phóng URL để tránh lãng phí bộ nhớ
+                    window.URL.revokeObjectURL(url);
+
+                    toastr.success(response.msg);
+                },
+                error: function () {
+                    alert("Error downloading file!");
+                }
+            });
+        });
+        //Focus in menu nav
+        $('#warehouseMenuNav').addClass('menu-item-open');
+        $('#listWarehouseNav').addClass('menu-item-active')
+    </script>
+    <script src="~/Areas/WarehouseManagement/assets/js/Warehouse/list-warehouses.js"></script>
+
+}

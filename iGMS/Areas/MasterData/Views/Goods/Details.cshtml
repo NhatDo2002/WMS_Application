@@ -1,0 +1,157 @@
+﻿@model WMS.Models.Good
+@{
+    ViewBag.Title = @Resources.Resource.good_detail;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<input hidden value="@Model.Id" id="id" />
+<div class="card card-custom">
+    <div class="card-header">
+        <h3 class="card-title">
+            @@Resources.Resource.good_detail
+        </h3>
+    </div>
+    <!--begin::Form-->
+    <div class="card-body">
+
+        <!--HIHI-->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-3 col-form-label">@Resources.Resource.good_id<span style="color:red"> (*) </span></label>
+                    <div class="col-9">
+                        <div class="input-group-prepend">
+                            <input disabled class="form-control" type="text" placeholder="@Resources.Resource.enter_good_id" value="@Model.Id" id="idgood" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label for="example-password-input" class="col-3 col-form-label">@Resources.Resource.good_name<span style="color:red"> (*) </span></label>
+                    <div class="col-9">
+                        <div class="input-group ">
+                            <input class="form-control" type="text" placeholder="@Resources.Resource.good_name" id="name" value="@Model.Name" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--HIHI-->
+        <!--HAHA-->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-3 col-form-label">@Resources.Resource.unit<span style="color:red"> (*) </span></label>
+                    <div class="col-9">
+                        <select class="form-control" data-id="kt_select2_1" name="unit" value="@Model.IdUnit">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-3 col-form-label">@Resources.Resource.good_group<span style="color:red"> (*) </span></label>
+                    <div class="col-9">
+                        <select class="form-control" data-id="kt_select2_1" id="groupgoods" value="@Model.IdGroupGood">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--HAHA-->
+        <!-- Ghi chú -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <div class="form-group row">
+                    <label class="col-1 col-form-label">@Resources.Resource.note</label>
+                    <div class="col-11">
+                        <textarea class="form-control" rows="3" placeholder="@Resources.Resource.note" id="note">@Model.Description</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Kết thúc Ghi chú -->
+    </div>
+</div>
+<div class="card-footer">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-10">
+            <button type="submit" class="btn btn-success mr-2" onclick="Edit()">@Resources.Resource.edit</button>
+            <a href="/Goods/Index" type="reset" class="btn btn-secondary">@Resources.Resource.cancel</a>
+        </div>
+    </div>
+</div>
+</div>
+@section scripts{
+    <script>
+        WareHouse()
+        $(function Unit() {
+            $.ajax({
+                url: '/MasterData/Unit/List',
+                 type: 'get',
+                 data: { id },
+                 success: function (data) {
+                     $('select[name="unit"]').empty();
+                     if (data.code == 200) {
+                        @* let table = '<option value="@ViewBag.idUnit">@ViewBag.nameUnit</option>'*@
+                        let table = '<option value="@Model.Unit.Id">@Model.GroupGood.Name</option>'
+                         $.each(data.c, function (k, v) {
+                             table += '<option value="' + v.id + '">' + v.name + '</option>'
+                         });
+                         $('select[name="unit"]').append(table);
+                     } else (
+                         alert(data.msg)
+                     )
+                 }
+             })
+         })
+
+         GroupGoods()
+         function GroupGoods() {
+             $.ajax({
+                 url: '/MasterData/goods/GroupGoods',
+                 type: 'get',
+                 success: function (data) {
+                     $('#groupgoods').empty();
+                     if (data.code == 200) {
+                         let table = '<option value="@ViewBag.idGroupGoods">@ViewBag.nameGroupGoods</option>'
+                         $.each(data.c, function (k, v) {
+                             table += '<option value="' + v.id + '">' + v.name + '</option>'
+                         });
+                         $('#groupgoods').append(table);
+                     } else (
+                         alert(data.msg)
+                     )
+                 }
+             })
+         }
+
+        //--------------------Select::WareHouse--------------
+        function WareHouse() {
+            $.ajax({
+                url: '/MasterData/goods/WareHouse',
+                type: 'get',
+                success: function (data) {
+                    $('#warehouse').empty();
+                    if (data.code == 200) {
+                        let table = '<option value="@Model.Id">@Model.Name</option>'
+                        $.each(data.c, function (k, v) {
+                            table += '<option value="' + v.id + '">' + v.name + '</option>'
+                        });
+                        $('#warehouse').append(table);
+                    } else (
+                        alert(data.msg)
+                    )
+                }
+            })
+        }
+    </script>
+    @*  <script src="~/Scripts/Goods.js"></script>*@
+}
+
+

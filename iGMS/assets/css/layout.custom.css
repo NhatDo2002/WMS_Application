@@ -1,0 +1,106 @@
+﻿@media (max-width: 991.98px) {
+    #kt_header {
+        backdrop-filter: none !important;
+    }
+    body {
+        backdrop-filter: none !important;
+    }
+}
+
+.datatable-row {
+    transition: transform 0.1s ease, z-index 0.1s ease !important;
+    transform-origin: left !important;
+    z-index: 1 !important;
+}
+
+.datatable-row-hover {
+    transform: scale(1.03) !important;
+    z-index: 1000 !important;
+    box-shadow: 2px 2px 10px #bebebe !important;
+}
+
+.datatable-row.dimmed {
+    transform: scale(0.95) !important;
+    z-index: 0 !important;
+}
+
+#textModal {
+    display: none;
+    position: absolute;
+    z-index: 1050;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+#sticky {
+     
+}
+
+#iconDisplaySticky {
+    
+}
+
+#whistleBtn {
+    display: none;
+}
+
+#sticky:hover {
+    width: fit-content !important;
+}
+
+#sticky:hover #whistleBtn {
+    display: block;
+}
+
+#sticky:hover #iconDisplaySticky {
+    display: none;
+}
+
+    #sticky:focus {
+        width: fit-content !important;
+    }
+
+    #sticky:focus #whistleBtn {
+        display: block;
+    }
+
+    #sticky:focus #iconDisplaySticky {
+        display: none;
+    }
+
+.switch.switch-icon input:checked ~ span:after {
+    content: "🔑" !important;
+}
+
+#whistleBtnCheck {
+    height: 50px;
+    width: 50px;
+    -webkit-appearance: none;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+    border-radius: 50%;
+    border: 20px solid #ececec;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #fff;
+}
+
+    #whistleBtnCheck::after {
+        font-family: FontAwesome;
+        content: "🔔";
+        color: #7a7a7a;
+        font-size: 20px;
+    }
+
+    #whistleBtnCheck:checked {
+        box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12), inset -10px -10px 15px rgba(255, 255, 255, 0.5), inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+    }
+
+        #whistleBtnCheck:checked::after {
+            color: #15e38a;
+        }

@@ -1,0 +1,58 @@
+﻿.input-group {
+    width: 100% !important; /* Mặc định cho mobile */
+}
+
+/* Tablet trở lên (>=768px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .input-group {
+        width: 80% !important;
+    }
+}
+
+/* Desktop trở lên (>=992px) */
+@media (min-width: 992px) {
+    .input-group {
+        width: 50% !important;
+    }
+}
+
+.nested {
+    display: none;
+}
+
+.modal-header, .card-header {
+    background-color: #f8f9fa; /* Màu nền nhẹ */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between; /* Căn đều các nút */
+    align-items: center; /* Căn giữa dọc */
+    padding: 1rem; /* Padding cho modal footer */
+}
+
+h1 {
+    font-size: 1.25rem; /* Cỡ chữ cho tiêu đề */
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Tăng khoảng cách giữa các form */
+}
+
+.dropzone {
+    border: 2px dashed #007bff; /* Border cho dropzone */
+    padding: 1rem; /* Padding cho dropzone */
+    margin-top: 1rem; /* Khoảng cách trên dropzone */
+    border-radius: 5px; /* Bo góc cho dropzone */
+}
+
+.btn {
+    padding: 0.5rem 1rem; /* Padding cho nút */
+}
+
+#scanning_table td, #scanning_table th {
+    /*text-align: center !important;*/ /* Căn giữa theo chiều ngang */
+    vertical-align: middle !important; /* Căn giữa theo chiều dọc */
+}
+

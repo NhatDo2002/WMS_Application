@@ -1,0 +1,98 @@
+﻿main {
+    transform-style: preserve-3d;
+    transform: rotateX(45deg) rotateZ(45deg);
+}
+
+.cube {
+    --size: 1rem;
+    --offset: calc(var(--size) * -1);
+    --duration: 3600ms;
+    --delay: calc(var(--i) * -0.0335s);
+    --ease: cubic-bezier(0.84, 0, 0.2, 1);
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    margin: 1rem;
+    background-color: var(--bg-color);
+    box-shadow: inset rgba(black, 0.4) -0.5rem 0.5rem 1rem;
+    transform-style: preserve-3d;
+    transform-origin: 50% 100% var(--offset);
+    transition-property: transform, background-color;
+    transition-timing-function: ease-out;
+    animation: animate var(--duration) var(--delay) var(--ease) alternate infinite, color calc(var(--duration) * 2) var(--delay) var(--ease) alternate infinite;
+}
+
+    .cube:nth-child(odd) {
+        --bg-color: #114b06;
+    }
+
+    .cube:nth-child(even) {
+        --bg-color: #1e9c39;
+    }
+
+    .cube:nth-child(3n) {
+        --bg-color: #adddb4;
+    }
+
+    .cube::before,
+    .cube::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: inherit;
+        box-shadow: inherit;
+        transform-origin: 100% 100%;
+    }
+
+    .cube::before {
+        transform: translateZ(var(--offset)) rotateY(90deg);
+        filter: brightness(120%);
+    }
+
+    .cube::after {
+        transform: translateZ(var(--offset)) rotateX(-90deg);
+        filter: brightness(80%);
+    }
+
+@keyframes animate {
+    0% {
+        transform: scaleX(4);
+    }
+
+    20% {
+        transform: scaleX(0.5) scaleY(0.6) scaleZ(0.5);
+    }
+
+    40% {
+        transform: scaleX(1) scaleY(0.8) scaleZ(4);
+    }
+
+    60% {
+        transform: scaleX(4) scaleY(0.6) scaleZ(4);
+    }
+
+    80% {
+        transform: scaleX(4) scaleZ(1) translateY(calc(var(--size) * 2));
+    }
+
+    100% {
+        transform: scaleX(1) scaleY(0,5) scaleZ(1) translateY(calc(var(--size) * -2));
+    }
+}
+
+@keyframes color {
+    42% {
+        background-color: var(--bg-color);
+    }
+
+    48%, 64% {
+        background-color: #fff;
+    }
+
+    66% {
+        background-color: var(--bg-color);
+    }
+}

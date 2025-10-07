@@ -1,0 +1,3192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account Create" xml:space="preserve">
+    <value>创建账户</value>
+  </data>
+  <data name="account_list" xml:space="preserve">
+    <value>账户列表</value>
+  </data>
+  <data name="add_function" xml:space="preserve">
+    <value>添加功能</value>
+  </data>
+  <data name="add_goods" xml:space="preserve">
+    <value>添加新商品</value>
+  </data>
+  <data name="add_good_group" xml:space="preserve">
+    <value>添加新商品组</value>
+  </data>
+  <data name="Add Type Customer" xml:space="preserve">
+    <value>添加客户类型</value>
+  </data>
+  <data name="add_warehouses" xml:space="preserve">
+    <value>添加新仓库</value>
+  </data>
+  <data name="atline" xml:space="preserve">
+    <value>在行</value>
+  </data>
+  <data name="start_rfid_scanning" xml:space="preserve">
+    <value>开始 RFID 扫描</value>
+  </data>
+  <data name="turn_on_sound" xml:space="preserve">
+    <value>打开声音</value>
+  </data>
+  <data name="start_locating_tags" xml:space="preserve">
+    <value>开始定位标签</value>
+  </data>
+  <data name="Bỏ Qua" xml:space="preserve">
+    <value>跳过</value>
+  </data>
+  <data name="CancelInfo" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Chi Tiết" xml:space="preserve">
+    <value>详情</value>
+  </data>
+  <data name="Chi Tiết Hàng Hóa" xml:space="preserve">
+    <value>商品详情</value>
+  </data>
+  <data name="Chi Tiết Hàng Hóa Trong Kho" xml:space="preserve">
+    <value>库存商品详情</value>
+  </data>
+  <data name="warehouse_detail" xml:space="preserve">
+    <value>仓库详情</value>
+  </data>
+  <data name="Chi Tiết Phiếu Kiểm Kê" xml:space="preserve">
+    <value>盘点单详情</value>
+  </data>
+  <data name="import_form_detail" xml:space="preserve">
+    <value>入库单详情</value>
+  </data>
+  <data name="Chi Tiết Phiếu Xuất" xml:space="preserve">
+    <value>发货单详情</value>
+  </data>
+  <data name="Chi Tiết Vật Tư" xml:space="preserve">
+    <value>物料详情</value>
+  </data>
+  <data name="hi_user" xml:space="preserve">
+    <value>你好, </value>
+  </data>
+  <data name="no_good_selected" xml:space="preserve">
+    <value>未选择商品</value>
+  </data>
+  <data name="Chưa Có EPC" xml:space="preserve">
+    <value>无 EPC</value>
+  </data>
+  <data name="Chưa Có Mã Hàng" xml:space="preserve">
+    <value>无产品代码</value>
+  </data>
+  <data name="Chưa Có Tài Khoản" xml:space="preserve">
+    <value>您还没有账户吗？</value>
+  </data>
+  <data name="uncheked" xml:space="preserve">
+    <value>未检查</value>
+  </data>
+  <data name="quantity_not_entered_for_scanning" xml:space="preserve">
+    <value>未输入扫描数量</value>
+  </data>
+  <data name="not_scanned_yet" xml:space="preserve">
+    <value>未扫描</value>
+  </data>
+  <data name="not_completed_scanning" xml:space="preserve">
+    <value>未完成扫描</value>
+  </data>
+  <data name="choose_file" xml:space="preserve">
+    <value>选择文件</value>
+  </data>
+  <data name="Chọn Hàng Hóa" xml:space="preserve">
+    <value>选择商品</value>
+  </data>
+  <data name="select_warehouses" xml:space="preserve">
+    <value>选择仓库</value>
+  </data>
+  <data name="Chọn Kho Hàng Để Tiếp Tục" xml:space="preserve">
+    <value>请选择仓库以继续！</value>
+  </data>
+  <data name="select_customers" xml:space="preserve">
+    <value>选择客户</value>
+  </data>
+  <data name="Chọn Khách Hàng Để Tiếp Tục" xml:space="preserve">
+    <value>选择客户以继续</value>
+  </data>
+  <data name="Chọn Mã TK Hạch Toán" xml:space="preserve">
+    <value>选择会计科目代码</value>
+  </data>
+  <data name="Chọn Nguồn KH" xml:space="preserve">
+    <value>选择客户来源</value>
+  </data>
+  <data name="Chọn Ngành Nghề" xml:space="preserve">
+    <value>选择行业</value>
+  </data>
+  <data name="Chọn Nhân Viên Kiểm Hàng" xml:space="preserve">
+    <value>选择验货员</value>
+  </data>
+  <data name="Chọn NV Phụ Trách" xml:space="preserve">
+    <value>选择负责人</value>
+  </data>
+  <data name="Chọn Phương Thức TT" xml:space="preserve">
+    <value>选择付款方式</value>
+  </data>
+  <data name="Chọn Thẻ Thành Viên" xml:space="preserve">
+    <value>选择会员卡</value>
+  </data>
+  <data name="function" xml:space="preserve">
+    <value>功能</value>
+  </data>
+  <data name="position" xml:space="preserve">
+    <value>职位</value>
+  </data>
+  <data name="ConfirmDeleteWarning" xml:space="preserve">
+    <value>此操作将无法撤销！</value>
+  </data>
+  <data name="Create Business Customer" xml:space="preserve">
+    <value>创建企业客户</value>
+  </data>
+  <data name="CreateSucess" xml:space="preserve">
+    <value>创建成功！</value>
+  </data>
+  <data name="system_configuration" xml:space="preserve">
+    <value>系统配置</value>
+  </data>
+  <data name="personal" xml:space="preserve">
+    <value>个人</value>
+  </data>
+  <data name="duplicate_codes" xml:space="preserve">
+    <value>重复代码</value>
+  </data>
+  <data name="Còn" xml:space="preserve">
+    <value>剩余</value>
+  </data>
+  <data name="Có Mã EPC Là" xml:space="preserve">
+    <value>有 EPC 代码是</value>
+  </data>
+  <data name="database" xml:space="preserve">
+    <value>数据库名称</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="catalog" xml:space="preserve">
+    <value>目录</value>
+  </data>
+  <data name="Danh Mục Chính" xml:space="preserve">
+    <value>主分类</value>
+  </data>
+  <data name="Danh Sách" xml:space="preserve">
+    <value>列表</value>
+  </data>
+  <data name="assets_detail_list" xml:space="preserve">
+    <value>物料明细列表</value>
+  </data>
+  <data name="customer_list" xml:space="preserve">
+    <value>客户列表</value>
+  </data>
+  <data name="Danh Sách Khách Hàng Doanh Nghiệp" xml:space="preserve">
+    <value>企业客户列表</value>
+  </data>
+  <data name="good_group_list" xml:space="preserve">
+    <value>商品组列表</value>
+  </data>
+  <data name="stock_take_list" xml:space="preserve">
+    <value>盘点单列表</value>
+  </data>
+  <data name="import_form_list" xml:space="preserve">
+    <value>入库单列表</value>
+  </data>
+  <data name="export_form_list" xml:space="preserve">
+    <value>出库单列表</value>
+  </data>
+  <data name="backup_list" xml:space="preserve">
+    <value>备份数据列表</value>
+  </data>
+  <data name="Danh Sách Tài Khoản" xml:space="preserve">
+    <value>账户列表</value>
+  </data>
+  <data name="units_catalog" xml:space="preserve">
+    <value>计量单位</value>
+  </data>
+  <data name="data_management" xml:space="preserve">
+    <value>数据管理</value>
+  </data>
+  <data name="DeleteInfo" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="DeleteWarning" xml:space="preserve">
+    <value>您想删除此数据吗？</value>
+  </data>
+  <data name="Delivery Bill" xml:space="preserve">
+    <value>发货单</value>
+  </data>
+  <data name="goods_detail_list" xml:space="preserve">
+    <value>商品明细列表</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>ID 重复！！！</value>
+  </data>
+  <data name="DuplicateName" xml:space="preserve">
+    <value>名称重复！！！</value>
+  </data>
+  <data name="excess" xml:space="preserve">
+    <value>多余</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="stop_scanning" xml:space="preserve">
+    <value>停止扫描</value>
+  </data>
+  <data name="stop_rfid_scanning" xml:space="preserve">
+    <value>停止 RFID 扫描</value>
+  </data>
+  <data name="Dừng Quét HandHeld" xml:space="preserve">
+    <value>停止手持机扫描</value>
+  </data>
+  <data name="Dữ Liệu Nhập Kho" xml:space="preserve">
+    <value>入库数据</value>
+  </data>
+  <data name="Dữ Liệu Xuất Kho" xml:space="preserve">
+    <value>出库数据</value>
+  </data>
+  <data name="data_in_use" xml:space="preserve">
+    <value>正在使用的数据</value>
+  </data>
+  <data name="login_data" xml:space="preserve">
+    <value>登录数据</value>
+  </data>
+  <data name="edit_business_customer" xml:space="preserve">
+    <value>编辑企业客户</value>
+  </data>
+  <data name="Edit Group Goods" xml:space="preserve">
+    <value>编辑商品组</value>
+  </data>
+  <data name="Edit Type Customer" xml:space="preserve">
+    <value>编辑客户类型</value>
+  </data>
+  <data name="edit_warehouse" xml:space="preserve">
+    <value>编辑仓库</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>英语</value>
+  </data>
+  <data name="enter group goods" xml:space="preserve">
+    <value>请输入商品组名称！！！</value>
+  </data>
+  <data name="enterwarehouse" xml:space="preserve">
+    <value>请输入仓库名称！！！</value>
+  </data>
+  <data name="entries" xml:space="preserve">
+    <value>条记录</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="export" xml:space="preserve">
+    <value>导出文件</value>
+  </data>
+  <data name="FailCreate" xml:space="preserve">
+    <value>创建失败！</value>
+  </data>
+  <data name="FailDelete" xml:space="preserve">
+    <value>删除失败！</value>
+  </data>
+  <data name="FailEdit" xml:space="preserve">
+    <value>编辑失败！</value>
+  </data>
+  <data name="false" xml:space="preserve">
+    <value> 错误！！！</value>
+  </data>
+  <data name="fasle add group goods" xml:space="preserve">
+    <value>产品组名称已在系统中！！！</value>
+  </data>
+  <data name="function_configuration" xml:space="preserve">
+    <value>功能配置</value>
+  </data>
+  <data name="note" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="Ghi Đè" xml:space="preserve">
+    <value>覆盖</value>
+  </data>
+  <data name="Goods Issue List" xml:space="preserve">
+    <value>出库单列表</value>
+  </data>
+  <data name="Goods Receipt List" xml:space="preserve">
+    <value>入库单列表</value>
+  </data>
+  <data name="groupgoods sucess" xml:space="preserve">
+    <value>创建商品组成功</value>
+  </data>
+  <data name="Gửi" xml:space="preserve">
+    <value>发送</value>
+  </data>
+  <data name="Hiển Thị Danh Sách Vật Tư Theo" xml:space="preserve">
+    <value>按显示物料列表</value>
+  </data>
+  <data name="recent_activities" xml:space="preserve">
+    <value>最近活动</value>
+  </data>
+  <data name="Hoặc Chưa Có Trong Hệ Thống" xml:space="preserve">
+    <value>或未在系统中</value>
+  </data>
+  <data name="Hàng Hóa" xml:space="preserve">
+    <value>商品</value>
+  </data>
+  <data name="Hàng tồn kho cao nhất" xml:space="preserve">
+    <value>最大库存</value>
+  </data>
+  <data name="Hàng tồn kho thấp nhất" xml:space="preserve">
+    <value>最小库存</value>
+  </data>
+  <data name="actions" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="Hôm nay:" xml:space="preserve">
+    <value>今天:</value>
+  </data>
+  <data name="debt_limit" xml:space="preserve">
+    <value>债务限额</value>
+  </data>
+  <data name="system" xml:space="preserve">
+    <value>系统</value>
+  </data>
+  <data name="full_name" xml:space="preserve">
+    <value>全名</value>
+  </data>
+  <data name="Hủy" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>入库</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>打印</value>
+  </data>
+  <data name="data_declaration" xml:space="preserve">
+    <value>数据声明</value>
+  </data>
+  <data name="warehouse" xml:space="preserve">
+    <value>仓库</value>
+  </data>
+  <data name="customer" xml:space="preserve">
+    <value>客户</value>
+  </data>
+  <data name="Khách Hàng Không Tồn Tại" xml:space="preserve">
+    <value>客户不存在！！！</value>
+  </data>
+  <data name="no_file_selected" xml:space="preserve">
+    <value>未选择文件！</value>
+  </data>
+  <data name="Không Có Sẵn" xml:space="preserve">
+    <value>不可用</value>
+  </data>
+  <data name="Không Nhận Được Tất Cả Dữ Liệu" xml:space="preserve">
+    <value>未收到所有数据</value>
+  </data>
+  <data name="Không Tồn Tại" xml:space="preserve">
+    <value>不存在！！！</value>
+  </data>
+  <data name="Không Tồn Tại Trong Kho" xml:space="preserve">
+    <value>不在仓库中</value>
+  </data>
+  <data name="unsatisfactory" xml:space="preserve">
+    <value>不满意</value>
+  </data>
+  <data name="Không Đủ Để Xuất" xml:space="preserve">
+    <value>数量不足，无法出库</value>
+  </data>
+  <data name="Kiểm Kho" xml:space="preserve">
+    <value>盘点</value>
+  </data>
+  <data name="stock_take" xml:space="preserve">
+    <value>盘点操作</value>
+  </data>
+  <data name="customer_type" xml:space="preserve">
+    <value>客户类型</value>
+  </data>
+  <data name="result" xml:space="preserve">
+    <value>结果</value>
+  </data>
+  <data name="stop_locating_tags" xml:space="preserve">
+    <value>停止定位标签</value>
+  </data>
+  <data name="bussiness_customer_list" xml:space="preserve">
+    <value>企业客户列表</value>
+  </data>
+  <data name="customer_type_list" xml:space="preserve">
+    <value>客户类型列表</value>
+  </data>
+  <data name="goods_list" xml:space="preserve">
+    <value>商品列表</value>
+  </data>
+  <data name="List of Group Goods" xml:space="preserve">
+    <value>商品组列表</value>
+  </data>
+  <data name="List Of Stock Take" xml:space="preserve">
+    <value>盘点单列表</value>
+  </data>
+  <data name="units_list" xml:space="preserve">
+    <value>单位列表</value>
+  </data>
+  <data name="warehouse_list" xml:space="preserve">
+    <value>仓库列表</value>
+  </data>
+  <data name="Liên Hệ Quản Trị Viên Để Được Cấp Lại Mật Khẩu" xml:space="preserve">
+    <value>请联系管理员重新颁发密码 ^-^</value>
+  </data>
+  <data name="Liên Hệ Quản Trị Viên Để Được Cấp Tài Khoản" xml:space="preserve">
+    <value>请联系管理员获取账户 ^-^</value>
+  </data>
+  <data name="Lên Phiếu Kiểm Kê" xml:space="preserve">
+    <value>创建盘点单</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="Lưu Thành Công" xml:space="preserve">
+    <value>保存成功</value>
+  </data>
+  <data name="Lưu Tạm Thời" xml:space="preserve">
+    <value>暂时保存</value>
+  </data>
+  <data name="Lượng Tồn Của Hàng Hóa" xml:space="preserve">
+    <value>商品的库存量</value>
+  </data>
+  <data name="Lập Phiếu" xml:space="preserve">
+    <value>创建入库和出库单</value>
+  </data>
+  <data name="create_stock_take_form" xml:space="preserve">
+    <value>创建盘点单</value>
+  </data>
+  <data name="Lập Phiếu Nhập" xml:space="preserve">
+    <value>创建入库单</value>
+  </data>
+  <data name="Lập Phiếu Xuất" xml:space="preserve">
+    <value>创建出库单</value>
+  </data>
+  <data name="create_export_form" xml:space="preserve">
+    <value>创建出库单</value>
+  </data>
+  <data name="Lỗi Chi Tiết Phiếu Kiểm" xml:space="preserve">
+    <value>盘点单详情错误</value>
+  </data>
+  <data name="server" xml:space="preserve">
+    <value>服务器</value>
+  </data>
+  <data name="id" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="epc_code" xml:space="preserve">
+    <value>EPC</value>
+  </data>
+  <data name="Mã HH" xml:space="preserve">
+    <value>商品ID</value>
+  </data>
+  <data name="good_id" xml:space="preserve">
+    <value>商品ID</value>
+  </data>
+  <data name="Mã Hàng Hoặc Kho hàng Không Tồn Tại" xml:space="preserve">
+    <value>产品代码或库存不存在</value>
+  </data>
+  <data name="Mã Hàng Hóa" xml:space="preserve">
+    <value>商品ID</value>
+  </data>
+  <data name="mã hàng không tồn tại" xml:space="preserve">
+    <value>商品ID不存在！！！</value>
+  </data>
+  <data name="Mã Hàng Trong Danh Sách Chưa Có Trong Phiếu Xuất" xml:space="preserve">
+    <value>列表中的商品ID尚未包含在销售订单中！！！</value>
+  </data>
+  <data name="Mã Hàng Trong Danh Sách Không Có Trong Phiếu Nhập" xml:space="preserve">
+    <value>列表中的商品ID不包含在订单中！！！</value>
+  </data>
+  <data name="Mã Hàng Trong Danh Sách Không Có Trong Phiếu Xuất" xml:space="preserve">
+    <value>列表中的商品ID不包含在出库中</value>
+  </data>
+  <data name="mã hàng tồn tại" xml:space="preserve">
+    <value>商品ID已存在于系统中！！！</value>
+  </data>
+  <data name="customer_code" xml:space="preserve">
+    <value>客户ID</value>
+  </data>
+  <data name="customer_type_id" xml:space="preserve">
+    <value>客户类型ID</value>
+  </data>
+  <data name="Mã Phiếu Kiểm Không Tồn Tại" xml:space="preserve">
+    <value>盘点单号不存在</value>
+  </data>
+  <data name="valid_po" xml:space="preserve">
+    <value>有效的采购订单ID！</value>
+  </data>
+  <data name="Mã Phiếu Nhập Đã Quét" xml:space="preserve">
+    <value>已扫描采购订单ID！！！</value>
+  </data>
+  <data name="Mã Phiếu Nhập Đã Tồn Tại" xml:space="preserve">
+    <value>收货单ID已存在！！！</value>
+  </data>
+  <data name="Mã Phiếu Xuất Hợp Lệ" xml:space="preserve">
+    <value>有效的销售订单ID！！！</value>
+  </data>
+  <data name="Mã Phiếu Xuất Không Tồn Tại" xml:space="preserve">
+    <value>销售订单ID不存在！</value>
+  </data>
+  <data name="Mã Phiếu Xuất Đã Quét" xml:space="preserve">
+    <value>已扫描销售订单ID！！！</value>
+  </data>
+  <data name="Mã Phiếu Xuất Đã Tồn Tại" xml:space="preserve">
+    <value>销售订单ID已存在！！！</value>
+  </data>
+  <data name="Mã Phòng Ban" xml:space="preserve">
+    <value>部门ID</value>
+  </data>
+  <data name="tax_code" xml:space="preserve">
+    <value>税号</value>
+  </data>
+  <data name="accounting_account_code" xml:space="preserve">
+    <value>会计科目代码</value>
+  </data>
+  <data name="Mã trùng" xml:space="preserve">
+    <value>重复代码</value>
+  </data>
+  <data name="Mã Vật Tư" xml:space="preserve">
+    <value>物料ID</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Mô Tả Nếu Có Hàng Dư hoặc Khác" xml:space="preserve">
+    <value>如果有多余或不同商品，请描述</value>
+  </data>
+  <data name="sample" xml:space="preserve">
+    <value>样本</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="Mục Đích" xml:space="preserve">
+    <value>目的</value>
+  </data>
+  <data name="customer_resources" xml:space="preserve">
+    <value>客户来源</value>
+  </data>
+  <data name="career" xml:space="preserve">
+    <value>行业</value>
+  </data>
+  <data name="datetime" xml:space="preserve">
+    <value>日期时间</value>
+  </data>
+  <data name="Ngày Mua" xml:space="preserve">
+    <value>购买日期</value>
+  </data>
+  <data name="Ngày Sinh" xml:space="preserve">
+    <value>出生日期</value>
+  </data>
+  <data name="modify_date" xml:space="preserve">
+    <value>修改日期</value>
+  </data>
+  <data name="create_date" xml:space="preserve">
+    <value>创建日期</value>
+  </data>
+  <data name="Ngày Tạo Đơn Hàng" xml:space="preserve">
+    <value>订单创建日期</value>
+  </data>
+  <data name="export_date" xml:space="preserve">
+    <value>订单出库日期</value>
+  </data>
+  <data name="deliver" xml:space="preserve">
+    <value>发货人</value>
+  </data>
+  <data name="backup_operator" xml:space="preserve">
+    <value>备份操作员</value>
+  </data>
+  <data name="Người Sở Hữu" xml:space="preserve">
+    <value>所有者</value>
+  </data>
+  <data name="modify_by" xml:space="preserve">
+    <value>修改人</value>
+  </data>
+  <data name="create_by" xml:space="preserve">
+    <value>创建人</value>
+  </data>
+  <data name="NhapKhoQuaSL" xml:space="preserve">
+    <value>入库数量超出允许的数量</value>
+  </data>
+  <data name="staff" xml:space="preserve">
+    <value>员工</value>
+  </data>
+  <data name="stock_auditor" xml:space="preserve">
+    <value>盘点员</value>
+  </data>
+  <data name="Nhân Viên Kiểm Hàng 1" xml:space="preserve">
+    <value>验货员 1</value>
+  </data>
+  <data name="Nhân Viên Kiểm Hàng 2" xml:space="preserve">
+    <value>验货员 2</value>
+  </data>
+  <data name="staff_in_charge" xml:space="preserve">
+    <value>负责人</value>
+  </data>
+  <data name="Nhóm Hàng" xml:space="preserve">
+    <value>商品组</value>
+  </data>
+  <data name="Nhóm Hàng Hóa" xml:space="preserve">
+    <value>商品组</value>
+  </data>
+  <data name="press_the_button" xml:space="preserve">
+    <value>按此按钮</value>
+  </data>
+  <data name="import_file" xml:space="preserve">
+    <value>导入文件</value>
+  </data>
+  <data name="Nhập Kho Vượt Quá" xml:space="preserve">
+    <value>仓库入库超量</value>
+  </data>
+  <data name="nhập mã hàng" xml:space="preserve">
+    <value>请输入商品ID！！！</value>
+  </data>
+  <data name="enter_good_id" xml:space="preserve">
+    <value>输入商品ID</value>
+  </data>
+  <data name="nhập số lượng cao nhất" xml:space="preserve">
+    <value>请输入最大数量！！！</value>
+  </data>
+  <data name="Nhập Số Lượng Hàng Tồn Kho Cao Nhất" xml:space="preserve">
+    <value>输入最大库存量</value>
+  </data>
+  <data name="Nhập Số Lượng Hàng Tồn Kho Thấp Nhất" xml:space="preserve">
+    <value>输入最小库存量</value>
+  </data>
+  <data name="nhập số lượng thấp nhất" xml:space="preserve">
+    <value>请输入最小数量！！！</value>
+  </data>
+  <data name="enter_inventory_quantity" xml:space="preserve">
+    <value>输入库存量</value>
+  </data>
+  <data name="Nhập thông tin chi tiết của bạn để đăng nhập vào tài khoản của bạn" xml:space="preserve">
+    <value>输入您的详细信息以登录您的账户：</value>
+  </data>
+  <data name="nhập tên hàng" xml:space="preserve">
+    <value>请输入商品名称！！！</value>
+  </data>
+  <data name="Nhập Tên Hàng Hóa" xml:space="preserve">
+    <value>输入商品名称</value>
+  </data>
+  <data name="nhập tên nhóm hàng" xml:space="preserve">
+    <value>请输入商品组名称！！！</value>
+  </data>
+  <data name="nhập tên đơn vị" xml:space="preserve">
+    <value>请输入单位名称！！！</value>
+  </data>
+  <data name="Nhập Tại Kho" xml:space="preserve">
+    <value>在仓库入库</value>
+  </data>
+  <data name="import_export" xml:space="preserve">
+    <value>入库 - 出库</value>
+  </data>
+  <data name="Nhập Đủ Số Phiếu Nhập" xml:space="preserve">
+    <value>请输入足够的收货单号！！！</value>
+  </data>
+  <data name="Nhập Đủ Số Phiếu Xuất" xml:space="preserve">
+    <value>请输入足够的销售订单号！！！</value>
+  </data>
+  <data name="Phiếu Kiểm" xml:space="preserve">
+    <value>盘点单号</value>
+  </data>
+  <data name="import_form" xml:space="preserve">
+    <value>入库单</value>
+  </data>
+  <data name="Phiếu Nhập Kho" xml:space="preserve">
+    <value>收货单</value>
+  </data>
+  <data name="Phiếu Xuất" xml:space="preserve">
+    <value>出库单</value>
+  </data>
+  <data name="Phiếu Xuất Kho" xml:space="preserve">
+    <value>发货单</value>
+  </data>
+  <data name="export_form" xml:space="preserve">
+    <value>出库单</value>
+  </data>
+  <data name="Phân Quyền Chức Năng" xml:space="preserve">
+    <value>功能权限分配</value>
+  </data>
+  <data name="Phân Quyền Quản Lý" xml:space="preserve">
+    <value>管理权限分配</value>
+  </data>
+  <data name="Phòng Ban" xml:space="preserve">
+    <value>部门</value>
+  </data>
+  <data name="scanning_method" xml:space="preserve">
+    <value>扫描方式</value>
+  </data>
+  <data name="payment_methods" xml:space="preserve">
+    <value>付款方式</value>
+  </data>
+  <data name="Phụ Lục" xml:space="preserve">
+    <value>附录</value>
+  </data>
+  <data name="Purchase Order" xml:space="preserve">
+    <value>采购订单</value>
+  </data>
+  <data name="system_permissions_and_functions" xml:space="preserve">
+    <value>系统权限和功能</value>
+  </data>
+  <data name="scan" xml:space="preserve">
+    <value>扫描</value>
+  </data>
+  <data name="Quét HandHeld" xml:space="preserve">
+    <value>手持机扫描</value>
+  </data>
+  <data name="rescan_duplicate_code" xml:space="preserve">
+    <value>重新扫描重复代码</value>
+  </data>
+  <data name="rescan_all" xml:space="preserve">
+    <value>重新扫描全部</value>
+  </data>
+  <data name="Quên Mật Khẩu" xml:space="preserve">
+    <value>忘记密码？</value>
+  </data>
+  <data name="warehouse_catalog" xml:space="preserve">
+    <value>仓库</value>
+  </data>
+  <data name="Quản Lý Danh Mục Sản Phẩm" xml:space="preserve">
+    <value>管理主分类</value>
+  </data>
+  <data name="Quản Lý Danh Mục Tài Khoản" xml:space="preserve">
+    <value>账户管理</value>
+  </data>
+  <data name="Quản Lý Hệ Thống" xml:space="preserve">
+    <value>系统管理</value>
+  </data>
+  <data name="Quản Lý Kho" xml:space="preserve">
+    <value>仓库管理</value>
+  </data>
+  <data name="warehouse_management" xml:space="preserve">
+    <value>仓库管理</value>
+  </data>
+  <data name="Quản Lý Nhập Hàng" xml:space="preserve">
+    <value>采购管理</value>
+  </data>
+  <data name="account_management" xml:space="preserve">
+    <value>账户管理</value>
+  </data>
+  <data name="Quản Lý Xuất Hàng" xml:space="preserve">
+    <value>销售管理</value>
+  </data>
+  <data name="Receip Data" xml:space="preserve">
+    <value>收货数据</value>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>收货单</value>
+  </data>
+  <data name="remains" xml:space="preserve">
+    <value>剩余</value>
+  </data>
+  <data name="Sales Order" xml:space="preserve">
+    <value>销售订单</value>
+  </data>
+  <data name="backup" xml:space="preserve">
+    <value>备份</value>
+  </data>
+  <data name="sql_server_backup" xml:space="preserve">
+    <value>SQL 服务器备份</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="serial_number" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="SucessDelete" xml:space="preserve">
+    <value>删除成功！</value>
+  </data>
+  <data name="SucessEdit" xml:space="preserve">
+    <value>更新成功！</value>
+  </data>
+  <data name="system_functions" xml:space="preserve">
+    <value>系统功能</value>
+  </data>
+  <data name="fax_number" xml:space="preserve">
+    <value>传真号码</value>
+  </data>
+  <data name="quantity" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="Số Lượng Hàng Hóa Trong Kho Không Đủ Để Xuất" xml:space="preserve">
+    <value>仓库中商品数量不足以出库！！！</value>
+  </data>
+  <data name="Số Lượng Hàng Nhập Kho" xml:space="preserve">
+    <value>入库商品数量</value>
+  </data>
+  <data name="stock_take_quantity" xml:space="preserve">
+    <value>盘点数量</value>
+  </data>
+  <data name="Số Lượng Nhập Vượt Quá Số Lượng Cho Phép Của Kho" xml:space="preserve">
+    <value>入库数量超出仓库允许的数量</value>
+  </data>
+  <data name="Số Lượng Tương Đồng" xml:space="preserve">
+    <value>相似数量</value>
+  </data>
+  <data name="quantity_of_inventory" xml:space="preserve">
+    <value>库存数量</value>
+  </data>
+  <data name="assets_quantity" xml:space="preserve">
+    <value>物料数量</value>
+  </data>
+  <data name="number_of_scanned_goods" xml:space="preserve">
+    <value>已扫描数量</value>
+  </data>
+  <data name="Số Lượng, Vui Lòng Giảm" xml:space="preserve">
+    <value>数量，请减少！！！</value>
+  </data>
+  <data name="Số Lượng, Vui Lòng Nhập Thêm" xml:space="preserve">
+    <value>数量，请再输入！！！</value>
+  </data>
+  <data name="number_of_days allowed_for_debt" xml:space="preserve">
+    <value>允许欠款天数</value>
+  </data>
+  <data name="number_of_unscanned_import_forms" xml:space="preserve">
+    <value>未扫描的入库单数量</value>
+  </data>
+  <data name="Số Phiếu Nhập Kho" xml:space="preserve">
+    <value>收货单号</value>
+  </data>
+  <data name="number_of_unscanned_export_forms" xml:space="preserve">
+    <value>未扫描的出库单数量</value>
+  </data>
+  <data name="export_form_code" xml:space="preserve">
+    <value>出库单号</value>
+  </data>
+  <data name="Số Phiếu Yêu Cầu Nhập" xml:space="preserve">
+    <value>采购订单号</value>
+  </data>
+  <data name="sale_order_id" xml:space="preserve">
+    <value>销售订单ID</value>
+  </data>
+  <data name="account_number_1" xml:space="preserve">
+    <value>账户号 1</value>
+  </data>
+  <data name="account_number_2" xml:space="preserve">
+    <value>账户号 2</value>
+  </data>
+  <data name="phone_number" xml:space="preserve">
+    <value>电话号码</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="edit_good" xml:space="preserve">
+    <value>编辑商品</value>
+  </data>
+  <data name="Sửa Kho Hàng" xml:space="preserve">
+    <value>编辑仓库</value>
+  </data>
+  <data name="edit_customer_infor" xml:space="preserve">
+    <value>编辑客户信息</value>
+  </data>
+  <data name="Sửa Khách Hàng Doanh Nghiệp" xml:space="preserve">
+    <value>编辑企业客户</value>
+  </data>
+  <data name="Sửa Loại Khách Hàng" xml:space="preserve">
+    <value>编辑客户类型</value>
+  </data>
+  <data name="edit_good_group" xml:space="preserve">
+    <value>编辑商品组</value>
+  </data>
+  <data name="edit_unit" xml:space="preserve">
+    <value>编辑单位</value>
+  </data>
+  <data name="The inventory of good" xml:space="preserve">
+    <value>商品的库存量</value>
+  </data>
+  <data name="Theo Phòng Ban" xml:space="preserve">
+    <value>按部门</value>
+  </data>
+  <data name="Theo Vật Tư" xml:space="preserve">
+    <value>按物料</value>
+  </data>
+  <data name="setup" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="deficiency" xml:space="preserve">
+    <value>不足</value>
+  </data>
+  <data name="Thoát" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="Thuộc Nhóm Hàng" xml:space="preserve">
+    <value>属于商品组</value>
+  </data>
+  <data name="Thuộc Đơn Vị" xml:space="preserve">
+    <value>属于单位</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="Thêm Chức Năng" xml:space="preserve">
+    <value>添加功能</value>
+  </data>
+  <data name="add_new_customer" xml:space="preserve">
+    <value>添加新客户</value>
+  </data>
+  <data name="add_customers_organization" xml:space="preserve">
+    <value>添加新客户 (组织)</value>
+  </data>
+  <data name="add_bussiness_customers" xml:space="preserve">
+    <value>创建新企业客户</value>
+  </data>
+  <data name="Thêm Loại Khách Hàng" xml:space="preserve">
+    <value>添加客户类型</value>
+  </data>
+  <data name="Thêm Nhóm Hàng" xml:space="preserve">
+    <value>添加商品组</value>
+  </data>
+  <data name="Thêm Tài Khoản" xml:space="preserve">
+    <value>添加用户</value>
+  </data>
+  <data name="add_units" xml:space="preserve">
+    <value>添加新单位</value>
+  </data>
+  <data name="notification" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="information" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="other_info" xml:space="preserve">
+    <value>其他信息</value>
+  </data>
+  <data name="user_info" xml:space="preserve">
+    <value>用户信息</value>
+  </data>
+  <data name="Thương Hiệu" xml:space="preserve">
+    <value>品牌</value>
+  </data>
+  <data name="membership_card" xml:space="preserve">
+    <value>会员卡</value>
+  </data>
+  <data name="Thừa" xml:space="preserve">
+    <value>多余</value>
+  </data>
+  <data name="messages" xml:space="preserve">
+    <value>消息</value>
+  </data>
+  <data name="Total goods inventory" xml:space="preserve">
+    <value>总商品库存</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>首页</value>
+  </data>
+  <data name="Trong" xml:space="preserve">
+    <value>在</value>
+  </data>
+  <data name="recent_access" xml:space="preserve">
+    <value>最近访问</value>
+  </data>
+  <data name="trùng tên nhóm hàng" xml:space="preserve">
+    <value>产品组名称已在系统中！！！</value>
+  </data>
+  <data name="trùng tên đơn vị" xml:space="preserve">
+    <value>单位名称已在系统中！！！</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="Trạng Thái Nhập Kho" xml:space="preserve">
+    <value>入库状态</value>
+  </data>
+  <data name="Trạng Thái Phiếu Kiểm" xml:space="preserve">
+    <value>盘点单状态</value>
+  </data>
+  <data name="inventory_status" xml:space="preserve">
+    <value>库存状态</value>
+  </data>
+  <data name="Trạng Thái Xuất Kho" xml:space="preserve">
+    <value>出库状态</value>
+  </data>
+  <data name="Tài Khoản" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="bank_account" xml:space="preserve">
+    <value>银行账户</value>
+  </data>
+  <data name="Tên" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="data" xml:space="preserve">
+    <value>数据</value>
+  </data>
+  <data name="good_name" xml:space="preserve">
+    <value>商品名称</value>
+  </data>
+  <data name="Tên Hàng Hóa" xml:space="preserve">
+    <value>商品名称</value>
+  </data>
+  <data name="warehouse_name" xml:space="preserve">
+    <value>仓库名称</value>
+  </data>
+  <data name="Tên Kho Hàng" xml:space="preserve">
+    <value>仓库名称</value>
+  </data>
+  <data name="customer_name" xml:space="preserve">
+    <value>客户名称</value>
+  </data>
+  <data name="Tên Loại Khách Hàng" xml:space="preserve">
+    <value>客户类型名称</value>
+  </data>
+  <data name="Tên Máy Chủ" xml:space="preserve">
+    <value>服务器名称</value>
+  </data>
+  <data name="Tên Nhóm Hàng" xml:space="preserve">
+    <value>商品组名称</value>
+  </data>
+  <data name="Tên Vật Tư" xml:space="preserve">
+    <value>物料名称</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="Tên Đơn Vị" xml:space="preserve">
+    <value>单位名称</value>
+  </data>
+  <data name="name_bank_account" xml:space="preserve">
+    <value>名称，银行账户</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="epc_search" xml:space="preserve">
+    <value>搜索 EPC 代码</value>
+  </data>
+  <data name="Tìm Mã Hàng" xml:space="preserve">
+    <value>搜索商品ID</value>
+  </data>
+  <data name="Tìm Mã Phiếu Kiểm" xml:space="preserve">
+    <value>搜索盘点单号</value>
+  </data>
+  <data name="Tìm Mã Phiếu Nhập" xml:space="preserve">
+    <value>搜索采购订单号</value>
+  </data>
+  <data name="Tìm Mã Phiếu Xuất" xml:space="preserve">
+    <value>搜索销售订单号</value>
+  </data>
+  <data name="Tạo Phiếu Nhập Hàng Thành Công" xml:space="preserve">
+    <value>创建采购订单成功！</value>
+  </data>
+  <data name="Tạo Phiếu Nhập kho" xml:space="preserve">
+    <value>创建入库单</value>
+  </data>
+  <data name="Tạo Phiếu Xuất Hàng Thành Công" xml:space="preserve">
+    <value>创建销售订单成功</value>
+  </data>
+  <data name="Tạo Phiếu Xuất Kho" xml:space="preserve">
+    <value>创建出库单</value>
+  </data>
+  <data name="Tạo Đơn" xml:space="preserve">
+    <value>提交订单</value>
+  </data>
+  <data name="Tạo Đơn Thất Bại" xml:space="preserve">
+    <value>订单创建失败</value>
+  </data>
+  <data name="reload" xml:space="preserve">
+    <value>重新加载</value>
+  </data>
+  <data name="all" xml:space="preserve">
+    <value>所有</value>
+  </data>
+  <data name="organization" xml:space="preserve">
+    <value>组织</value>
+  </data>
+  <data name="Tổng Lượng Tồn Hàng Hóa" xml:space="preserve">
+    <value>总商品库存</value>
+  </data>
+  <data name="Tổng Số Lượng Tồn Kho" xml:space="preserve">
+    <value>总库存量</value>
+  </data>
+  <data name="start_date" xml:space="preserve">
+    <value>开始日期</value>
+  </data>
+  <data name="Vietnamese" xml:space="preserve">
+    <value>越南语</value>
+  </data>
+  <data name="Vui lòng chọn hiển thị danh sách vật tư theo tất cả." xml:space="preserve">
+    <value>请选择显示所有物料列表。</value>
+  </data>
+  <data name="Vui Lòng Nhập Mã Phiếu Nhập" xml:space="preserve">
+    <value>请输入采购订单号</value>
+  </data>
+  <data name="Vui Lòng Nhập Mã Phiếu Xuất" xml:space="preserve">
+    <value>请输入销售订单号！！！</value>
+  </data>
+  <data name="Vui Lòng Nhập Số Lượng Cao Nhất" xml:space="preserve">
+    <value>请输入最大数量！！！</value>
+  </data>
+  <data name="Vui Lòng Nhập Số Lượng Thấp Nhất" xml:space="preserve">
+    <value>请输入最小数量！！！</value>
+  </data>
+  <data name="Vui Lòng Nhập Số Lượng Tồn" xml:space="preserve">
+    <value>请输入库存数量！！！</value>
+  </data>
+  <data name="Vui Lòng Nhập Số Lượng Vào Kho" xml:space="preserve">
+    <value>请输入入库数量！！！</value>
+  </data>
+  <data name="Vui Lòng Nhập Tên Kho Hàng" xml:space="preserve">
+    <value>请输入仓库名称！！！</value>
+  </data>
+  <data name="input_require_correctly" xml:space="preserve">
+    <value>请正确输入所有数据以确保系统正常运行</value>
+  </data>
+  <data name="Vui Lòng Tìm Chọn Mã Hàng Hóa Để Lập Phiếu" xml:space="preserve">
+    <value>请搜索商品ID以创建单据</value>
+  </data>
+  <data name="Vẫn Còn Dư" xml:space="preserve">
+    <value>还有</value>
+  </data>
+  <data name="Về Sản Phẩm" xml:space="preserve">
+    <value>关于产品</value>
+  </data>
+  <data name="warehouse_detail_list" xml:space="preserve">
+    <value>仓库库存详情</value>
+  </data>
+  <data name="Xuất File" xml:space="preserve">
+    <value>导出</value>
+  </data>
+  <data name="from_warehouse" xml:space="preserve">
+    <value>从仓库出库</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="delete_all_duplicate_codes" xml:space="preserve">
+    <value>删除所有重复代码</value>
+  </data>
+  <data name="Đã gửi thành công" xml:space="preserve">
+    <value>发送成功</value>
+  </data>
+  <data name="checked" xml:space="preserve">
+    <value>已检查</value>
+  </data>
+  <data name="Đã nhận được EPC Thành Công" xml:space="preserve">
+    <value>成功接收 EPC</value>
+  </data>
+  <data name="Đã Nhập Đủ Số Lượng" xml:space="preserve">
+    <value>已输入足够数量！！！</value>
+  </data>
+  <data name="scanned" xml:space="preserve">
+    <value>已扫描</value>
+  </data>
+  <data name="Đã Tồn Tại, Có Mã EPC Là" xml:space="preserve">
+    <value>已存在，EPC 代码为</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="Đăng Kí" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="create_account" xml:space="preserve">
+    <value>注册新账户</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="login_time" xml:space="preserve">
+    <value>登录时间</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>登出</value>
+  </data>
+  <data name="unit" xml:space="preserve">
+    <value>单位</value>
+  </data>
+  <data name="path" xml:space="preserve">
+    <value>路径</value>
+  </data>
+  <data name="Đặt Hàng Bán" xml:space="preserve">
+    <value>销售订单</value>
+  </data>
+  <data name="end_date" xml:space="preserve">
+    <value>结束日期</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="enough" xml:space="preserve">
+    <value>足够</value>
+  </data>
+  <data name="export_warehouse" xml:space="preserve">
+    <value>出库操作</value>
+  </data>
+  <data name="Not_Found_Title" xml:space="preserve">
+    <value>您要查找的页面不存在！</value>
+  </data>
+  <data name="Not_Found_Description" xml:space="preserve">
+    <value>您将在10秒后重定向到主页...</value>
+  </data>
+  <data name="Back_Home" xml:space="preserve">
+    <value>返回主页</value>
+  </data>
+  <data name="import_warehouse" xml:space="preserve">
+    <value>入库操作</value>
+  </data>
+  <data name="create_import_form" xml:space="preserve">
+    <value>创建入库请求</value>
+  </data>
+  <data name="scan_import_form" xml:space="preserve">
+    <value>扫描入库单</value>
+  </data>
+  <data name="scan_export_form" xml:space="preserve">
+    <value>扫描出库单</value>
+  </data>
+  <data name="scan_stock_take_form" xml:space="preserve">
+    <value>库存盘点</value>
+  </data>
+  <data name="inventory" xml:space="preserve">
+    <value>库存</value>
+  </data>
+  <data name="good_group_catalog" xml:space="preserve">
+    <value>商品组</value>
+  </data>
+  <data name="goods_catalog" xml:space="preserve">
+    <value>商品</value>
+  </data>
+  <data name="management_catalog" xml:space="preserve">
+    <value>管理</value>
+  </data>
+  <data name="customer_management" xml:space="preserve">
+    <value>客户管理</value>
+  </data>
+  <data name="authorization_management" xml:space="preserve">
+    <value>权限管理</value>
+  </data>
+  <data name="update_system" xml:space="preserve">
+    <value>更新版本</value>
+  </data>
+  <data name="update_catalog" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="update_machine" xml:space="preserve">
+    <value>更新扫描设备</value>
+  </data>
+  <data name="help_center" xml:space="preserve">
+    <value>帮助中心</value>
+  </data>
+  <data name="good_finding_list" xml:space="preserve">
+    <value>可搜索产品列表</value>
+  </data>
+  <data name="overall" xml:space="preserve">
+    <value>概览</value>
+  </data>
+  <data name="goods_management" xml:space="preserve">
+    <value>商品管理</value>
+  </data>
+  <data name="units_management" xml:space="preserve">
+    <value>单位管理</value>
+  </data>
+  <data name="scan_status" xml:space="preserve">
+    <value>扫描状态</value>
+  </data>
+  <data name="approval_status" xml:space="preserve">
+    <value>审批状态</value>
+  </data>
+  <data name="not_approve" xml:space="preserve">
+    <value>未批准</value>
+  </data>
+  <data name="approved" xml:space="preserve">
+    <value>已批准</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="scan_detail" xml:space="preserve">
+    <value>扫描详情</value>
+  </data>
+  <data name="approve" xml:space="preserve">
+    <value>批准</value>
+  </data>
+  <data name="transaction_name" xml:space="preserve">
+    <value>交易名称</value>
+  </data>
+  <data name="representative_person" xml:space="preserve">
+    <value>代表人</value>
+  </data>
+  <data name="transaction_account" xml:space="preserve">
+    <value>交易账户</value>
+  </data>
+  <data name="good_group" xml:space="preserve">
+    <value>商品组</value>
+  </data>
+  <data name="min_debt" xml:space="preserve">
+    <value>最小债务</value>
+  </data>
+  <data name="max_debt" xml:space="preserve">
+    <value>最大债务</value>
+  </data>
+  <data name="detail_bussiness_customer" xml:space="preserve">
+    <value>企业客户详情</value>
+  </data>
+  <data name="search_by_name" xml:space="preserve">
+    <value>按名称搜索</value>
+  </data>
+  <data name="goods" xml:space="preserve">
+    <value>商品</value>
+  </data>
+  <data name="rfid_scan" xml:space="preserve">
+    <value>RFID 扫描处理</value>
+  </data>
+  <data name="tag_registration" xml:space="preserve">
+    <value>标签注册</value>
+  </data>
+  <data name="enter_function_name" xml:space="preserve">
+    <value>输入函数名</value>
+  </data>
+  <data name="enter_method" xml:space="preserve">
+    <value>输入方法</value>
+  </data>
+  <data name="successful_status" xml:space="preserve">
+    <value>成功状态</value>
+  </data>
+  <data name="successful_value" xml:space="preserve">
+    <value>成功状态值</value>
+  </data>
+  <data name="successful_notification_key" xml:space="preserve">
+    <value>成功通知关键字</value>
+  </data>
+  <data name="successful_object" xml:space="preserve">
+    <value>成功返回对象</value>
+  </data>
+  <data name="add_parameter" xml:space="preserve">
+    <value>添加参数</value>
+  </data>
+  <data name="delete_parameter" xml:space="preserve">
+    <value>删除参数</value>
+  </data>
+  <data name="apply_return_value" xml:space="preserve">
+    <value>应用返回值</value>
+  </data>
+  <data name="enter_api_hostname" xml:space="preserve">
+    <value>输入 API 主机名</value>
+  </data>
+  <data name="note_for_api_setup" xml:space="preserve">
+    <value>注意：要设置 API，请右键单击需要设置的文件夹</value>
+  </data>
+  <data name="goods_infor" xml:space="preserve">
+    <value>商品信息</value>
+  </data>
+  <data name="goods_quantity" xml:space="preserve">
+    <value>商品数量</value>
+  </data>
+  <data name="confirm" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="enter_good_infor" xml:space="preserve">
+    <value>输入商品信息</value>
+  </data>
+  <data name="good_import_quantity" xml:space="preserve">
+    <value>商品入库数量</value>
+  </data>
+  <data name="note_for_inventory_scanning" xml:space="preserve">
+    <value>执行仓库扫描以清点正在创建的商品数量（如果有），以保存库存信息</value>
+  </data>
+  <data name="total_scanned_epc" xml:space="preserve">
+    <value>已扫描EPC总数</value>
+  </data>
+  <data name="perform_scanning" xml:space="preserve">
+    <value>执行扫描</value>
+  </data>
+  <data name="scanned_epc_infor" xml:space="preserve">
+    <value>已扫描的EPC信息</value>
+  </data>
+  <data name="epc_excess_or_wrong" xml:space="preserve">
+    <value>EPC 超出或错误</value>
+  </data>
+  <data name="confirm_goods_infor" xml:space="preserve">
+    <value>确认商品信息</value>
+  </data>
+  <data name="simple_infor" xml:space="preserve">
+    <value>基本信息</value>
+  </data>
+  <data name="previous" xml:space="preserve">
+    <value>上一步</value>
+  </data>
+  <data name="create_new" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>下一步</value>
+  </data>
+  <data name="good_detail" xml:space="preserve">
+    <value>商品详情</value>
+  </data>
+  <data name="edit_good_infor" xml:space="preserve">
+    <value>编辑商品信息</value>
+  </data>
+  <data name="update_good_quantity" xml:space="preserve">
+    <value>更新商品数量</value>
+  </data>
+  <data name="present_inventory_infor" xml:space="preserve">
+    <value>当前库存信息</value>
+  </data>
+  <data name="scanned_quantity" xml:space="preserve">
+    <value>实际扫描数量</value>
+  </data>
+  <data name="scanning_data" xml:space="preserve">
+    <value>扫描数据</value>
+  </data>
+  <data name="total_inventory" xml:space="preserve">
+    <value>总库存量</value>
+  </data>
+  <data name="total_scanned_goods" xml:space="preserve">
+    <value>已扫描商品总数</value>
+  </data>
+  <data name="scanned_goods" xml:space="preserve">
+    <value>已扫描商品</value>
+  </data>
+  <data name="list_of_items_to_find" xml:space="preserve">
+    <value>需要查找的物品列表</value>
+  </data>
+  <data name="check_inventory_in_warehouses" xml:space="preserve">
+    <value>检查仓库库存量</value>
+  </data>
+  <data name="good_group_name" xml:space="preserve">
+    <value>商品组名称</value>
+  </data>
+  <data name="login_welcome" xml:space="preserve">
+    <value>欢迎来到</value>
+  </data>
+  <data name="enter_permission_info" xml:space="preserve">
+    <value>输入权限信息</value>
+  </data>
+  <data name="permission_name" xml:space="preserve">
+    <value>权限名称</value>
+  </data>
+  <data name="select_functions_for_permission" xml:space="preserve">
+    <value>为权限选择功能</value>
+  </data>
+  <data name="find_functions" xml:space="preserve">
+    <value>查找功能</value>
+  </data>
+  <data name="edit_permission_info" xml:space="preserve">
+    <value>编辑权限信息</value>
+  </data>
+  <data name="permission_list" xml:space="preserve">
+    <value>权限列表</value>
+  </data>
+  <data name="add_permission" xml:space="preserve">
+    <value>添加权限</value>
+  </data>
+  <data name="order_id" xml:space="preserve">
+    <value>订单ID</value>
+  </data>
+  <data name="import_from_warehouse" xml:space="preserve">
+    <value>从仓库入库</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>提交</value>
+  </data>
+  <data name="import_form_id" xml:space="preserve">
+    <value>入库单号</value>
+  </data>
+  <data name="import_warehouse_id" xml:space="preserve">
+    <value>入库请求单号</value>
+  </data>
+  <data name="retrieve_data_from_file" xml:space="preserve">
+    <value>从文件检索数据</value>
+  </data>
+  <data name="rfid_scan_data" xml:space="preserve">
+    <value>RFID 扫描数据</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>总计</value>
+  </data>
+  <data name="warehouse_import_data_list" xml:space="preserve">
+    <value>仓库入库数据列表</value>
+  </data>
+  <data name="scanning_form" xml:space="preserve">
+    <value>扫描记录</value>
+  </data>
+  <data name="stock_take_id" xml:space="preserve">
+    <value>盘点单ID</value>
+  </data>
+  <data name="account" xml:space="preserve">
+    <value>账户</value>
+  </data>
+  <data name="management_permissions" xml:space="preserve">
+    <value>管理权限</value>
+  </data>
+  <data name="good_catalog_management" xml:space="preserve">
+    <value>商品目录管理</value>
+  </data>
+  <data name="account_catalog" xml:space="preserve">
+    <value>账户目录</value>
+  </data>
+  <data name="delete_warehouse" xml:space="preserve">
+    <value>删除仓库</value>
+  </data>
+  <data name="delete_good" xml:space="preserve">
+    <value>删除商品</value>
+  </data>
+  <data name="delete_good_group" xml:space="preserve">
+    <value>删除商品组</value>
+  </data>
+  <data name="add_customer" xml:space="preserve">
+    <value>添加新客户</value>
+  </data>
+  <data name="delete_customer" xml:space="preserve">
+    <value>删除客户</value>
+  </data>
+  <data name="add_customer_type" xml:space="preserve">
+    <value>添加新客户类型</value>
+  </data>
+  <data name="edit_customer_type" xml:space="preserve">
+    <value>编辑客户类型</value>
+  </data>
+  <data name="delete_customer_type" xml:space="preserve">
+    <value>删除客户类型</value>
+  </data>
+  <data name="add_user" xml:space="preserve">
+    <value>添加新用户</value>
+  </data>
+  <data name="edit_user" xml:space="preserve">
+    <value>编辑用户</value>
+  </data>
+  <data name="edit_user_password" xml:space="preserve">
+    <value> 编辑用户密码</value>
+  </data>
+  <data name="delete_user" xml:space="preserve">
+    <value>删除用户</value>
+  </data>
+  <data name="change_password" xml:space="preserve">
+    <value>更改密码</value>
+  </data>
+  <data name="current_password" xml:space="preserve">
+    <value>当前密码</value>
+  </data>
+  <data name="new_password" xml:space="preserve">
+    <value>新密码</value>
+  </data>
+  <data name="confirm_new_password" xml:space="preserve">
+    <value>确认新密码</value>
+  </data>
+  <data name="edit_account" xml:space="preserve">
+    <value>编辑账户</value>
+  </data>
+  <data name="permission" xml:space="preserve">
+    <value>权限</value>
+  </data>
+  <data name="update_account_info" xml:space="preserve">
+    <value>更新账户信息</value>
+  </data>
+  <data name="user_fullname" xml:space="preserve">
+    <value>全名</value>
+  </data>
+  <data name="date_of_birth" xml:space="preserve">
+    <value>出生日期</value>
+  </data>
+  <data name="update_account_permission" xml:space="preserve">
+    <value>更新账户权限</value>
+  </data>
+  <data name="select_permission" xml:space="preserve">
+    <value>选择权限</value>
+  </data>
+  <data name="select_function" xml:space="preserve">
+    <value>选择功能</value>
+  </data>
+  <data name="search_function" xml:space="preserve">
+    <value>搜索功能</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="personal_info" xml:space="preserve">
+    <value>个人信息</value>
+  </data>
+  <data name="account_info" xml:space="preserve">
+    <value>账户信息</value>
+  </data>
+  <data name="confirm_password" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+  <data name="add_account" xml:space="preserve">
+    <value>添加新账户</value>
+  </data>
+  <data name="export_quantity" xml:space="preserve">
+    <value>出库数量</value>
+  </data>
+  <data name="approve_status" xml:space="preserve">
+    <value>审批状态</value>
+  </data>
+  <data name="stock_take_status" xml:space="preserve">
+    <value>盘点单状态</value>
+  </data>
+  <data name="customer_type_name" xml:space="preserve">
+    <value>客户类型名称</value>
+  </data>
+  <data name="Chưa kiểm" xml:space="preserve">
+    <value>未检查</value>
+  </data>
+  <data name="Đã kiểm" xml:space="preserve">
+    <value>已检查！</value>
+  </data>
+  <data name="list_charts" xml:space="preserve">
+    <value>请求单图表列表</value>
+  </data>
+  <data name="inventory_chart" xml:space="preserve">
+    <value>库存图表</value>
+  </data>
+  <data name="rfid_reading" xml:space="preserve">
+    <value>RFID 读取</value>
+  </data>
+  <data name="upload_preasn" xml:space="preserve">
+    <value>上传 PreASN 文件</value>
+  </data>
+  <data name="hod_confirm" xml:space="preserve">
+    <value>HOD/确认</value>
+  </data>
+  <data name="group_good_management" xml:space="preserve">
+    <value>商品组管理</value>
+  </data>
+  <data name="total_quantity_wh" xml:space="preserve">
+    <value>所有仓库的总库存量</value>
+  </data>
+  <data name="wh_noti" xml:space="preserve">
+    <value>仓库</value>
+  </data>
+  <data name="import_noti" xml:space="preserve">
+    <value>入库单</value>
+  </data>
+  <data name="export_noti" xml:space="preserve">
+    <value>出库单</value>
+  </data>
+  <data name="issues_review" xml:space="preserve">
+    <value>待审批的出库单</value>
+  </data>
+  <data name="receipt_review" xml:space="preserve">
+    <value>待审批的收货单</value>
+  </data>
+  <data name="current_inventory_noti" xml:space="preserve">
+    <value>现有商品的当前库存量</value>
+  </data>
+  <data name="search_place_layout" xml:space="preserve">
+    <value>搜索功能</value>
+  </data>
+  <data name="import_export_chart" xml:space="preserve">
+    <value>入库/出库数量图表</value>
+  </data>
+  <data name="top_3_product" xml:space="preserve">
+    <value>前3名畅销产品</value>
+  </data>
+  <data name="outbound" xml:space="preserve">
+    <value>出库</value>
+  </data>
+  <data name="stock_take_chart" xml:space="preserve">
+    <value>盘点</value>
+  </data>
+  <data name="action" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="good_group_list_page" xml:space="preserve">
+    <value>商品组列表</value>
+  </data>
+  <data name="upload_good_group" xml:space="preserve">
+    <value>通过上传Excel文件添加新商品组</value>
+  </data>
+  <data name="good_group_search" xml:space="preserve">
+    <value>按名称搜索商品组</value>
+  </data>
+  <data name="print_time" xml:space="preserve">
+    <value>打印日期</value>
+  </data>
+  <data name="account_print" xml:space="preserve">
+    <value>打印人</value>
+  </data>
+  <data name="good_group_print" xml:space="preserve">
+    <value>商品组列表</value>
+  </data>
+  <data name="printing" xml:space="preserve">
+    <value>正在打印</value>
+  </data>
+  <data name="update_print_btn" xml:space="preserve">
+    <value>更新打印格式</value>
+  </data>
+  <data name="good_group_warning" xml:space="preserve">
+    <value>您确定要删除此商品组吗？</value>
+  </data>
+  <data name="remove_unwanted" xml:space="preserve">
+    <value>可能发生不必要的数据丢失！</value>
+  </data>
+  <data name="delete_success" xml:space="preserve">
+    <value>数据删除成功！</value>
+  </data>
+  <data name="error_ajax" xml:space="preserve">
+    <value>可能发生错误，请稍后重试！</value>
+  </data>
+  <data name="add_good_group_layout" xml:space="preserve">
+    <value>添加新商品组</value>
+  </data>
+  <data name="good_group_line" xml:space="preserve">
+    <value>商品组名称在行</value>
+  </data>
+  <data name="added_in_system" xml:space="preserve">
+    <value>已添加到系统</value>
+  </data>
+  <data name="is_not_empty" xml:space="preserve">
+    <value>不能为空</value>
+  </data>
+  <data name="duplicated_line" xml:space="preserve">
+    <value>与另一行重复，请重新检查</value>
+  </data>
+  <data name="good_group_duplicated" xml:space="preserve">
+    <value>商品组ID重复</value>
+  </data>
+  <data name="pdf" xml:space="preserve">
+    <value>PDF 文件导出成功！</value>
+  </data>
+  <data name="csv" xml:space="preserve">
+    <value>CSV 文件导出成功！</value>
+  </data>
+  <data name="excel" xml:space="preserve">
+    <value>Excel 文件导出成功！</value>
+  </data>
+  <data name="from_date" xml:space="preserve">
+    <value>从日期</value>
+  </data>
+  <data name="To date" xml:space="preserve">
+    <value>至日期</value>
+  </data>
+  <data name="upload_good" xml:space="preserve">
+    <value>通过上传Excel文件添加新商品</value>
+  </data>
+  <data name="good_search" xml:space="preserve">
+    <value>按名称搜索商品...</value>
+  </data>
+  <data name="good_print" xml:space="preserve">
+    <value>商品列表</value>
+  </data>
+  <data name="good_edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="good_delete" xml:space="preserve">
+    <value>删除商品</value>
+  </data>
+  <data name="good_delete_warning" xml:space="preserve">
+    <value>您确定要删除此产品吗？</value>
+  </data>
+  <data name="to_date_error" xml:space="preserve">
+    <value>结束日期必须晚于开始日期！</value>
+  </data>
+  <data name="from_date_error" xml:space="preserve">
+    <value>开始日期必须早于结束日期！</value>
+  </data>
+  <data name="good_note" xml:space="preserve">
+    <value>输入产品备注...</value>
+  </data>
+  <data name="good_list_title" xml:space="preserve">
+    <value>商品列表</value>
+  </data>
+  <data name="choose_file_error" xml:space="preserve">
+    <value>请选择文件！</value>
+  </data>
+  <data name="excel_miss" xml:space="preserve">
+    <value>请只选择 Excel 文件！</value>
+  </data>
+  <data name="not_in_system" xml:space="preserve">
+    <value>不在系统中！</value>
+  </data>
+  <data name="unit_line" xml:space="preserve">
+    <value>单位名称在行</value>
+  </data>
+  <data name="different_line" xml:space="preserve">
+    <value>与行不同</value>
+  </data>
+  <data name="goods_line" xml:space="preserve">
+    <value>商品名称在行</value>
+  </data>
+  <data name="upload_success" xml:space="preserve">
+    <value>文件上传成功！</value>
+  </data>
+  <data name="goods_exist" xml:space="preserve">
+    <value>商品代码已存在。</value>
+  </data>
+  <data name="goods_invalid" xml:space="preserve">
+    <value>商品代码无效</value>
+  </data>
+  <data name="add_goods_page" xml:space="preserve">
+    <value>添加新商品</value>
+  </data>
+  <data name="goods_id_add_placeholder" xml:space="preserve">
+    <value>输入新商品ID...</value>
+  </data>
+  <data name="goods_name_add_placeholder" xml:space="preserve">
+    <value>输入新商品名称...</value>
+  </data>
+  <data name="goods_id" xml:space="preserve">
+    <value>商品ID</value>
+  </data>
+  <data name="detail" xml:space="preserve">
+    <value>更多详情</value>
+  </data>
+  <data name="good_id_search" xml:space="preserve">
+    <value>按ID搜索商品...</value>
+  </data>
+  <data name="goods_epc_detail" xml:space="preserve">
+    <value>更多EPC详情</value>
+  </data>
+  <data name="goods_detail_page" xml:space="preserve">
+    <value>商品明细列表</value>
+  </data>
+  <data name="unit_list_page" xml:space="preserve">
+    <value>单位列表</value>
+  </data>
+  <data name="upload_unit" xml:space="preserve">
+    <value>通过上传Excel文件添加新单位</value>
+  </data>
+  <data name="unit_search" xml:space="preserve">
+    <value>按名称搜索单位...</value>
+  </data>
+  <data name="unit_print" xml:space="preserve">
+    <value>单位列表</value>
+  </data>
+  <data name="unit_name" xml:space="preserve">
+    <value>单位名称</value>
+  </data>
+  <data name="total_print" xml:space="preserve">
+    <value>总计</value>
+  </data>
+  <data name="unit_edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="unit_delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="unit_delete_warning" xml:space="preserve">
+    <value>您确定要删除此单位吗？</value>
+  </data>
+  <data name="unit_add_page" xml:space="preserve">
+    <value>添加新单位</value>
+  </data>
+  <data name="unit_duplicated" xml:space="preserve">
+    <value>单位ID重复！</value>
+  </data>
+  <data name="warehouse_upload" xml:space="preserve">
+    <value>通过上传Excel文件添加新仓库</value>
+  </data>
+  <data name="warehouse_search" xml:space="preserve">
+    <value>按名称搜索仓库...</value>
+  </data>
+  <data name="warehouse_print" xml:space="preserve">
+    <value>仓库列表</value>
+  </data>
+  <data name="warehouse_min" xml:space="preserve">
+    <value>最低库存量</value>
+  </data>
+  <data name="warehouse_max" xml:space="preserve">
+    <value>最高库存量</value>
+  </data>
+  <data name="warehouse_edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="warehouse_delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="warehouse_delete_warning" xml:space="preserve">
+    <value>您确定要删除此仓库吗？</value>
+  </data>
+  <data name="warehouse_list_page" xml:space="preserve">
+    <value>仓库列表</value>
+  </data>
+  <data name="warehouse_add_page" xml:space="preserve">
+    <value>添加新仓库</value>
+  </data>
+  <data name="warehouse_line" xml:space="preserve">
+    <value>仓库名称在行</value>
+  </data>
+  <data name="warehouse_min_upload" xml:space="preserve">
+    <value>行中最低库存量</value>
+  </data>
+  <data name="warehouse_min_max_upload" xml:space="preserve">
+    <value>不能大于最高库存量</value>
+  </data>
+  <data name="warehouse_max_upload" xml:space="preserve">
+    <value>行中最高库存量</value>
+  </data>
+  <data name="warehouse_max_min_upload" xml:space="preserve">
+    <value>不能小于最小库存量</value>
+  </data>
+  <data name="warehouse_duplicated_upload" xml:space="preserve">
+    <value>仓库ID重复！</value>
+  </data>
+  <data name="warehouse_error_id" xml:space="preserve">
+    <value>仓库ID无效！</value>
+  </data>
+  <data name="warehouse_error_unknown" xml:space="preserve">
+    <value>仓库不存在！</value>
+  </data>
+  <data name="warehouse_fw_req_err" xml:space="preserve">
+    <value>请求数据无效！</value>
+  </data>
+  <data name="warehouse_fw_create_note" xml:space="preserve">
+    <value>由于库存数量不足，无法创建发货单！</value>
+  </data>
+  <data name="warehouse_fw_so_err" xml:space="preserve">
+    <value>销售订单ID</value>
+  </data>
+  <data name="warehouse_fw_so_contain_err" xml:space="preserve">
+    <value>包含物品ID:</value>
+  </data>
+  <data name="warehouse_fw_so_quantity_err" xml:space="preserve">
+    <value>数量是：</value>
+  </data>
+  <data name="warehouse_fw_more" xml:space="preserve">
+    <value>输入数量超出仓库允许的限额！</value>
+  </data>
+  <data name="warehouse_fw_create_fail" xml:space="preserve">
+    <value>调拨失败！</value>
+  </data>
+  <data name="warehouse_fw_create_success" xml:space="preserve">
+    <value>调拨成功！</value>
+  </data>
+  <data name="approve_auth" xml:space="preserve">
+    <value>您没有权限批准此单据！</value>
+  </data>
+  <data name="approve_none" xml:space="preserve">
+    <value>没有要批准的单据！</value>
+  </data>
+  <data name="export_success" xml:space="preserve">
+    <value>调拨成功！</value>
+  </data>
+  <data name="inventory_print" xml:space="preserve">
+    <value>库存列表</value>
+  </data>
+  <data name="inventory_name" xml:space="preserve">
+    <value>仓库名称</value>
+  </data>
+  <data name="inventory_quantity" xml:space="preserve">
+    <value>库存数量</value>
+  </data>
+  <data name="inventory_data" xml:space="preserve">
+    <value>库存数据</value>
+  </data>
+  <data name="inventory_idgood" xml:space="preserve">
+    <value>商品ID</value>
+  </data>
+  <data name="warehouse_detail_list_page" xml:space="preserve">
+    <value>仓库库存详情</value>
+  </data>
+  <data name="warehouse_detail_list_note" xml:space="preserve">
+    <value>检查仓库中的商品库存量</value>
+  </data>
+  <data name="warehouse_detail_list_header" xml:space="preserve">
+    <value>商品数量信息</value>
+  </data>
+  <data name="warehouse_detail_list_modal" xml:space="preserve">
+    <value>仓库中的商品详情</value>
+  </data>
+  <data name="warehouse_detail_list_search" xml:space="preserve">
+    <value>按ID搜索商品...</value>
+  </data>
+  <data name="warehouse_detail_list_gepc" xml:space="preserve">
+    <value>商品详情</value>
+  </data>
+  <data name="inventory_header" xml:space="preserve">
+    <value>库存详情</value>
+  </data>
+  <data name="inventory_transfer" xml:space="preserve">
+    <value>仓库调拨</value>
+  </data>
+  <data name="add_search" xml:space="preserve">
+    <value>已添加到搜索列表</value>
+  </data>
+  <data name="Choose_an_option" xml:space="preserve">
+    <value>选择操作</value>
+  </data>
+  <data name="account_list_page" xml:space="preserve">
+    <value>账户列表</value>
+  </data>
+  <data name="account_search" xml:space="preserve">
+    <value>按名称搜索用户...</value>
+  </data>
+  <data name="account_edit" xml:space="preserve">
+    <value>编辑用户</value>
+  </data>
+  <data name="account_delete" xml:space="preserve">
+    <value>删除用户</value>
+  </data>
+  <data name="account_delete_warning" xml:space="preserve">
+    <value>您确定要删除此用户吗？</value>
+  </data>
+  <data name="account_create_page" xml:space="preserve">
+    <value>注册新用户</value>
+  </data>
+  <data name="account_edit_pass" xml:space="preserve">
+    <value>修改密码</value>
+  </data>
+  <data name="permission_not" xml:space="preserve">
+    <value>您没有权限执行此操作！</value>
+  </data>
+  <data name="account_error_char" xml:space="preserve">
+    <value>账户必须包含6个以上字符！</value>
+  </data>
+  <data name="account_error_contain" xml:space="preserve">
+    <value>账户只能包含字母和数字！</value>
+  </data>
+  <data name="account_error_pass_length" xml:space="preserve">
+    <value>密码必须包含至少8个字符！</value>
+  </data>
+  <data name="account_error_pass_same" xml:space="preserve">
+    <value>两个密码不匹配！</value>
+  </data>
+  <data name="account_error_pass_contain" xml:space="preserve">
+    <value>密码必须包含至少一个特殊字符和一个大写字母！</value>
+  </data>
+  <data name="account_error_email" xml:space="preserve">
+    <value>电子邮件无效！</value>
+  </data>
+  <data name="account_error_username" xml:space="preserve">
+    <value>请输入用户全名！</value>
+  </data>
+  <data name="account_error_auth" xml:space="preserve">
+    <value>请为用户选择至少一个权限！</value>
+  </data>
+  <data name="account_error_function" xml:space="preserve">
+    <value>请为账户选择功能！</value>
+  </data>
+  <data name="account_error_username_same" xml:space="preserve">
+    <value>此用户名已存在！</value>
+  </data>
+  <data name="data_no" xml:space="preserve">
+    <value>没有请求的数据！</value>
+  </data>
+  <data name="account_error_nofind" xml:space="preserve">
+    <value>未在系统中找到此账户！</value>
+  </data>
+  <data name="account_error_lock" xml:space="preserve">
+    <value>此账户已被锁定，请联系管理员解锁！</value>
+  </data>
+  <data name="account_pass_change" xml:space="preserve">
+    <value>密码修改成功！</value>
+  </data>
+  <data name="account_error_passnew" xml:space="preserve">
+    <value>新密码确认不正确！</value>
+  </data>
+  <data name="account_error_oldpassnew" xml:space="preserve">
+    <value>新密码与旧密码相同！</value>
+  </data>
+  <data name="account_error_pass_incorrect" xml:space="preserve">
+    <value>密码不正确！</value>
+  </data>
+  <data name="account_error_pass_count_lock" xml:space="preserve">
+    <value>账户输入密码错误</value>
+  </data>
+  <data name="account_error_pass_time_will" xml:space="preserve">
+    <value>次，之后将被锁定</value>
+  </data>
+  <data name="account_error_pass_wrong_more" xml:space="preserve">
+    <value>次错误尝试！</value>
+  </data>
+  <data name="account_error_pass_locked" xml:space="preserve">
+    <value>账户因连续5次输入错误密码而被锁定！</value>
+  </data>
+  <data name="account_error_no_exist" xml:space="preserve">
+    <value>账户不存在！</value>
+  </data>
+  <data name="account_user_list_print" xml:space="preserve">
+    <value>用户列表</value>
+  </data>
+  <data name="account_require" xml:space="preserve">
+    <value>请填写所有必填信息！</value>
+  </data>
+  <data name="account_error_enter_email" xml:space="preserve">
+    <value>请输入电子邮件！</value>
+  </data>
+  <data name="account_error_phone" xml:space="preserve">
+    <value>请输入电话号码！</value>
+  </data>
+  <data name="account_error_phone_invalid" xml:space="preserve">
+    <value>电话号码无效！</value>
+  </data>
+  <data name="account_choose_role" xml:space="preserve">
+    <value>选择账户权限...</value>
+  </data>
+  <data name="account_edit_success" xml:space="preserve">
+    <value>用户信息更新成功！</value>
+  </data>
+  <data name="account_error_account" xml:space="preserve">
+    <value>请输入账户名！</value>
+  </data>
+  <data name="account_error_enter_pass" xml:space="preserve">
+    <value>请输入密码！</value>
+  </data>
+  <data name="account_error_pass_upper" xml:space="preserve">
+    <value>密码必须包含至少1个大写字母！</value>
+  </data>
+  <data name="account_error_pass_syntax" xml:space="preserve">
+    <value>密码必须包含至少一个特殊字符！</value>
+  </data>
+  <data name="account_error_pass_num" xml:space="preserve">
+    <value>密码必须包含至少一个数字！</value>
+  </data>
+  <data name="account_error_pass_3continue" xml:space="preserve">
+    <value>密码不能包含3个或以上连续字符！</value>
+  </data>
+  <data name="account_error_pass_reenter" xml:space="preserve">
+    <value>请重新输入密码！</value>
+  </data>
+  <data name="account_create_success" xml:space="preserve">
+    <value>新账户注册成功！</value>
+  </data>
+  <data name="customer_type_list_page" xml:space="preserve">
+    <value>客户类型列表</value>
+  </data>
+  <data name="customer_type_search" xml:space="preserve">
+    <value>按ID搜索客户类型...</value>
+  </data>
+  <data name="customer_type_print" xml:space="preserve">
+    <value>客户类型列表</value>
+  </data>
+  <data name="customer_type_edit" xml:space="preserve">
+    <value>编辑客户类型</value>
+  </data>
+  <data name="customer_type_delete" xml:space="preserve">
+    <value>删除客户类型</value>
+  </data>
+  <data name="customer_type_warning" xml:space="preserve">
+    <value>您确定要删除此客户类型吗？</value>
+  </data>
+  <data name="customer_list_page" xml:space="preserve">
+    <value>客户列表</value>
+  </data>
+  <data name="customer_search" xml:space="preserve">
+    <value>按名称搜索客户...</value>
+  </data>
+  <data name="customer_print" xml:space="preserve">
+    <value>客户列表</value>
+  </data>
+  <data name="customer_edit" xml:space="preserve">
+    <value>编辑客户</value>
+  </data>
+  <data name="customer_delete" xml:space="preserve">
+    <value>删除客户</value>
+  </data>
+  <data name="customer_warning" xml:space="preserve">
+    <value>您确定要删除此客户吗？</value>
+  </data>
+  <data name="customer_work" xml:space="preserve">
+    <value>仍在工作</value>
+  </data>
+  <data name="customer_end" xml:space="preserve">
+    <value>合作终止</value>
+  </data>
+  <data name="permission_search" xml:space="preserve">
+    <value>按名称搜索权限...</value>
+  </data>
+  <data name="permission_print" xml:space="preserve">
+    <value>权限列表</value>
+  </data>
+  <data name="status_work" xml:space="preserve">
+    <value>正在工作</value>
+  </data>
+  <data name="status_notwork" xml:space="preserve">
+    <value>停止工作</value>
+  </data>
+  <data name="permission_delete_warning" xml:space="preserve">
+    <value>您确定要删除此权限吗？</value>
+  </data>
+  <data name="permission_edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="permission_delete" xml:space="preserve">
+    <value>删除权限</value>
+  </data>
+  <data name="error_permission_name" xml:space="preserve">
+    <value>请输入权限名称！</value>
+  </data>
+  <data name="error_function" xml:space="preserve">
+    <value>请为此权限选择至少一个功能！</value>
+  </data>
+  <data name="error_add_function" xml:space="preserve">
+    <value>添加到系统时出现问题！</value>
+  </data>
+  <data name="error_permission_hasalready" xml:space="preserve">
+    <value>权限已存在！</value>
+  </data>
+  <data name="error_permission_notexist" xml:space="preserve">
+    <value>权限在系统中不存在！</value>
+  </data>
+  <data name="error_permission_delete" xml:space="preserve">
+    <value>系统中没有可删除的权限！</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>仍在启用</value>
+  </data>
+  <data name="no_active" xml:space="preserve">
+    <value>不再使用</value>
+  </data>
+  <data name="password_enter" xml:space="preserve">
+    <value>输入密码...</value>
+  </data>
+  <data name="password_confirm" xml:space="preserve">
+    <value>确认密码...</value>
+  </data>
+  <data name="function_name" xml:space="preserve">
+    <value>功能名称</value>
+  </data>
+  <data name="function_search" xml:space="preserve">
+    <value>按名称搜索功能...</value>
+  </data>
+  <data name="name_placeholder" xml:space="preserve">
+    <value>输入用户名...</value>
+  </data>
+  <data name="email_placeholder" xml:space="preserve">
+    <value>输入电子邮件...</value>
+  </data>
+  <data name="account_placeholder" xml:space="preserve">
+    <value>输入账户名...</value>
+  </data>
+  <data name="phone_placeholder" xml:space="preserve">
+    <value>输入电话号码...</value>
+  </data>
+  <data name="address_placeholder" xml:space="preserve">
+    <value>输入地址...</value>
+  </data>
+  <data name="des_placeholder" xml:space="preserve">
+    <value>输入描述...</value>
+  </data>
+  <data name="permission_placeholder" xml:space="preserve">
+    <value>输入权限名称...</value>
+  </data>
+  <data name="purchase_id_error" xml:space="preserve">
+    <value>采购订单ID不存在！</value>
+  </data>
+  <data name="purchase_approve" xml:space="preserve">
+    <value>采购订单已获批准！</value>
+  </data>
+  <data name="approve_success" xml:space="preserve">
+    <value>批准成功！</value>
+  </data>
+  <data name="delete_form_auth" xml:space="preserve">
+    <value>您没有权限删除此单据！</value>
+  </data>
+  <data name="scan_form_approve_delete" xml:space="preserve">
+    <value>已批准的扫描记录无法删除！</value>
+  </data>
+  <data name="purchase_delete_error" xml:space="preserve">
+    <value>收货单已添加商品到仓库，无法删除！</value>
+  </data>
+  <data name="actual_import" xml:space="preserve">
+    <value>实际入库</value>
+  </data>
+  <data name="purchase_search_id" xml:space="preserve">
+    <value>按ID搜索采购订单...</value>
+  </data>
+  <data name="purchase_print" xml:space="preserve">
+    <value>采购订单</value>
+  </data>
+  <data name="purchase_print_id" xml:space="preserve">
+    <value>采购订单ID:</value>
+  </data>
+  <data name="debit" xml:space="preserve">
+    <value>借方:</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>贷方:</value>
+  </data>
+  <data name="receipt_id" xml:space="preserve">
+    <value>收货ID</value>
+  </data>
+  <data name="scan_process" xml:space="preserve">
+    <value>数据扫描处理</value>
+  </data>
+  <data name="scan_list" xml:space="preserve">
+    <value>扫描记录列表</value>
+  </data>
+  <data name="approve_po" xml:space="preserve">
+    <value>批准收货</value>
+  </data>
+  <data name="purchase_delete" xml:space="preserve">
+    <value>删除收货单</value>
+  </data>
+  <data name="purchase_print_btn" xml:space="preserve">
+    <value>打印收货单</value>
+  </data>
+  <data name="purchase_id" xml:space="preserve">
+    <value>采购订单ID</value>
+  </data>
+  <data name="purchase_scan_ID" xml:space="preserve">
+    <value>扫描记录ID</value>
+  </data>
+  <data name="purchase_good_status" xml:space="preserve">
+    <value>收货状态</value>
+  </data>
+  <data name="purchase_receive" xml:space="preserve">
+    <value>已收货</value>
+  </data>
+  <data name="purchase_pending" xml:space="preserve">
+    <value>待入库</value>
+  </data>
+  <data name="approve_scan" xml:space="preserve">
+    <value>批准扫描记录</value>
+  </data>
+  <data name="scan_delete" xml:space="preserve">
+    <value>删除扫描记录</value>
+  </data>
+  <data name="purchase_confirm" xml:space="preserve">
+    <value>确认批准此采购订单吗？</value>
+  </data>
+  <data name="purchase_not_approve" xml:space="preserve">
+    <value>采购订单尚未批准！</value>
+  </data>
+  <data name="purchase_cancle" xml:space="preserve">
+    <value>采购订单已取消！</value>
+  </data>
+  <data name="confirm_all_scan" xml:space="preserve">
+    <value>确认批准所有扫描记录吗？</value>
+  </data>
+  <data name="confirm_scan" xml:space="preserve">
+    <value>确认批准此扫描记录吗？</value>
+  </data>
+  <data name="confirm_delete_scan_data" xml:space="preserve">
+    <value>确认删除此扫描数据吗？</value>
+  </data>
+  <data name="confirm_delete_po" xml:space="preserve">
+    <value>确认删除此采购订单吗？</value>
+  </data>
+  <data name="export_id" xml:space="preserve">
+    <value>出库ID</value>
+  </data>
+  <data name="approve_so" xml:space="preserve">
+    <value>批准发货</value>
+  </data>
+  <data name="sale_confirm" xml:space="preserve">
+    <value>确认批准此销售订单吗？</value>
+  </data>
+  <data name="sale_delete" xml:space="preserve">
+    <value>删除出库单</value>
+  </data>
+  <data name="confirm_delete_so" xml:space="preserve">
+    <value>确认删除此销售订单吗？</value>
+  </data>
+  <data name="sale_print_btn" xml:space="preserve">
+    <value>打印出库单</value>
+  </data>
+  <data name="sale_search_id" xml:space="preserve">
+    <value>按ID搜索销售订单...</value>
+  </data>
+  <data name="sale_good_status" xml:space="preserve">
+    <value>出库状态</value>
+  </data>
+  <data name="sale_export" xml:space="preserve">
+    <value>已出库</value>
+  </data>
+  <data name="sale_pending" xml:space="preserve">
+    <value>待出库</value>
+  </data>
+  <data name="scan_not_do" xml:space="preserve">
+    <value>无法执行此操作</value>
+  </data>
+  <data name="scan_not_approve_yet" xml:space="preserve">
+    <value>此销售订单尚未批准！</value>
+  </data>
+  <data name="appove_all_scan_confirm" xml:space="preserve">
+    <value>确认批准所有扫描记录吗？</value>
+  </data>
+  <data name="reciept_noID_error" xml:space="preserve">
+    <value>需要扫描记录ID</value>
+  </data>
+  <data name="reciept_noPOID_error" xml:space="preserve">
+    <value>需要采购订单ID！</value>
+  </data>
+  <data name="receipt_poIDinvalid_error" xml:space="preserve">
+    <value>采购订单ID无效！</value>
+  </data>
+  <data name="receipt_noDataScan_error" xml:space="preserve">
+    <value>没有扫描数据！</value>
+  </data>
+  <data name="receipt_dupicated_error" xml:space="preserve">
+    <value>系统中已存在重复的标签码！</value>
+  </data>
+  <data name="receipt_exist_error" xml:space="preserve">
+    <value>此扫描记录ID已存在于系统中！</value>
+  </data>
+  <data name="receipt_nothing_error" xml:space="preserve">
+    <value>没有要添加到库存的扫描记录！</value>
+  </data>
+  <data name="receipt_approve_success" xml:space="preserve">
+    <value>批准成功，库存已更新！</value>
+  </data>
+  <data name="receipt_approveAlready_error" xml:space="preserve">
+    <value>此扫描记录已获批准！</value>
+  </data>
+  <data name="cancle_record" xml:space="preserve">
+    <value>取消扫描记录！</value>
+  </data>
+  <data name="reciept_nodata_error" xml:space="preserve">
+    <value>无单据数据！</value>
+  </data>
+  <data name="sale_approve" xml:space="preserve">
+    <value>销售订单已获批准！</value>
+  </data>
+  <data name="approve_failed" xml:space="preserve">
+    <value>批准失败！</value>
+  </data>
+  <data name="delivery_soID_error" xml:space="preserve">
+    <value>销售订单ID不存在！</value>
+  </data>
+  <data name="delivery_exported_error" xml:space="preserve">
+    <value>此记录已包含从仓库发货的物品，无法删除！</value>
+  </data>
+  <data name="process_error" xml:space="preserve">
+    <value>处理数据时出错！</value>
+  </data>
+  <data name="sale_noexist" xml:space="preserve">
+    <value>系统中不存在此销售订单！</value>
+  </data>
+  <data name="scan_add_successfully" xml:space="preserve">
+    <value>保存扫描记录成功！</value>
+  </data>
+  <data name="scan_ID_error" xml:space="preserve">
+    <value>此扫描记录ID不存在于系统中！</value>
+  </data>
+  <data name="sale_wh_error" xml:space="preserve">
+    <value>请选择一个仓库！</value>
+  </data>
+  <data name="sale_inventory_error" xml:space="preserve">
+    <value>库存不足</value>
+  </data>
+  <data name="save_success" xml:space="preserve">
+    <value>保存成功！</value>
+  </data>
+  <data name="sale_lessInven_error" xml:space="preserve">
+    <value>库存不足！</value>
+  </data>
+  <data name="search_stock" xml:space="preserve">
+    <value>按ID搜索盘点单...</value>
+  </data>
+  <data name="stock_unverified_list" xml:space="preserve">
+    <value>未验证代码列表</value>
+  </data>
+  <data name="stock_delete" xml:space="preserve">
+    <value>删除盘点单</value>
+  </data>
+  <data name="stock_print" xml:space="preserve">
+    <value>打印盘点单</value>
+  </data>
+  <data name="stock_scaned" xml:space="preserve">
+    <value>扫描数量</value>
+  </data>
+  <data name="stock_missepc_list" xml:space="preserve">
+    <value>缺少商品列表</value>
+  </data>
+  <data name="stock_fullcheck" xml:space="preserve">
+    <value>已盘点完成</value>
+  </data>
+  <data name="stock_notcomplete" xml:space="preserve">
+    <value>未完成盘点</value>
+  </data>
+  <data name="stock_confirmDelete" xml:space="preserve">
+    <value>确认删除此盘点单吗？</value>
+  </data>
+  <data name="stock_list_page" xml:space="preserve">
+    <value>盘点单列表</value>
+  </data>
+  <data name="stock_invalid_error" xml:space="preserve">
+    <value>盘点单号无效！</value>
+  </data>
+  <data name="stock_exist_error" xml:space="preserve">
+    <value>此盘点单在系统中不存在！</value>
+  </data>
+  <data name="warning_list" xml:space="preserve">
+    <value>警告商品列表</value>
+  </data>
+  <data name="stock_create" xml:space="preserve">
+    <value>创建盘点单成功！</value>
+  </data>
+  <data name="belong_wh" xml:space="preserve">
+    <value>属于仓库</value>
+  </data>
+  <data name="different_from" xml:space="preserve">
+    <value>与单据中指定的仓库不同！</value>
+  </data>
+  <data name="unidentified" xml:space="preserve">
+    <value>未识别！</value>
+  </data>
+  <data name="no_goods_scanned" xml:space="preserve">
+    <value>未扫描任何物品以保存扫描记录！</value>
+  </data>
+  <data name="warning_list_page" xml:space="preserve">
+    <value>警告商品列表</value>
+  </data>
+  <data name="confirm_delete_recordInfo" xml:space="preserve">
+    <value>您确定要删除此记录信息吗？</value>
+  </data>
+  <data name="device_name" xml:space="preserve">
+    <value>设备</value>
+  </data>
+  <data name="record_date" xml:space="preserve">
+    <value>记录日期</value>
+  </data>
+  <data name="data_noexist" xml:space="preserve">
+    <value>数据在系统中不存在！</value>
+  </data>
+  <data name="noti_po" xml:space="preserve">
+    <value>采购订单ID</value>
+  </data>
+  <data name="noti_notapprove" xml:space="preserve">
+    <value>未批准。</value>
+  </data>
+  <data name="noti_so" xml:space="preserve">
+    <value>销售订单ID</value>
+  </data>
+  <data name="formisnotinthecorrectformat" xml:space="preserve">
+    <value>格式不正确！！！</value>
+  </data>
+  <data name="coincide" xml:space="preserve">
+    <value>与...一致</value>
+  </data>
+  <data name="check_warehouse" xml:space="preserve">
+    <value>从仓库检查</value>
+  </data>
+  <data name="barcode_scan" xml:space="preserve">
+    <value>条码扫描处理</value>
+  </data>
+  <data name="serial" xml:space="preserve">
+    <value>标识码</value>
+  </data>
+  <data name="goods_barcode_detail" xml:space="preserve">
+    <value>更多详情</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="reference" xml:space="preserve">
+    <value>参考代码</value>
+  </data>
+  <data name="scan_process_data" xml:space="preserve">
+    <value>扫描的商品数据</value>
+  </data>
+  <data name="not_included_in_form" xml:space="preserve">
+    <value>不在单据中！</value>
+  </data>
+  <data name="not_know_match_sku" xml:space="preserve">
+    <value>扫描到的标识符与单据上的多个 SKU 重复！系统无法确定对应的 SKU。</value>
+  </data>
+  <data name="empty_barcode" xml:space="preserve">
+    <value>空条码！</value>
+  </data>
+  <data name="quantity_export" xml:space="preserve">
+    <value>商品数量</value>
+  </data>
+  <data name="currently_not_enough" xml:space="preserve">
+    <value>当前数量不足以执行此出库操作。</value>
+  </data>
+  <data name="goods_with_id" xml:space="preserve">
+    <value>商品ID</value>
+  </data>
+  <data name="not_exists_in_system" xml:space="preserve">
+    <value>系统中不存在。请重新检查。</value>
+  </data>
+  <data name="warehouse_combo" xml:space="preserve">
+    <value>选择仓库</value>
+  </data>
+  <data name="inventory_wh_name" xml:space="preserve">
+    <value>仓库</value>
+  </data>
+  <data name="Thailand" xml:space="preserve">
+    <value>泰语</value>
+  </data>
+  <data name="enter_sku" xml:space="preserve">
+    <value>输入 SKU</value>
+  </data>
+  <data name="enter_reference" xml:space="preserve">
+    <value>输入产品参考代码</value>
+  </data>
+  <data name="cannot_proccess_rfid_from_barcode_form" xml:space="preserve">
+    <value>此采购订单已使用条码扫描！不允许使用 RFID 扫描，因为数据将不匹配</value>
+  </data>
+  <data name="invalid_input_create" xml:space="preserve">
+    <value>输入数量无效的物品：</value>
+  </data>
+  <data name="please_enter_reference" xml:space="preserve">
+    <value>请输入产品参考代码</value>
+  </data>
+  <data name="please_enter_sku" xml:space="preserve">
+    <value>请输入 SKU</value>
+  </data>
+  <data name="sku_identifier_exists" xml:space="preserve">
+    <value>此产品参考代码已存在</value>
+  </data>
+  <data name="stock_valid" xml:space="preserve">
+    <value>盘点单号有效！</value>
+  </data>
+  <data name="stock_enter" xml:space="preserve">
+    <value>请输入盘点单号！</value>
+  </data>
+  <data name="stock_not_exist" xml:space="preserve">
+    <value>盘点单号不存在！</value>
+  </data>
+  <data name="enter_product_code" xml:space="preserve">
+    <value>请输入产品代码</value>
+  </data>
+  <data name="enter_product_name" xml:space="preserve">
+    <value>请输入产品名称</value>
+  </data>
+  <data name="print_barcode_module" xml:space="preserve">
+    <value>打印条码</value>
+  </data>
+  <data name="scanned_record_code" xml:space="preserve">
+    <value>搜索扫描记录代码</value>
+  </data>
+  <data name="import_detail" xml:space="preserve">
+    <value>入库单详情</value>
+  </data>
+  <data name="not_all_assign_location" xml:space="preserve">
+    <value>还有未选择位置的商品。请为所有商品选择完整的位置！</value>
+  </data>
+  <data name="export_detail" xml:space="preserve">
+    <value>出库单详情</value>
+  </data>
+  <data name="number_print_label" xml:space="preserve">
+    <value>打印标签数量</value>
+  </data>
+  <data name="print_function" xml:space="preserve">
+    <value>打印商品标签</value>
+  </data>
+  <data name="select_print_type" xml:space="preserve">
+    <value>选择连接类型</value>
+  </data>
+  <data name="select_printer" xml:space="preserve">
+    <value>选择打印机</value>
+  </data>
+  <data name="print_in_network" xml:space="preserve">
+    <value>网络</value>
+  </data>
+  <data name="refesh_printer" xml:space="preserve">
+    <value>重新加载打印机列表</value>
+  </data>
+  <data name="start_print" xml:space="preserve">
+    <value>执行打印</value>
+  </data>
+  <data name="please_select_printer" xml:space="preserve">
+    <value>请选择打印机！</value>
+  </data>
+  <data name="print_success" xml:space="preserve">
+    <value>打印成功!</value>
+  </data>
+  <data name="printer_paused" xml:space="preserve">
+    <value>无法打印，因为打印机已暂停！</value>
+  </data>
+  <data name="printer_open" xml:space="preserve">
+    <value>无法打印，因为打印头已打开！</value>
+  </data>
+  <data name="printer_paper_out" xml:space="preserve">
+    <value>无法打印，因为缺纸！</value>
+  </data>
+  <data name="printer_not_ready" xml:space="preserve">
+    <value>打印机尚未准备就绪！</value>
+  </data>
+  <data name="printer_not_connect" xml:space="preserve">
+    <value>无法连接到打印机！</value>
+  </data>
+  <data name="Chinese" xml:space="preserve">
+    <value>中文 </value>
+  </data>
+  <data name="sample_text" xml:space="preserve">
+    <value>示例文本</value>
+  </data>
+  <data name="adjust_parameter" xml:space="preserve">
+    <value>调整参数</value>
+  </data>
+  <data name="size" xml:space="preserve">
+    <value>尺寸</value>
+  </data>
+  <data name="font_size" xml:space="preserve">
+    <value>字体大小</value>
+  </data>
+  <data name="display_text" xml:space="preserve">
+    <value>显示文本</value>
+  </data>
+  <data name="rotation_angle" xml:space="preserve">
+    <value>旋转角度</value>
+  </data>
+  <data name="bar_witdh" xml:space="preserve">
+    <value>条宽</value>
+  </data>
+  <data name="height" xml:space="preserve">
+    <value>高度</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="update_label" xml:space="preserve">
+    <value>更新标签尺寸</value>
+  </data>
+  <data name="width_inch" xml:space="preserve">
+    <value>宽度（英寸）</value>
+  </data>
+  <data name="height_inch" xml:space="preserve">
+    <value>高度（英寸）</value>
+  </data>
+  <data name="content" xml:space="preserve">
+    <value>内容</value>
+  </data>
+  <data name="label_review" xml:space="preserve">
+    <value>预览标签</value>
+  </data>
+  <data name="text" xml:space="preserve">
+    <value>文本</value>
+  </data>
+  <data name="qr_code" xml:space="preserve">
+    <value>二维码</value>
+  </data>
+  <data name="barcode" xml:space="preserve">
+    <value>条形码</value>
+  </data>
+  <data name="select_printer_test_print" xml:space="preserve">
+    <value>选择打印机进行测试打印</value>
+  </data>
+  <data name="test_print" xml:space="preserve">
+    <value>测试打印</value>
+  </data>
+  <data name="save_layout" xml:space="preserve">
+    <value>保存布局</value>
+  </data>
+  <data name="components" xml:space="preserve">
+    <value>组件</value>
+  </data>
+  <data name="design_label" xml:space="preserve">
+    <value>设计标签模板</value>
+  </data>
+  <data name="no_printer_found" xml:space="preserve">
+    <value>没有可用的打印机</value>
+  </data>
+  <data name="save_layout_successfully" xml:space="preserve">
+    <value>布局保存成功</value>
+  </data>
+  <data name="barcode_structure_analysis" xml:space="preserve">
+    <value>条码结构分析</value>
+  </data>
+  <data name="field_segmentation" xml:space="preserve">
+    <value>字段分段</value>
+  </data>
+  <data name="delimiter_detection" xml:space="preserve">
+    <value>分隔符检测</value>
+  </data>
+  <data name="data_pattern_recognition" xml:space="preserve">
+    <value>数据模式识别</value>
+  </data>
+  <data name="setup_barcode_structure" xml:space="preserve">
+    <value>设置条码结构</value>
+  </data>
+  <data name="content_type" xml:space="preserve">
+    <value>内容类型</value>
+  </data>
+  <data name="enter_content_manually" xml:space="preserve">
+    <value>手动输入内容</value>
+  </data>
+  <data name="automatically_fetch_from_PO" xml:space="preserve">
+    <value>ดึงจากใบสั่งซื้อโดยอัตโนมัติ</value>
+  </data>
+  <data name="select_data_field" xml:space="preserve">
+    <value>选择数据字段</value>
+  </data>
+  <data name="item_code" xml:space="preserve">
+    <value>商品编码</value>
+  </data>
+  <data name="item_name" xml:space="preserve">
+    <value>商品名称</value>
+  </data>
+  <data name="preview" xml:space="preserve">
+    <value>预览</value>
+  </data>
+  <data name="please_enter_delimiter" xml:space="preserve">
+    <value> 请输入分隔符字符!</value>
+  </data>
+  <data name="inventory_overview" xml:space="preserve">
+    <value>库存概览</value>
+  </data>
+  <data name="goods_data" xml:space="preserve">
+    <value>商品数据</value>
+  </data>
+  <data name="warehouses_data" xml:space="preserve">
+    <value>仓库数据</value>
+  </data>
+  <data name="unit_data" xml:space="preserve">
+    <value>单位数据</value>
+  </data>
+  <data name="groupgoods_data" xml:space="preserve">
+    <value>商品分类数据</value>
+  </data>
+  <data name="user" xml:space="preserve">
+    <value>用户</value>
+  </data>
+  <data name="account_data" xml:space="preserve">
+    <value>账户数据</value>
+  </data>
+  <data name="lock_account_admin" xml:space="preserve">
+    <value>您的账户已被锁定，请联系管理员解锁！</value>
+  </data>
+  <data name="login_success" xml:space="preserve">
+    <value>登录成功</value>
+  </data>
+  <data name="processing" xml:space="preserve">
+    <value> 正在处理...</value>
+  </data>
+  <data name="no_data" xml:space="preserve">
+    <value> 没有数据</value>
+  </data>
+  <data name="showing" xml:space="preserve">
+    <value>显示第</value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>条，共</value>
+  </data>
+  <data name="item_product_template" xml:space="preserve">
+    <value>商品组模板</value>
+  </data>
+  <data name="enter_product_code_excel" xml:space="preserve">
+    <value>输入商品编码</value>
+  </data>
+  <data name="enter_product_description_excel" xml:space="preserve">
+    <value>输入商品描述</value>
+  </data>
+  <data name="sample_download_success" xml:space="preserve">
+    <value>示例文件下载成功</value>
+  </data>
+  <data name="unit_template" xml:space="preserve">
+    <value>单位模板</value>
+  </data>
+  <data name="unit_name_template" xml:space="preserve">
+    <value>输入单位名称</value>
+  </data>
+  <data name="unit_description" xml:space="preserve">
+    <value>输入单位描述</value>
+  </data>
+  <data name="delete_goodsgrp_already_use" xml:space="preserve">
+    <value>此商品分类名称当前正在被某些商品使用，您确定要删除此信息吗?</value>
+  </data>
+  <data name="delete_unit_already_use" xml:space="preserve">
+    <value>此单位名称当前正在被某些商品使用，您确定要删除此信息吗?</value>
+  </data>
+  <data name="warehouse_template" xml:space="preserve">
+    <value>仓库模板</value>
+  </data>
+  <data name="enter_wh_excel" xml:space="preserve">
+    <value>输入仓库名称</value>
+  </data>
+  <data name="enter_minimum_qty_excel" xml:space="preserve">
+    <value>输入最小数量</value>
+  </data>
+  <data name="enter_maximum_qty_excel" xml:space="preserve">
+    <value>输入最大数量</value>
+  </data>
+  <data name="enter_wh_des" xml:space="preserve">
+    <value>输入仓库描述</value>
+  </data>
+  <data name="not_valid_number" xml:space="preserve">
+    <value>不是有效的数字</value>
+  </data>
+  <data name="minimum_stock_at_row" xml:space="preserve">
+    <value>行中的最小库存数量</value>
+  </data>
+  <data name="maximum_stock_at_row" xml:space="preserve">
+    <value>行中的最大库存数量</value>
+  </data>
+  <data name="min_more_than_max" xml:space="preserve">
+    <value>最小库存数量不能大于最大库存数量</value>
+  </data>
+  <data name="wh_already_contains_goods" xml:space="preserve">
+    <value>当前该仓库已包含有关商品数量的详细信息，为确保系统数据完整性，无法删除</value>
+  </data>
+  <data name="production_date" xml:space="preserve">
+    <value>生产日期</value>
+  </data>
+  <data name="enter_product_name_excel" xml:space="preserve">
+    <value>输入商品名称</value>
+  </data>
+  <data name="enter_product_quantity_excel" xml:space="preserve">
+    <value>输入数量</value>
+  </data>
+  <data name="enter_product_group_excel" xml:space="preserve">
+    <value>输入商品分类（如有）</value>
+  </data>
+  <data name="enter_unit_excel" xml:space="preserve">
+    <value>输入单位（如有）</value>
+  </data>
+  <data name="enter_production_date_excel" xml:space="preserve">
+    <value>输入生产日期</value>
+  </data>
+  <data name="enter_notes_excel" xml:space="preserve">
+    <value>输入备注（如有）</value>
+  </data>
+  <data name="product_template" xml:space="preserve">
+    <value>商品模板</value>
+  </data>
+  <data name="goodgroup_line" xml:space="preserve">
+    <value>该行的商品组名称</value>
+  </data>
+  <data name="goods_id_line" xml:space="preserve">
+    <value>该行的商品编码</value>
+  </data>
+  <data name="goods_quantity_line" xml:space="preserve">
+    <value>该行的数量</value>
+  </data>
+  <data name="already_exists" xml:space="preserve">
+    <value>已存在于系统中</value>
+  </data>
+  <data name="in_sheet" xml:space="preserve">
+    <value>在工作表</value>
+  </data>
+  <data name="product_code_standard" xml:space="preserve">
+    <value>商品编码不得包含特殊字符或字符之间的空格</value>
+  </data>
+  <data name="new_message" xml:space="preserve">
+    <value>您有一條新通知</value>
+  </data>
+  <data name="invalid_document_code" xml:space="preserve">
+    <value>无效的单据编号</value>
+  </data>
+  <data name="permission_updated_successfully" xml:space="preserve">
+    <value>权限修改成功!</value>
+  </data>
+  <data name="permission_added_successfully" xml:space="preserve">
+    <value>权限添加成功!</value>
+  </data>
+  <data name="delete_cus_relate_po_so" xml:space="preserve">
+    <value>该客户存在与之前的入库或出库单相关的数据。您确定要删除这些数据吗？</value>
+  </data>
+  <data name="delete_typecus_relate_cus" xml:space="preserve">
+    <value>此客户类型正在被客户数据使用，您确定要删除吗？</value>
+  </data>
+  <data name="not_empty_po_id" xml:space="preserve">
+    <value>入库单号不能为空</value>
+  </data>
+  <data name="invalid_receipt_id" xml:space="preserve">
+    <value>入库单号无效</value>
+  </data>
+  <data name="not_empty_so_id" xml:space="preserve">
+    <value>出库单号不能为空</value>
+  </data>
+  <data name="invalid_so_id" xml:space="preserve">
+    <value>出库单号无效</value>
+  </data>
+  <data name="include_invalid_char" xml:space="preserve">
+    <value>包含无效字符</value>
+  </data>
+  <data name="layout_label_not_exist" xml:space="preserve">
+    <value>系统中不存在标签布局。请重新检查</value>
+  </data>
+  <data name="cannot_connect_printer" xml:space="preserve">
+    <value>无法连接到打印机，请重新检查</value>
+  </data>
+  <data name="invalid_quantity_print" xml:space="preserve">
+    <value>部分商品的打印数量不正确</value>
+  </data>
+  <data name="no_components" xml:space="preserve">
+    <value>没有可用于测试打印的组件</value>
+  </data>
+  <data name="printer_connect_error" xml:space="preserve">
+    <value>打印机连接错误</value>
+  </data>
+  <data name="excel_not_correct_format" xml:space="preserve">
+    <value>Excel 文件格式不符合要求的模板</value>
+  </data>
+  <data name="name_not_contain_symtax" xml:space="preserve">
+    <value>不允许包含数字或特殊字符</value>
+  </data>
+  <data name="invalid_phone_number" xml:space="preserve">
+    <value>无效的电话号码</value>
+  </data>
+  <data name="enter_new_pass" xml:space="preserve">
+    <value>请输入新密码</value>
+  </data>
+  <data name="enter_renew_pass" xml:space="preserve">
+    <value>请输入确认密码！</value>
+  </data>
+  <data name="enter_current_pass" xml:space="preserve">
+    <value>输入当前密码</value>
+  </data>
+  <data name="inventory_code_already_exists" xml:space="preserve">
+    <value>库存盘点单号已存在</value>
+  </data>
+  <data name="manage_printer" xml:space="preserve">
+    <value>管理打印机</value>
+  </data>
+  <data name="list_printer" xml:space="preserve">
+    <value>打印机列表</value>
+  </data>
+  <data name="edit_printer" xml:space="preserve">
+    <value>编辑打印机</value>
+  </data>
+  <data name="delete_printer" xml:space="preserve">
+    <value>删除打印机</value>
+  </data>
+  <data name="printer_name" xml:space="preserve">
+    <value>打印机名称</value>
+  </data>
+  <data name="ip" xml:space="preserve">
+    <value>网络地址 (IP)</value>
+  </data>
+  <data name="port" xml:space="preserve">
+    <value>端口</value>
+  </data>
+  <data name="printer_not_exist" xml:space="preserve">
+    <value>系统中不存在打印机数据</value>
+  </data>
+  <data name="ip_invalid" xml:space="preserve">
+    <value>网络地址格式无效</value>
+  </data>
+  <data name="port_invalid" xml:space="preserve">
+    <value>端口格式无效</value>
+  </data>
+  <data name="add_printer" xml:space="preserve">
+    <value>添加打印机</value>
+  </data>
+  <data name="printer_information" xml:space="preserve">
+    <value>打印机信息</value>
+  </data>
+  <data name="cannot_get_list_printer" xml:space="preserve">
+    <value>无法获取打印机列表</value>
+  </data>
+  <data name="no_printer_address" xml:space="preserve">
+    <value>没有打印机地址</value>
+  </data>
+  <data name="manage_printers_labels" xml:space="preserve">
+    <value>管理打印机和标签</value>
+  </data>
+  <data name="invalid_size_label" xml:space="preserve">
+    <value>标签尺寸无效</value>
+  </data>
+  <data name="structure_not_exist" xml:space="preserve">
+    <value>条码结构在系统中不存在，请重新检查</value>
+  </data>
+  <data name="invalid_seperate_char" xml:space="preserve">
+    <value>分隔符应仅为某些特殊字符，避免使用字母或数字</value>
+  </data>
+  <data name="should_use_char" xml:space="preserve">
+    <value>建议使用特殊字符，如 |、/、-...</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>类型</value>
+  </data>
+</root>

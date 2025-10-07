@@ -1,0 +1,492 @@
+﻿@{
+    ViewBag.Title = Resources.Resource.add_goods;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/assets/css/pages/wizard/wizard-1.css" rel="stylesheet" type="text/css" />
+<style>
+    #submitBtn {
+        position: absolute;
+        right: 0;
+    }
+</style>
+<div class="card card-custom shadow-sm">
+    <!-- Header -->
+    @*<div class="card-header text-white">
+            <h3 class="card-title">@Resources.Resource.add_goods</h3>
+        </div>*@
+    <!--begin::Wizard-->
+    <div class="wizard wizard-1" id="kt_wizard" data-wizard-state="step-first" data-wizard-clickable="false">
+        <!--begin::Wizard Nav-->
+        <div class="wizard-nav border-bottom">
+            <div class="wizard-steps p-8 p-lg-10">
+                <!--begin::Wizard Step 1 Nav-->
+                <div class="wizard-step" data-wizard-type="step" data-wizard-state="current">
+                    <div class="wizard-label">
+                        <i class="wizard-icon flaticon-list"></i>
+                        <h3 class="wizard-title">@Resources.Resource.goods_infor</h3>
+                    </div>
+                    <!--<span class="svg-icon svg-icon-xl wizard-arrow">-->
+                    <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Arrow-right.svg-->
+                    <!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon points="0 0 24 0 24 24 0 24" />
+                            <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)" x="11" y="5" width="2" height="14" rx="1" />
+                            <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+                        </g>
+                    </svg>-->
+                    <!--end::Svg Icon-->
+                    <!--</span>-->
+                </div>
+                <!--end::Wizard Step 1 Nav-->
+                <!--begin::Wizard Step 2 Nav-->
+                <!--<div class="wizard-step" data-wizard-type="step">
+                    <div class="wizard-label">
+                        <i class="wizard-icon flaticon2-layers-2"></i>
+                        <h3 class="wizard-title">2. @Resources.Resource.goods_quantity</h3>
+                    </div>
+                    <span class="svg-icon svg-icon-xl wizard-arrow">-->
+                <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Arrow-right.svg-->
+                <!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon points="0 0 24 0 24 24 0 24" />
+                        <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)" x="11" y="5" width="2" height="14" rx="1" />
+                        <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+                    </g>
+                </svg>-->
+                <!--end::Svg Icon-->
+                <!--</span>
+                </div>-->
+                <!--end::Wizard Step 2 Nav-->
+                <!--begin::Wizard Step 3 Nav-->
+                @*<div class="wizard-step" data-wizard-type="step">
+                        <div class="wizard-label">
+                            <i class="wizard-icon flaticon-responsive"></i>
+                            <h3 class="wizard-title">3. @Resources.Resource.confirm</h3>
+                        </div>
+                    </div>*@
+                <!--end::Wizard Step 3 Nav-->
+            </div>
+        </div>
+        <!--end::Wizard Nav-->
+        <!--begin::Wizard Body-->
+        <div class="row justify-content-center my-10 px-8 my-lg-15 px-lg-10">
+            <div class="col-xl-12 col-xxl-7">
+                <!--begin::Wizard Form-->
+                <form class="form" id="good_add_form">
+                    <!--begin::Wizard Step 1-->
+                    <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
+                        <h2 class="mb-10 font-weight-bold text-dark text-center">@Resources.Resource.enter_good_infor</h2>
+
+                        <div class="alert alert-custom alert-outline-primary d-flex align-items-center">
+                            <i class="flaticon-warning text-blue mr-2"></i>
+                            <div class="alert-text">
+                                @Resources.Resource.input_require_correctly
+                            </div>
+                        </div>
+
+                        <!--begin::Input-->
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label>@Resources.Resource.good_id <span class="text-danger"> (*) </span></label>
+                                    <input type="text" class="form-control form-control-lg" id="idgood" name="idgood" placeholder="@Resources.Resource.goods_id_add_placeholder" />
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="form-group">
+                                    <label>@Resources.Resource.reference</label>
+                                    <input type="text" class="form-control form-control-lg" id="identifier" name="identifier" placeholder="@Resources.Resource.enter_reference" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Input-->
+                        <!--begin::Input Group-->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>@Resources.Resource.good_name <span class="text-danger"> (*) </span></label>
+                                    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="@Resources.Resource.goods_name_add_placeholder" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Input Group-->
+                        <!--begin::Input Group-->
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <!--begin::Input-->
+                                <div class="form-group">
+                                    <label>@Resources.Resource.good_group</label>
+                                    <select class="form-control" data-id="kt_select2_1" id="groupgoods" name="groupgoods">
+                                    </select>
+                                </div>
+                                <!--end::Input-->
+                            </div>
+                            <div class="col-xl-6">
+                                <!--begin::Input-->
+                                <div class="form-group">
+                                    <label>@Resources.Resource.unit</label>
+                                    <select class="form-control" data-id="kt_select2_1" name="unit">
+                                    </select>
+                                </div>
+                                <!--end::Input-->
+                            </div>
+                        </div>
+                        <!--end::Input Group-->
+                        <div class="form-group">
+                            <label>@Resources.Resource.note</label>
+                            <textarea class="form-control" rows="3" placeholder="@Resources.Resource.good_note" id="note"></textarea>
+                        </div>
+                    </div>
+                    <!--end::Wizard Step 1-->
+                    <!--begin::Wizard Actions-->
+                    <div class="d-flex justify-content-between border-top mt-5 pt-10">
+                        @*<div class="mr-2">
+                                <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">@Resources.Resource.previous</button>
+                            </div>*@
+                        <div style="width: 100%; position: relative">
+                            <a href="/MasterData/Goods/Index" class="btn btn-secondary font-weight-bolder text-uppercase px-9 py-4" >@Resources.Resource.Hủy</a>
+                            <button type="button" id="submitBtn" class="btn btn-success font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">@Resources.Resource.create_new</button>
+                            @*<button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">@Resources.Resource.next</button>*@
+                        </div>
+                    </div>
+                    <!--end::Wizard Actions-->
+                </form>
+                <!--end::Wizard Form-->
+            </div>
+        </div>
+        <!--end::Wizard Body-->
+    </div>
+    <!--end::Wizard-->
+</div>
+@section scripts{
+    <script src="~/Areas/MasterData/assets/js/paho_mqtt.js"></script>
+    <script>
+        var resource = {
+            goods_exist: "@Html.Raw(Resources.Resource.goods_exist)",
+            enter_product_code: "@Html.Raw(Resources.Resource.enter_product_code)",
+            enter_product_name: "@Html.Raw(Resources.Resource.enter_product_name)",
+            product_code_standard: "@Html.Raw(Resources.Resource.product_code_standard)",
+            include_invalid_char: "@Html.Raw(Resources.Resource.include_invalid_char)",
+        }
+        var stt = 0;
+        /*--------------- AddGoods--------------*/
+        @*function AddGoods() {
+
+            //lấy thông tin khi nhập vào input....
+            var idGoods = $('#idgood').val()
+            var NameGoods = $('#name').val()
+            var GroupGoods = $('#groupgoods').val()
+            var UnitGoods = $('select[name="unit"]').val()
+            var NoteGoods = $('#note').val()
+            var Inventory = $('#qtt').val()
+
+            var good = {
+                Id: idGoods,
+                Name: NameGoods,
+                IdGroupGood: GroupGoods,
+                IdUnit: UnitGoods,
+                Description: NoteGoods,
+                Inventory: Inventory,
+            }
+            sendAjaxRequest(good)
+        }
+        function sendAjaxRequest(good) {
+            var idDetailWarehouse = $('#warehouse').val().trim()
+            if (idDetailWarehouse == "-1") { idDetailWarehouse = null };
+            $.each(errorEPC, function (k, v) {
+                epcshow = epcshow.filter(function (element) {
+                    return element !== v;
+                })
+            });
+            $.ajax({
+                url: '/MasterData/Goods/Add',
+                type: 'Post',
+                data: { good: good, idDetailWarehouse: idDetailWarehouse, arrayepc: JSON.stringify(arrayepc) },
+                success: function (data) {
+                    if (data.status == 200) {
+                        toastr.success(data.msg);
+                        setTimeout(function () { window.location.href = "/MasterData/Goods/Index"; }, 1000);
+                    } else if (data.status == 300) {
+                        Swal.fire({
+                            title: "@Resources.Resource.warning",
+                            text: data.msg,
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonText: "@Resources.Resource.rescan_all",
+                            cancelButtonText: "@Resources.Resource.cancel",
+                            cancelButtonColor: "#d33",
+                            showCloseButton: true,
+                            showDenyButton: true,
+                            denyButtonText: "@Resources.Resource.rescan_duplicate_code",
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                //Quét lại tất cả.
+                                epcshow = [];
+                                $('#qtt').val(0);
+
+                            } else if (result.dismiss === Swal.DismissReason.Deny) {
+                                // Tìm kiếm lấy mã trùng gửi...
+                                Swal.fire({
+                                    title: "@Resources.Resource.duplicate_codes",
+                                    html: data.epc,
+                                    icon: "info",
+                                    showCancelButton: true,
+                                    confirmButtonText: "Ok",
+                                    cancelButtonText: "@Resources.Resource.Gửi",
+                                    showCloseButton: true,
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        //Ok
+                                    } else {
+                                        // Gửi
+                                    }
+                                });
+                            } else {
+                                //Hủy
+                                Swal.close();
+                            }
+                        });
+                    }
+                    else {
+                        toastr.error(data.msg);
+                    }
+                },
+            });
+        }*@
+        $(document).ready(function () {
+            if (/Android/i.test(navigator.userAgent)) {
+                $("#HandheldRfid").show()
+                $("#desktopRfid").hide()
+            } else {
+                $("#HandheldRfid").hide()
+                $("#desktopRfid").show()
+            }
+        });
+        WareHouse()
+        GroupGoods()
+        Unit();
+        function Unit() {
+            $.ajax({
+                url: '/MasterData/Unit/GetAll',
+                type: 'get',
+                success: function (data) {
+                    $('select[name="unit"]').empty();
+                    if (data.code == 200) {
+                        let table = '<option value="-1">@Resources.Resource.Thuộc_Đơn_Vị</option>'
+                        $.each(data.c, function (k, v) {
+                            table += '<option value="' + v.Id + '">' + v.Name + '</option>'
+                        });
+                        $('select[name="unit"]').append(table);
+                    } else {
+                        alert(data.msg)
+                    }
+                }
+            })
+        }
+
+        function GroupGoods() {
+            $.ajax({
+                url: '/MasterData/GroupGoods/GetAll',
+                type: 'get',
+                success: function (data) {
+                    $('#groupgoods').empty();
+                    if (data.code == 200) {
+                        let table = '<option value="-1">@Resources.Resource.Thuộc_Nhóm_Hàng</option>'
+                        $.each(data.c, function (k, v) {
+                            table += '<option value="' + v.Id + '">' + v.Name + '</option>'
+                        });
+                        $('#groupgoods').append(table);
+                    } else {
+                        alert(data.msg)
+                    }
+                }
+            })
+        }
+
+        function WareHouse() {
+            $.ajax({
+                url: '/MasterData/goods/WareHouse',
+                type: 'get',
+                success: function (data) {
+                    $('#warehouse').empty();
+                    if (data.code == 200) {
+                        let table = '<option value="-1">@Resources.Resource.select_warehouses</option>'
+                        $.each(data.c, function (k, v) {
+                            table += '<option value="' + v.id + '">' + v.name + '</option>'
+                        });
+                        $('#warehouse').append(table);
+                    } else {
+                        alert(data.msg)
+                    }
+                }
+            })
+        }
+        // lấy danh sách nhập hàng vào detail warehouse
+        var des = '';
+        var errorEPC = [];
+        //Quét mã hàng hóa lấy số lượng thực tế
+        async function CompareReceipt(epc) {
+            await CheckIdGoodsInSystem(epc)
+                .then(function (data) {
+                    // Xử lý dữ liệu thành công
+                    if (data?.status) {
+                        stt += 1;
+                        var idGood = $("#idgood").val()
+                        var tr = `<tr class="more" id="more${idGood}">
+                                  <td>${stt}</td>
+                                  <td>${epc}</td>
+                                  <td id="${epc + "_" + idGood}">${idGood}</td>
+                                  </tr>`
+                        $('#readEPC').append(tr);
+                        $('#qtt').val(Number($('#qtt').val()) + 1);
+                        arrayepc.push(epc);
+                    } else {
+                        var more = $('.more').map(function () {
+                            return this.id;
+                        }).get();
+                        stt += 1;
+                        var tr = `<tr class="more" id="more${data?.checkEpc?.IdGoods}">
+                          <td>${stt}</td>
+                          <td>${epc}</td>
+                          <td id="${epc + "_" + data?.checkEpc?.IdGoods}">${data?.checkEpc?.IdGoods}</td>
+                          </tr>`
+                        $('#readEPC').append(tr);
+
+                        var barcodes = data?.checkEpc?.IdGoods
+                        if (more.includes("more" + barcodes + "")) {
+                            $('#amountmore' + barcodes + '').text(Number($('#amountmore' + barcodes + '').text()) + 1)
+                        } else {
+                            var tr = `<tr class="more" id="more${barcodes}">
+                                      <td>${barcodes}</td>
+                                      <td>${data?.checkEpc?.Name}</td>
+                                      <td id="amountmore${barcodes}">1</td>
+                                      </tr>`
+                            $('#des').append(tr)
+                        }
+                        errorEPC.push(
+                            epc
+                        );
+                    }
+
+                })
+                .catch(function (error) {
+                    // Xử lý lỗi
+                    toastr.error(error);
+                });
+
+        }
+        //kiểm tra mã hàng đã có trong hệ thống
+        function CheckIdGoodsInSystem(epc) {
+            return new Promise(function (resolve, reject) {
+                $.ajax({
+                    url: '/EPCs/Epc/CheckIdGoodsInSystem',
+                    type: 'get',
+                    data: { epc },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            resolve(data);
+                        }
+                        else {
+                            toastr.error(data.msg)
+                            reject(data.msg);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        reject(error);
+                    }
+                });
+            });
+        }
+
+        var start;
+        //function RFID() {
+        //    if ($('#idgood').val().trim() == "") { toastr.warning('Chưa nhập mã hàng hóa !!!'); return; };
+        //    if ($('#warehouse').val().trim() == "-1") { toastr.warning('Chọn Kho hàng !!!'); return; };
+        //    DeleteEpc()
+        //    $('.on').css('display', 'none')
+        //    $('.off').css('display', 'block')
+        //    start = setInterval(function () { AllShowEPC() }, 200);
+        //}
+        //stop scanner
+        //function Stop() {
+        //    $('.on').css('display', 'block')
+        //    $('.off').css('display', 'none')
+        //    clearInterval(start);
+        //}
+
+        function StopHH() {
+            $('.on').css('display', 'block')
+            $('.off').css('display', 'none')
+            rfid.disconnect();
+        }
+        var epcshow = [];
+        function AllShowEPC() {
+            $.ajax({
+                url: '/WarehouseManagement/rfid/AllShowEPC',
+                type: 'get',
+                success: function (data) {
+                    if (data.code == 200) {
+                        $.each(data.a, function (k, v) {
+                            $.ajax({
+                                url: '/rfid/falseEPC',
+                                type: 'post',
+                                data: { epc: v.id },
+                                success: async function (data) {
+                                    if (data.code == 200) {
+                                        if (!epcshow.includes(v.id)) {
+                                            epcshow.push(v.id)
+                                            $("#totalEPC").html(epcshow.length);
+                                            await CompareReceipt(v.id)
+                                        }
+                                    }
+                                }
+                            })
+                        })
+                    }
+                }
+            })
+        }
+        function DeleteEpc() {
+            $.ajax({
+                url: '/WarehouseManagement/rfid/DeleteEPC',
+                type: 'post',
+            })
+        }
+        function RFIDHandHeld() {
+            $('.on').css('display', 'none')
+            $('.off').css('display', 'block')
+            rfid.statusEvent = "statusEvent(%json)";
+            rfid.tagEvent = "TagHandler(%json)";
+            RFIDEnumrate();
+        }
+        //RFID
+        async function TagHandler(tagarray) {
+            for (i = 0; i < tagarray.TagData.length; i++) {
+                var epc = tagarray.TagData[i].tagID
+                if (!epcshow.includes(epc)) {
+                    epcshow.push(epc)
+                     await CompareReceipt(epc)
+
+                }
+            }
+        }
+        function RFIDEnumrate() {
+            rfid.transport = 'serial'
+            rfid.readerID = 'RFID1';
+            rfid.enumerate();
+            setTimeout(function () {
+                rfid.connect();
+                rfid.startTriggerType = "triggerPress";
+                rfid.performInventory();
+                rfid.beepOnRead = 1;
+            }, 1000);
+        }
+        $('#goodsBtn').addClass('menu-item-open');
+        $('#addGoodsBtn').addClass('menu-item-active')
+    </script>
+    <script src="~/Areas/MasterData/assets/js/select2.js"></script>
+    <script src="~/Areas/MasterData/assets/js/Good/add-good.js"></script>
+    <script src="~/Areas/MasterData/assets/js/elements.js"></script>
+    <script src="~/Areas/MasterData/assets/js/ebapi-modules.js"></script>
+
+}

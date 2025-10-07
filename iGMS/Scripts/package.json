@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@grapecity/spread-excelio": "^15.2.5",
+    "@grapecity/spread-sheets": "^15.2.5",
+    "@tinymce/tinymce-jquery": "^2.0.0",
+    "fs-extra": "^10.1.0",
+    "jquery": "^3.6.1",
+    "tinymce": "^6.2.0"
+  }
+}

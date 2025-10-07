@@ -1,0 +1,204 @@
+﻿
+@{
+    ViewBag.Title = @Resources.Resource.goods_detail_list;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card card-custom">
+    <div class="card-header">
+        <h3 class="card-title">
+            @Resources.Resource.goods_list
+        </h3>
+    </div>
+    <div class="card-body">
+        <!--begin::Form-->
+        @*<div class="form-group row">
+                <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.good_id</label>
+                <div class="col-8">
+                    <div class="input-group ">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="38" height="38"
+                             viewBox="0 0 48 48"
+                             style=" fill:#000000;">
+                            <path fill="#616161" d="M34.6 28.1H38.6V45.1H34.6z" transform="rotate(-45.001 36.586 36.587)"></path>
+                            <path fill="#616161" d="M20 4A16 16 0 1 0 20 36A16 16 0 1 0 20 4Z"></path>
+                            <path fill="#37474F" d="M36.2 32.1H40.2V44.400000000000006H36.2z" transform="rotate(-45.001 38.24 38.24)"></path>
+                            <path fill="#64B5F6" d="M20 7A13 13 0 1 0 20 33A13 13 0 1 0 20 7Z"></path>
+                            <path fill="#BBDEFB" d="M26.9,14.2c-1.7-2-4.2-3.2-6.9-3.2s-5.2,1.2-6.9,3.2c-0.4,0.4-0.3,1.1,0.1,1.4c0.4,0.4,1.1,0.3,1.4-0.1C16,13.9,17.9,13,20,13s4,0.9,5.4,2.5c0.2,0.2,0.5,0.4,0.8,0.4c0.2,0,0.5-0.1,0.6-0.2C27.2,15.3,27.2,14.6,26.9,14.2z"></path>
+                        </svg>
+                        <input class="form-control" type="search" placeholder="@Resources.Resource.Tìm_Mã_Hàng" id="idgoods" />
+                    </div>
+                </div>
+            </div>*@
+        <div class="col-md-4 my-2 mb-5">
+            <div class="input-icon">
+                <input type="text" class="form-control" placeholder="@Resources.Resource.good_id_search" id="kt_datatable_search_query" />
+                <span>
+                    <i class="flaticon2-search-1 text-muted"></i>
+                </span>
+            </div>
+        </div>
+        <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable_good"></div>
+        @*<div style="height: 500px;overflow-y: scroll;">
+                <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable" role="grid" aria-describedby="kt_datatable_info">
+                    <thead>
+                        <tr role="row">
+                            <th>@Resources.Resource.serial_number</th>
+                            <th>@Resources.Resource.good_id</th>
+                            <th>@Resources.Resource.good_name</th>
+                            <th>@Resources.Resource.quantity</th>
+                            <th>@Resources.Resource.Chi_Tiết</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tbd">
+                    </tbody>
+                </table>
+            </div>*@
+    </div>
+</div>
+<!--Modal-->
+<div class="modal fade" id="showlist" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Resources.Resource.goods_epc_detail</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body" style="min-height: 300px">
+                @*<table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable" role="grid" aria-describedby="kt_datatable_info" style="width:750px">
+                        <thead>
+                            <tr role="row">
+                                <th>STT</th>
+                                <th>@Resources.Resource.good_id</th>
+                                <th>@Resources.Resource.epc_code</th>
+                                <th>@Resources.Resource.search</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbd1">
+                        </tbody>
+                    </table>*@
+                <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable_epc"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">@Resources.Resource.close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+
+    <script>
+        //Goods(1, "");
+        //hiển thị danh sách bằng tìm idpurchase
+        //$('#idgoods').keyup(function (e) {
+        //    $('#tbd').empty();
+        //    var seach = $('#idgoods').val()
+        //    //Goods(1, seach);
+        //});
+        //load code goods
+        function Goods(page, seach) {
+            $.ajax({
+                url: '/MasterData/Goods/List',
+                type: 'get',
+                data: { pagenum: 50, page: page, seach: seach },
+                success: function (data) {
+                    if (data.code == 200) {
+                        var Stt = $('#tbd').children('tr').length + 1;
+                        $.each(data.c, function (k, v) {
+                            var table = '<tr id="' + v.id.trim() + '" role="row" class="hanghoa">';
+                            table += '<td>' + (Stt) + '</td>';
+                            table += '<td>' + v.id.trim() + '</td>';
+                            table += '<td>' + v.name + '</td>';
+                            table += '<td>' + v.inventory + '</td>';
+                            table += '<td style="cursor: pointer;" nowrap="nowrap" name="detailGoods">';
+                            table += '<i class="nav-icon fas fa-list" data-id="' + v.id.trim() + '"></i>';
+                            table += '</tr>';
+                            $('#tbd').append(table);
+                            Stt++;
+                        })
+                        if (page < data.pages) {
+                            page++
+                            Goods(page, seach)
+                        }
+                    } else (
+                        alert(data.msg)
+                    )
+                }
+            })
+        }
+        $(document).on('click', 'td[name="detailGoods"]', function () {
+            var idgoods = $(this).closest('tr').attr('id')
+            openList(1, idgoods)
+        })
+        //hiển thị modal
+        function openList(page, idgoods) {
+
+            $('#showlist').modal('show');
+
+            $.ajax({
+                url: '/MasterData/goods/DetailListGoods',
+                type: 'get',
+                data: { pagenum: 50, page: page, idgoods: idgoods },
+                success: function (data) {
+                    $("#tbd1").empty();
+                    if (data.code == 200) {
+                        for (var i = 0; i < data.epc.length; i++) {
+                            var epc = data.epc[i].idEPC
+                            let table = '<tr id="' + data.epc[i].idGoods.trim() + '" role="row" >';
+                            table += '<td>' + Number(i + 1) + '</td>'
+                            table += '<td>' + data.epc[i].idGoods + '</td>'
+                            table += '<td>' + epc + '</td>'
+                            table += '<td style="cursor: pointer;" nowrap="nowrap">';
+                            table += `<a class="nav-link" name="setEPC" id="${epc}" >`;
+                            table += '<i class="nav-icon la la-search"></i></a>';
+                            table += '</tr>';
+                            $('#tbd1').append(table);
+                        };
+                        if (page < data.pages) {
+                            page++
+                            openList(page, idgoods)
+                        }
+                    }
+                },
+                error: function () {
+                    toastr.error('Lỗi.');
+                }
+            })
+        }
+        //sử dụng localStorage
+        $(document).on('click', 'a[name="setEPC"]', function () {
+            var idEPC = $(this).attr('id')
+            localStorage.setItem("EPC", idEPC)
+            window.location.href = "/MasterData/Goods/SearchEPC"
+        })
+
+        //Focus in menu nav
+        $('#goodsBtn').addClass('menu-item-open');
+        $('#listDetailGoodsBtn').addClass('menu-item-active')
+
+        var resources = {
+            name: "@Resources.Resource.good_name",
+            id: "@Resources.Resource.goods_id",
+            unit: "@Resources.Resource.unit",
+            group: "@Resources.Resource.good_group",
+            wh: "@Resources.Resource.wh_noti",
+            inventory: "@Resources.Resource.inventory",
+            createDate : "@Resources.Resource.create_date",
+            createBy : "@Resources.Resource.create_by",
+            modifyDate : "@Resources.Resource.modify_date",
+            modifyBy : "@Resources.Resource.modify_by",
+            status : "@Resources.Resource.status",
+            detail: "@Resources.Resource.detail",
+            "epc_detail": "@Resources.Resource.goods_epc_detail",
+            "epc_code": "@Resources.Resource.epc_code",
+            "barcode_identify": "@Resources.Resource.serial",
+            @*"barcode_detail": "@Resources.Resource.g"*@
+        }
+
+    </script>
+    <script src="~/Areas/MasterData/assets/js/Good/list-detail-good.js"></script>
+}
+

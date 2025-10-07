@@ -1,0 +1,232 @@
+﻿
+
+@{
+    ViewBag.Title = @Resources.Resource.scan_export_form;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Areas/WarehouseManagement/assets/css/Receipt.css" rel="stylesheet" />
+<style>
+    .modal-footer {
+        display: flex;
+        justify-content: space-between; /* Căn đều các nút */
+        align-items: center; /* Căn giữa dọc */
+        padding: 1rem; /* Padding cho modal footer */
+    }
+
+    #scanning_table td, #scanning_table th {
+        /*text-align: center !important;*/ /* Căn giữa theo chiều ngang */
+        vertical-align: middle !important; /* Căn giữa theo chiều dọc */
+    }
+</style>
+
+<div class="card card-custom">
+    <div class="card-header">
+        <h3 class="card-title">
+            @Resources.Resource.scan_export_form
+        </h3>
+    </div>
+    <!--begin::Form-->
+    <div class="card-body">
+        <div class="form-group mb-8">
+            <div class="alert alert-custom alert-default" role="alert">
+                <div class="alert-icon"><i class="flaticon-warning text-primary"></i></div>
+                <div class="alert-text">
+                    @Resources.Resource.input_require_correctly
+                </div>
+            </div>
+        </div>
+        @*<div class="form-group row" id="HandHeld">
+                <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.Phương_thức_quét<span style="color:red"> (*Handheld)</span> </label>
+                <div class="col-2">
+                    <input type="checkbox" id="ScanMethod" checked data-toggle="toggle" data-on="RFID" data-off="Barcode" data-onstyle="success" data-offstyle="primary">
+                </div>
+            </div>*@
+        <div class="form-group row" hidden>
+            <label for="example-password-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.export_form_code<span style="color:red"> (*) </span></label>
+            <div class="col-lg-10 col-xl-10">
+                <div class="input-group ">
+                    <input class="form-control" type="number" placeholder="@Resources.Resource.export_form_code" id="id" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.sale_order_id<span style="color:red"> (*) </span></label>
+            <div class="col-lg-10 col-xl-10">
+                <input class="form-control" id="idsalesorder" name="idsalesorder" placeholder="@Resources.Resource.sale_order_id" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.export_date</label>
+            <div class="col-lg-10 col-xl-10">
+                <input class="form-control " type="text" id="datexuat" name="datexuat" placeholder="yyyy/MM/dd" readonly />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.customer</label>
+            <div class="col-lg-10 col-xl-10">
+                <input class="form-control " readonly id="nameCustomer" name="nameCustomer" placeholder="@Resources.Resource.customer_name" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.from_warehouse</label>
+            <div class="col-lg-10 col-xl-10">
+                <input class="form-control" readonly id="nameWarehouse" name="nameWarehouse" placeholder="@Resources.Resource.warehouse_name" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.stock_auditor</label>
+            <div class="col-lg-10 col-xl-10">
+                <select class="form-control" data-id="kt_select2_1" data-live-search="true" id="user">
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.note</label>
+            <div class="col-xl-10">
+                <textarea class="form-control" type="text" id="note" placeholder="@Resources.Resource.note" name="GhiChu"></textarea>
+            </div>
+        </div>
+        <div class="form-group  row" id="desktoprfid">
+            <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.goods<span style="color:red;"> (*) </span></label>
+            <div class="col-lg-10 col-xl-10">
+                <button type="button" class="btn btn-success mr-2" onclick="RFID()" id="detailBtn">@Resources.Resource.rfid_scan</button>
+                @*<button type="submit" class="btn btn-secondary mr-2 off" style="display:none" onclick=" Stop()">@Resources.Resource.stop_rfid_scanning</button>*@
+                @*<span class="label label-xl label-info label-inline mr-2">Thời gian đọc: <span id="timer">00:00:00</span></span>*@
+            </div>
+        </div>
+        @*<div class="form-group row" id="rfidhandheld">
+                <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.start_rfid_scanning</label>
+                <div class="col-lg-10 col-xl-10">
+                    <button type="submit" class="btn btn-success mr-2" onclick="RFIDHandHeld()">@Resources.Resource.start_rfid_scanning</button>
+                    <button type="submit" class="btn btn-secondary mr-2 " onclick="StopHH()">@Resources.Resource.stop_Quét_HandHeld</button>
+                </div>
+            </div>*@
+        <div class="css-table-container">
+            <div class="w-100 h-100" style="overflow: auto">
+                <div class="datatable datatable-bordered datatable-head-custom" id="sale-order-goods-scan-datatable"></div>
+            </div>
+        </div>
+        <br />
+        <br />
+        @*<div class="form-group row">
+                <label for="example-password-input" class="col-md-2 col-form-label">@Resources.Resource.epc_excess_or_wrong</label>
+                <div class="col-md-10">
+                    <div class="css-table-container">
+                        <div class="w-100 h-100" style="overflow: auto">
+                            <div data-scroll="true" data-height="150">
+                                <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable" role="grid" aria-describedby="kt_datatable_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th>MÃ HÀNG HÓA</th>
+                                            <th>TÊN KHO HÀNG</th>
+                                            <th>SỐ LƯỢNG</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbdUnmatch">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-5">
+            </div>
+            <div class="col-lg-7 col-xl-7">
+                @*<button type="button" class="btn btn-primary mr-2 saveButton"> @Resources.Resource.save</button>*@
+                <a href="/WarehouseManagement/SaleOrder/List" type="reset" class="btn btn-secondary">@Resources.Resource.cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="read" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalSizeXl" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Resources.Resource.scan_process_data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div data-scroll="true" data-height="300">
+                    <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="scanning_table" role="grid" aria-describedby="kt_datatable_info">
+                        <thead>
+                            <tr role="row">
+                                <th>@Resources.Resource.goods_id</th>
+                                <th name="ctn">@Resources.Resource.good_name</th>
+                                <th>@Resources.Resource.unit</th>
+                                <th>@Resources.Resource.quantity</th>
+                                <th>@Resources.Resource.stock_scaned</th>
+                                <th>@Resources.Resource.status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbdRead">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                @*<span class="label label-xl label-info label-inline mr-2">Time: <span id="timer">00:00:00</span></span>*@
+                <span class="label label-xl label-inline mr-2"></span>
+                <div>
+                    <button type="button" class="btn btn-success font-weight-bolder font-size-sm mr-2 on" onclick="startReading()">@Resources.Resource.scan</button>
+                    <button type="button" class="btn btn-secondary  font-weight-bolder font-size-sm mr-2 off" style="display:none" onclick=" Stop()">@Resources.Resource.stop</button>
+                    <button type="button" class="btn btn-primary font-weight-bold saveButton">@Resources.Resource.save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/jquery.scannerdetection.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            if (/Android/i.test(navigator.userAgent)) {
+                $("#HandHeld").show()
+                $("#rfidhandheld").show()
+                $("#desktoprfid").hide()
+            } else {
+                $("#HandHeld").hide()
+                $("#rfidhandheld").hide()
+                $("#desktoprfid").show()
+            }
+        });
+        var resourcedelivery = {
+                status: "@Resources.Resource.status",
+                goodsID: "@Resources.Resource.goods_id",
+                goodsName: "@Resources.Resource.good_name",
+                quantity: "@Resources.Resource.quantity",
+                scanQuantity: "@Resources.Resource.stock_scaned",
+                goodsGroup: "@Resources.Resource.good_group",
+                unit: "@Resources.Resource.unit",
+                du: "@Resources.Resource.excess",
+                thieu: "@Resources.Resource.deficiency",
+                bang: "@Resources.Resource.enough",
+                belong: "@Resources.Resource.belong_wh",
+                different: "@Resources.Resource.different_from",
+                not_in: "@Resources.Resource.not_included_in_form",
+            unidentified: "@Resources.Resource.unidentified",
+            no_item: "@Resources.Resource.no_goods_scanned",
+            success: "@Resources.Resource.success",
+            choose_staff: "@Resources.Resource.Chọn_Nhân_Viên_Kiểm_Hàng",
+                rfid_scan: "@Html.Raw(Resources.Resource.rfid_scan)",
+            barcode_scan: "@Html.Raw(Resources.Resource.barcode_scan)",
+            empty_barcode: "@Html.Raw(Resources.Resource.empty_barcode)",
+            not_included_in_form: "@Html.Raw(Resources.Resource.not_included_in_form)",
+            not_know_match_sku: "@Html.Raw(Resources.Resource.not_know_match_sku)",
+            unidentified: "@Html.Raw(Resources.Resource.unidentified)",
+        }
+        $('#exportBtn').addClass('menu-item-open');
+        $('#scanExportFormBtn').addClass('menu-item-active');
+    </script>
+    <script src="~/Areas/WarehouseManagement/assets/js/paho_mqtt.js"></script>
+    <script src="~/Areas/WarehouseManagement/assets/js/SaleOrder/Delivery.js"></script>
+    <script src="~/Areas/WarehouseManagement/assets/js/SaleOrder/reading-detail.js"></script>
+}

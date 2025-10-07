@@ -1,0 +1,650 @@
+﻿
+@{
+    ViewBag.Title = Resources.Resource.export_form_list;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model WMS.ViewModel.SaleOrderViewModel
+<link href="~/assets/css/dragula/dragula.min.css" rel="stylesheet" />
+<style>
+    /* Màu nền chung cho modal */
+    .modal-content {
+        background-color: #ffffff;
+    }
+
+    /* Màu nền cho phần header của modal */
+    .modal-header {
+        background-color: #d9d9d9;
+    }
+
+    .drag-container {
+        min-height: 30px;
+    }
+
+    p {
+        margin-bottom: 0 !important;
+    }
+
+    .write-content {
+        padding-right: 30px;
+    }
+
+    .bill-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .edit-text[contenteditable="true"] {
+        border: 1px dashed #007bff;
+        padding: 5px;
+        background-color: #f9f9f9;
+        outline: none;
+    }
+
+    .edit-text {
+        min-width: 50px;
+    }
+
+    .add-row-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        position: relative;
+        width: 35%;
+        opacity: 0; /* Mặc định ẩn toàn bộ */
+        transition: opacity 0.3s ease; /* Thêm hiệu ứng mượt mà khi thay đổi */
+        cursor: pointer;
+    }
+
+        .add-row-container:hover {
+            opacity: 1; /* Hiển thị khi hover */
+        }
+
+    .line {
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        z-index: 0;
+        background-color: #007bff;
+    }
+
+    .add-button {
+        width: 15px;
+        height: 15px;
+        background-color: #007bff;
+        border-radius: 50%;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+        .add-button:hover .line:hover {
+            background-color: #0056b3;
+        }
+
+    .add-line-container {
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative;
+        display: inline-block;
+        opacity: 0; /* Mặc định ẩn toàn bộ */
+        transition: opacity 0.3s ease; /* Thêm hiệu ứng mượt mà khi thay đổi */
+        cursor: pointer;
+    }
+
+        .add-line-container:hover {
+            opacity: 1; /* Hiển thị khi hover */
+        }
+
+    .sign-add-button {
+        width: 15px;
+        height: 15px;
+        background-color: #007bff;
+        border-radius: 50%;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1;
+        position: absolute;
+        top: 50%; /* Đặt vị trí của nút ở giữa đường kẻ */
+        left: 60%;
+        transform: translate(-50%, -50%);
+    }
+
+    .sign-line {
+        height: 100%; /* Chiều cao của đường kẻ dọc */
+        width: 2px; /* Chiều rộng của đường kẻ */
+        background-color: #007bff;
+        position: absolute;
+        left: 50%; /* Đặt đường kẻ ở giữa */
+        top: 0;
+        z-index: 0;
+    }
+</style>
+<div class="card card-custom">
+    <div class="card-header">
+        <h3 class="card-title">
+            @Resources.Resource.export_form_list
+        </h3>
+    </div>
+    <div class="card-body">
+        <!--begin::Form-->
+        <div class="form-group row">
+            <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.start_date</label>
+            <div class="col-xl-4">
+                <input class="form-control" id="tungay" placeholder="Select time" type="date">
+            </div>
+            <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.end_date</label>
+            <div class="col-xl-4">
+                <input class="form-control" id="denngay" placeholder="Select time" type="date">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.scan_status</label>
+            <div class="col-xl-4">
+                <select class="form-control" id="statussaleorder" name="statussaleorder">
+                    <option value="">@Resources.Resource.all</option>
+                    <option value="true">@Resources.Resource.scanned</option>
+                    <option value="false">@Resources.Resource.not_scanned_yet</option>
+                    <option value="false2">@Resources.Resource.not_completed_scanning</option>
+                </select>
+            </div>
+            <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.select_warehouses</label>
+            <div class="col-xl-4">
+                @Html.DropDownListFor(m => m.Warehouse, Model.Warehouse, Resources.Resource.all, new { @class = "form-control", @id = "warehouse" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.staff</label>
+            <div class="col-xl-4">
+                <select class="form-control" id="nhanVien" name="nhanVien">
+                </select>
+            </div>
+            <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.approve_status</label>
+            <div class="col-xl-4">
+                <select class="form-control" id="handlingStatus" name="handlingStatusName">
+                    <option value="">@Resources.Resource.all</option>
+                    <option value="NONAPPROVE">@Resources.Resource.not_approve</option>
+                    <option value="APPROVED">@Resources.Resource.approved</option>
+                    <option value="CANCEL">@Resources.Resource.cancel</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-search-input" class="col-xl-2 col-lg-2 col-form-label">@Resources.Resource.export_form</label>
+            <div class="input-group col-10">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="la flaticon-search-magnifier-interface-symbol"></i></span>
+                </div>
+                <input class="form-control" type="search" placeholder="@Resources.Resource.sale_search_id" id="seachidsaleorder" />
+            </div>
+        </div>
+        <div class="css-table-container">
+            <div class="w-100 h-100" style="overflow: auto">
+                <div class="datatable datatable-bordered datatable-head-custom" id="sale-order-datatable"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Delivery Modal-->
+<div id="delivery_modal" class="modal fade" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content" style="min-height: 590px;">
+            <div class="modal-header py-5" style="background-color: #ffffff;">
+                <h5 class="modal-title">
+                    @Resources.Resource.scan_detail
+                </h5>
+                <input type="text" class="form-control" placeholder="@Resources.Resource.sale_search_id" id="seachidreceipt" style="width:30%" />
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input hidden value="" id="hiddenID" />
+                <div style="width: 100%; display: flex; align-items: flex-end; flex-direction: column">
+                    <button type="button" id="detailSOBtn" class="btn btn-outline-secondary btn-icon"><i class="la la-file-text-o"></i></button>
+                </div>
+                <div class="row form-group">
+                    <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable_delivery" style="width: 100%;"></div>
+                </div>
+                <!--end: Datatable-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light-success font-weight-bold text-uppercase" name="approveAllDelivery">@Resources.Resource.approve</button>
+                <button type="button" class="btn btn-light-dark font-weight-bold text-uppercase" data-dismiss="modal">@Resources.Resource.close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Detail Modal-->
+<div class="modal fade show" id="detail_modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #ffffff;">
+                <h5 class="modal-title" id="exampleModalLabel">@Resources.Resource.Chi_Tiết_Phiếu_Xuất</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body" style="overflow-y: scroll;">
+                <input hidden value="" id="hiddenID" />
+                <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable1" role="grid" aria-describedby="kt_datatable_info">
+                    <thead>
+                        <tr role="row">
+                            <th>STT</th>
+                            <th>@Resources.Resource.good_id</th>
+                            <th>@Resources.Resource.good_name</th>
+                            <th>@Resources.Resource.quantity</th>
+                            <th>@Resources.Resource.scanned_quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbd1">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" style="width: 80px" class="btn btn-light-dark font-weight-bold" data-dismiss="modal">@Resources.Resource.close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Detail of not approved yet-->
+<div class="modal fade show" id="unapproved_detail_modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #ffffff;">
+                <h5 class="modal-title" id="exampleModalLabel">@Resources.Resource.Chi_Tiết_Phiếu_Xuất</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body" style="overflow-y: scroll;">
+                <input hidden value="" id="hiddenID" />
+                <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable1" role="grid" aria-describedby="kt_datatable_info">
+                    <thead>
+                        <tr role="row">
+                            <th>STT</th>
+                            <th>@Resources.Resource.good_id</th>
+                            <th>@Resources.Resource.good_name</th>
+                            <th>@Resources.Resource.quantity</th>
+                            <th>@Resources.Resource.scanned_quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbd1_unapproved_detail">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" style="width: 80px" class="btn btn-light-dark font-weight-bold" data-dismiss="modal">@Resources.Resource.close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="BILL" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width:1100px;">
+        <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-body" id="in" style="padding: 20px;">
+                <div class="row">
+                    <div class="col-1 bill-logo">
+                        <div>
+                            <img id="billLogo" alt="Logo" src="~/PrintDetail/logo-bill.png" style="width: 90px" />
+                            <input type="file" id="imageInput" style="display: none;" accept="image/*" onchange="updateImage()" />
+                        </div>
+                    </div>
+                    <div id="drag-container-1" class="drag-container col-7" style="display: flex; flex-direction: column; justify-content: center;padding-left: 20px">
+                        <h5 class="draggable" style="font-weight: bolder">CÔNG TY CỔ PHẦN THƯƠNG MẠI HÀ PHAN</h5>
+                        <p class="draggable">Địa chỉ: 758/25/2B Xô Viết Nghệ Tĩnh, Phường 25, Quận Bình Thạnh, TP HCM.</p>
+                    </div>
+                    <div id="drag-container-2" class="drag-container col-4 text-center">
+                        <p class="draggable">Mẫu số: 02-VT</p>
+                        <p class="draggable">(Ban hành theo QĐ số 15/2006/QĐ - BTC ngày 20/03/2006 của Bộ trưởng BTC)</p>
+                        @*<p>Số phiếu: <span name="phieu">6324/14</span></p>
+                            <p>Ngày xuất: <span name="ngayxuat">15/08/2024</span></p>*@
+                    </div>
+                </div>
+                <!-- Title -->
+                <div class="row mt-5 mb-5 ">
+                    <div class="text-right col-7">
+                        <div class="text-center ml-auto" style="width: fit-content;">
+                            <h2 class="font-weight-bold">PHIẾU XUẤT KHO</h2>
+                            <p style="font-style:italic">Số phiếu xuất: <span id="idSO"></span></p>
+                            <p class="edit-text" id="dateSO"></p>
+                        </div>
+                    </div>
+                    <div class="align-text-bottom col-1">
+                    </div>
+                    <div class="align-text-bottom col-4 d-flex flex-column">
+                        <div class="mt-auto" style="width: fit-content; height: fit-content;">
+                            <p class="edit-text">Nợ: ..............</p>
+                            <p class="edit-text">Có: ..............</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Customer Info -->
+                <div id="drag-container-3" class="drag-container mb-4">
+                    <p class="draggable"><span class="edit-text">- Khách hàng: </span> <span class="content">CÔNG TY TNHH DFT RENZE </span></p>
+                    <p class="draggable"><span class="edit-text">- Địa chỉ: </span><span class="content">Thái Hòa, Phước Thái, Nhơn Trạch, Đồng Nai, Việt Nam</span></p>
+                    <p class="draggable"><span class="edit-text">- Lý do xuất kho: </span><span class="content">Xuất tại kho công ty</span></p>
+                    <p class="draggable"><span class="edit-text">- Xuất tại kho: </span><span class="content">Kho Văn Phòng</span></p>
+                </div>
+                <!-- Table -->
+                <table class="table table-bordered" id="kt_datatable" style="width: 100%;">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>STT</th>
+                            <th>Mã Hàng</th>
+                            <th>Tên Hàng</th>
+                            <th>Đơn Vị</th>
+                            <th>Số Lượng</th>
+                            <th>Thực Xuất</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbdBillPrint">
+                        <tr>
+                            <td>1</td>
+                            <td>P-1037974-010</td>
+                            <td>Đế chân máy ZEMA ZT200-203dpi</td>
+                            <td>Cái</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>P-1037974-010</td>
+                            <td>Đế chân máy ZEMA ZT200-203dpi</td>
+                            <td>Cái</td>
+                            <td>1</td>
+                            <td>1</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div id="drag-container-4" class="drag-container">
+                    <p class="draggable"><span class="edit-text">- Số chứng từ gốc kèm theo: </span><span>109/19860723/RENZE</span></p>
+                </div>
+                <!-- Footer -->
+                <div id="drag-container-5" class="drag-container row mt-4 text-center justify-content-between" style="margin-left: 10px;">
+                    <div class="pl-6 pr-6 draggable">
+                        <p class="edit-text" style="font-weight: bold">Người Lập Phiếu</p>
+                        <p>(Ký, ghi rõ họ tên)</p>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+                    <div class="pl-6 pr-6 draggable">
+                        <p class="edit-text" style="font-weight: bold">Thủ Kho Xuất</p>
+                        <p>(Ký, ghi rõ họ tên)</p>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+                    <div class="pl-6 pr-6 draggable">
+                        <p class="edit-text" style="font-weight: bold">Người Nhận Hàng</p>
+                        <p>(Ký, ghi rõ họ tên)</p>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+                    <div class="pl-6 pr-6 draggable">
+                        <p class="edit-text" style="font-weight: bold">Người Giao Hàng</p>
+                        <p>(Ký, ghi rõ họ tên)</p>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+                    <div class="pl-6 pr-6 draggable">
+                        <p class="edit-text" style="font-weight: bold">Kế Toán Trưởng</p>
+                        <p>(Ký, ghi rõ họ tên)</p>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Buttons -->
+            <div class="modal-footer d-flex justify-content-between">
+                <div>
+                    <button class="btn btn-warning" style="display:none" id="updateBtn">Cập nhật format phiếu in</button>
+                </div>
+                <div>
+                    <div data-dismiss="modal" class="btn btn-secondary">Đóng</div>
+                    <button type="button" onclick="Printing()" class="btn btn-primary">In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="modal" id="BILL" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width:1100px;">
+        <div class="modal-content">-->
+<!-- Header -->
+<!--<div class="modal-body" id="in" style="padding: 20px;">
+    <div class="row">
+        <div class="col-8">
+            <h5 class="font-weight-bold">CÔNG TY CỔ PHẦN THƯƠNG MẠI HÀ PHAN</h5>
+            <p>Địa chỉ: 758/25/2B Xô Viết Nghệ Tĩnh, Phường 25, Quận Bình Thạnh, TP HCM.</p>
+            <p>Điện thoại: [Số điện thoại]</p>
+        </div>
+        <div class="col-4 text-right">
+            <p>Số ĐH: <span name="iddh"></span></p>
+            <p>Ngày ĐH: <span name="datedh"></span></p>
+        </div>
+    </div>-->
+<!-- Title -->
+<!--<div class="text-center mt-4 mb-4">
+    <h2 class="font-weight-bold">PHIẾU XUẤT KHO</h2>
+</div>-->
+<!-- Customer Info -->
+<!--<div class="mb-4">
+    <p>- Khách hàng: <span name="customer"></span></p>
+    <p>- Địa chỉ: <span name="address"></span></p>
+    <p>- Xuất tại: <span name="nameware"></span></p>
+</div>-->
+<!-- Table -->
+<!--<table class="table table-bordered table-striped" id="kt_datatable" style="width: 100%;">
+    <thead class="thead-light">
+        <tr>
+            <th>STT</th>
+            <th>Mã Hàng</th>
+            <th>Tên Hàng</th>
+            <th>Số Lượng</th>
+            <th>Nhóm Hàng</th>
+            <th>Đơn Vị</th>
+        </tr>
+    </thead>
+    <tbody id="tbdmodal"></tbody>
+</table>-->
+<!-- Footer -->
+<!--<div class="row mt-4 text-center">
+        <div class="col-6">
+            <p><strong>Người Xác Nhận</strong></p>
+            <p>(Ký, ghi rõ họ tên)</p>
+        </div>
+        <div class="col-6">
+            <p>Ngày.....Tháng....Năm........</p>
+            <p><strong>Người Lập Đơn Hàng</strong></p>
+            <p>(Ký, ghi rõ họ tên)</p>
+        </div>
+    </div>
+</div>-->
+<!-- Footer Buttons -->
+<!--<div class="modal-footer">
+                <div data-dismiss="modal" class="btn btn-secondary">Đóng</div>
+                <button type="button" onclick="printDiv('in')" class="btn btn-primary">In</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.17.26/css/grapes.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.17.26/grapes.min.js"></script>
+
+
+
+<!--Modal-->
+<!--<div class="modal fade show" id="showlist" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Resources.Resource.Chi_Tiết_Phiếu_Xuất</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body" style="height: 300px; overflow-y: scroll;">
+                <table class="table table-separate table-head-custom table-checkable dataTable no-footer dtr-inline" id="kt_datatable" role="grid" aria-describedby="kt_datatable_info" style="width:750px">
+                    <thead>
+                        <tr role="row">
+                            <th>STT</th>
+                            <th>@Resources.Resource.good_id</th>
+                            <th>@Resources.Resource.good_name</th>
+                            <th>@Resources.Resource.quantity</th>
+                            <th>@Resources.Resource.scanned_quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbd1">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">@Resources.Resource.close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModalLong" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog" style="max-width:1300px" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Danh sách số lần quét</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">-->
+<!--begin: Datatable-->
+<!--<div class="datatable datatable-bordered datatable-head-custom" id="delivery_datatable"></div>-->
+<!--end: Datatable-->
+<!--<div hidden id="modalSaleOrderId"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" id="btnConfirm">Duyệt phiếu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deliveryDetailModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog" style="max-width:1300px" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Chi tiết lần quét</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">-->
+<!--begin: Datatable-->
+<!--<div class="datatable datatable-bordered datatable-head-custom" id="delivery_detail_datatable"></div>-->
+<!--end: Datatable-->
+<!--</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" id="btnSave">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+@section scripts{
+    <script src="~/assets/js/dragula/dragula.min.js"></script>
+    <script>
+        var resources = {
+            all: "@Resources.Resource.all",
+            errorAjax: "@Resources.Resource.error_ajax",
+            fromError: "@Resources.Resource.from_date_error",
+            toError: "@Resources.Resource.to_date_error",
+            exportID: "@Resources.Resource.export_id",
+            wh: "@Resources.Resource.inventory_name",
+            cus: "@Resources.Resource.customer_name",
+            status: "@Resources.Resource.status",
+            approveStatus: "@Resources.Resource.approve_status",
+            actions: "@Resources.Resource.actions",
+            createBy: "@Resources.Resource.create_by",
+            createDate: "@Resources.Resource.create_date",
+            scanningProcess: "@Resources.Resource.scan_process",
+            scanList: "@Resources.Resource.scan_list",
+            confirmDelete: "@Resources.Resource.confirm_delete_so",
+            deleteSO: "@Resources.Resource.sale_delete",
+            printSO: "@Resources.Resource.sale_print_btn",
+            noScan: "@Resources.Resource.not_scanned_yet",
+            notDoneScan: "@Resources.Resource.not_completed_scanning",
+            scanned: "@Resources.Resource.scanned",
+            approved: "@Html.Raw(Resources.Resource.approved)",
+            notApproved: "@Resources.Resource.not_approve",
+            cancleApprove: "@Resources.Resource.cancel",
+            approveSO: "@Resources.Resource.approve_so",
+            scanFormID: "@Resources.Resource.purchase_scan_ID",
+            goodExporting: "@Resources.Resource.sale_good_status",
+            exported: "@Resources.Resource.sale_export",
+            pending: "@Resources.Resource.sale_pending",
+            chooseAction: "@Resources.Resource.Choose_an_option",
+            scanApprove: "@Resources.Resource.approve_scan",
+            confirmScanApprove: "@Resources.Resource.confirm_scan",
+            scandetail: "@Resources.Resource.scan_detail",
+            deletescan: "@Resources.Resource.scan_delete",
+            note: "@Resources.Resource.note",
+            cannotDo: "@Resources.Resource.scan_not_do",
+            soNotApprove: "@Resources.Resource.scan_not_approve_yet",
+            confirmScanDelete: "@Resources.Resource.confirm_delete_scan_data",
+            goodsID: "@Resources.Resource.goods_id",
+            goodsName: "@Resources.Resource.good_name",
+            scannedQuantity: "@Resources.Resource.number_of_scanned_goods",
+            soConfirm: "@Resources.Resource.sale_confirm",
+            approveAllScan: "@Resources.Resource.appove_all_scan_confirm",
+            export_detail: "@Html.Raw(Resources.Resource.export_detail)",
+        }
+    </script>
+    <script src="~/Areas/WarehouseManagement/assets/js/SaleOrder/List.js"></script>
+    <script>
+        //const editor = grapesjs.init({
+        //    container: '#BILL',
+        //    fromElement: true,
+        //    height: '700px',
+        //    width: 'auto',
+        //    storageManager: false,
+        //    panels: { defaults: [] },
+        //    blockManager: { appendTo: '#blocks' }
+        //});
+        $('#exportBtn').addClass('menu-item-open');
+        $('#listExportFormBtn').addClass('menu-item-active')
+    </script>
+}

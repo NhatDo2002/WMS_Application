@@ -1,0 +1,353 @@
+﻿
+@{
+    ViewBag.Title = Resources.Resource.setup_barcode_structure;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #hover-area {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px;
+    }
+
+
+    .add-btn {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: none;
+        background-color: #0d6efd;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 0 4px;
+        pointer-events: none; /* Ngăn hover khi ẩn */
+    }
+
+    #hover-area:hover .add-btn {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto; /* Cho phép click */
+    }
+
+    #pattern {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #labelArea {
+        border: 2px solid #888;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+        margin-top: 1rem;
+    }
+
+    .draggable {
+        padding: 10px;
+        background-color: #f8f9fa;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: grab;
+        text-align: center;
+    }
+
+    .label-element {
+        position: absolute;
+        cursor: move;
+    }
+
+        .label-element * {
+            pointer-events: none; /* Đảm bảo chuột không bị chặn bởi phần tử con như canvas, svg */
+        }
+
+    .edit-popover {
+        position: absolute;
+        z-index: 10;
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        min-width: 200px;
+    }
+</style>
+
+<div class="card card-custom">
+    <div class="card-header">
+        <h3 class="card-title">
+            @Resources.Resource.barcode_structure_analysis
+        </h3>
+    </div>
+
+    <!--begin::Form-->
+    <div class="card-body">
+        <div class="form-group row">
+            <label class="col-lg-2 col-md-4 col-4 col-form-label">@Resources.Resource.field_segmentation<span style="color:red"> (*) </span></label>
+            <div class="col-lg-10 col-md-8 col-8">
+                <span class="switch switch-outline switch-icon switch-primary">
+                    <label>
+                        <input type="checkbox" checked="checked" name="select" id="isSeperate" />
+                        <span></span>
+                    </label>
+                </span>
+            </div>
+        </div>
+        <div id="structure-zone">
+            <div class="form-group row">
+                <label for="example-search-input" class="col-lg-2 col-md-4 col-4  col-form-label">@Resources.Resource.delimiter_detection</label>
+                <div class="col-lg-10 col-md-8 col-8">
+                    <input class="form-control" type="text" placeholder="Enter delimiter character..." id="delimiter_new" style="width: 20%" />
+                    <span class="form-text text-muted">@Resources.Resource.should_use_char</span>
+                    <input class="form-control" type="hidden" placeholder="" id="delimiter" style="width: 20%" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-search-input" class="col-lg-2 col-md-4 col-4  col-form-label">@Resources.Resource.data_pattern_recognition</label>
+                <div class="col-lg-10 col-md-8 col-8 d-flex align-items-center" id="hover-area">
+                    <button class="add-btn left">+</button>
+                    <div id="pattern" class="draggable-zone row p-list">
+                    </div>
+                    <button class="add-btn right">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-10">
+                <button class="btn btn-success mr-2" id="submit">@Resources.Resource.save</button>
+                <a href="/Home/index" type="reset" class="btn btn-secondary">@Resources.Resource.cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card card-custom mt-5">
+    <div class="card-header">
+        <h3 class="card-title">
+            @Resources.Resource.design_label
+        </h3>
+        <div class="card-toolbar">
+            <button type="button" id="printerOpen" class="btn btn-lg btn-light-primary font-weight-bold">
+                <i class="fas fa-print"></i> @Resources.Resource.manage_printer
+            </button>
+        </div>
+    </div>
+
+    <!--begin::Form-->
+    <div class="card-body">
+        <div class="container py-5">
+            @*<select class="mb-4 form-select" id="list-printers">
+                    <option value="-1">Lựa chọn máy in</option>
+                </select>*@
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <label for="widthInput" class="form-label">@Resources.Resource.width_inch</label>
+                    <input type="number" id="widthInput" class="form-control" value="4">
+                </div>
+                <div class="col-md-3">
+                    <label for="heightInput" class="form-label">@Resources.Resource.height_inch</label>
+                    <input type="number" id="heightInput" class="form-control" value="2">
+                </div>
+                <div class="col-md-3 align-self-end">
+                    <button class="btn btn-primary w-100" id="updateSizeBtn">@Resources.Resource.update_label</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label>@Resources.Resource.components</label>
+                    <div class="draggable my-2" draggable="true" data-type="text">📝 @Resources.Resource.text</div>
+                    <div class="draggable my-2" draggable="true" data-type="qr">🔲 @Resources.Resource.qr_code</div>
+                    <div class="draggable my-2" draggable="true" data-type="barcode">📦 @Resources.Resource.barcode</div>
+                </div>
+
+                <div class="col-md-9" style="border-left: 2px dashed black">
+                    <label>@Resources.Resource.label_review</label>
+                    <div id="labelArea"></div>
+                </div>
+            </div>
+            <div class="form-group row mt-5">
+                <label class="col-2 col-form-label">@Resources.Resource.select_printer_test_print</label>
+                <select class="form-control col-2 mr-5" id="selectPrinter">
+                </select>
+                <input type="text" id="ipReview" class="form-control col-2 mr-5" placeholder="@Resources.Resource.ip" disabled/>
+                <input type="text" id="portReview" class="form-control col-2 mr-5" placeholder="@Resources.Resource.port" disabled/>
+                <button class="btn btn-info" id="print_test_btn">@Resources.Resource.test_print</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-10">
+                <button class="btn btn-success mr-2" id="submitLayout">@Resources.Resource.save_layout</button>
+                <a href="/Home/index" type="reset" class="btn btn-secondary">@Resources.Resource.cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Printer Modal-->
+<div class="modal fade" id="printerManage" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="min-width:900px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Resources.Resource.list_printer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div data-scroll="true" data-height="300">
+                    <div class="w-100 d-flex justify-content-end align-items-center">
+                        <button type="button" class="btn btn-primary" id="addPrinterModal">
+                            @Resources.Resource.add_printer
+                        </button>
+                    </div>
+                    <div class="datatable datatable-bordered datatable-head-custom" id="printer_datatable"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">@Resources.Resource.close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Add/Edit Modal-->
+<div class="modal fade" id="printerInfo" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Resources.Resource.printer_information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="printer_info">
+                    <input type="hidden" id="id" />
+                    <div class="form-group">
+                        <label>@Resources.Resource.printer_name <span class="text-danger">*</span></label>
+                        <input type="text" name="name" id="namePrinter" class="form-control" placeholder="HT830..." />
+                    </div>
+                    <div class="form-group">
+                        <label for="ip">@Resources.Resource.ip <span class="text-danger">*</span></label>
+                        <input type="text" name="ip" class="form-control" id="ip" placeholder="100.27.239.77..." />
+                    </div>
+                    <div class="form-group">
+                        <label>@Resources.Resource.port:</label>
+                        <input type="number" name="port" class="form-control" id="port" placeholder="9100..." />
+                    </div>
+                    <div class="form-group mb-1">
+                        <label for="des">@Resources.Resource.description</label>
+                        <textarea class="form-control" id="des" rows="3" placeholder="@Resources.Resource.des_placeholder"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">@Resources.Resource.close</button>
+                <button type="button" id="savePrinter" class="btn btn-primary font-weight-bold">@Resources.Resource.save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="editPopover" class="edit-popover d-none">
+    <div class="mb-2">
+        <label>@Resources.Resource.content_type:</label>
+        <select class="form-control" id="contentType">
+            <option value="manual">@Resources.Resource.enter_content_manually</option>
+            <option value="field">@Resources.Resource.automatically_fetch_from_PO</option>
+        </select>
+    </div>
+    <!-- Nhập nội dung thủ công -->
+    <div class="mb-2" id="manualField">
+        <label>@Resources.Resource.content:</label>
+        <input type="text" id="editContentInput" class="form-control form-control-sm">
+    </div>
+
+    <!-- Lựa chọn trường từ PO -->
+    <div id="fieldOptionsWrapper" class="mb-2 d-none">
+        <label>@Resources.Resource.select_data_field:</label><br />
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Id" id="fieldId">
+            <label class="form-check-label" for="fieldId">@Resources.Resource.item_code</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Name" id="fieldName">
+            <label class="form-check-label" for="fieldName">@Resources.Resource.item_name</label>
+        </div>
+        <small class="form-text text-muted mt-1">@Resources.Resource.preview: <span id="fieldPreview">—</span></small>
+    </div>
+    <div class="mb-2">
+        <label id="size-title">@Resources.Resource.font_size:</label>
+        <input type="number" id="editSizeInput" class="form-control form-control-sm">
+    </div>
+    <button class="btn btn-danger btn-sm w-100" id="deleteElementBtn">@Resources.Resource.delete</button>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/jsBarcode.js"></script>
+    <script src="~/Scripts/qrcodeJS.js"></script>
+    <script>
+        var resource = {
+            "sample_text": "@Html.Raw(Resources.Resource.sample_text)",
+            "print_success": "@Html.Raw(Resources.Resource.print_success)",
+            "adjust_parameter": "@Html.Raw(Resources.Resource.adjust_parameter)",
+            "size": "@Html.Raw(Resources.Resource.size)",
+            "font_size": "@Html.Raw(Resources.Resource.font_size)",
+            "display_text": "@Html.Raw(Resources.Resource.display_text)",
+            "rotation_angle": "@Html.Raw(Resources.Resource.rotation_angle)",
+            "bar_witdh": "@Html.Raw(Resources.Resource.bar_witdh)",
+            "height": "@Html.Raw(Resources.Resource.height)",
+            "yes": "@Html.Raw(Resources.Resource.yes)",
+            "no": "@Html.Raw(Resources.Resource.no)",
+            "content": "@Html.Raw(Resources.Resource.content)",
+            "no_printer_found": "@Html.Raw(Resources.Resource.no_printer_found)",
+            "save_layout_successfully": "@Html.Raw(Resources.Resource.save_layout_successfully)",
+            "please_enter_delimiter": "@Html.Raw(Resources.Resource.please_enter_delimiter)",
+            "good_id": "@Html.Raw(Resources.Resource.good_id)",
+            "item_name": "@Html.Raw(Resources.Resource.item_name)",
+            "edit_printer": "@Html.Raw(Resources.Resource.edit_printer)",
+            "delete_printer": "@Html.Raw(Resources.Resource.warehouse_delete)",
+            "createDate": "@Resources.Resource.create_date",
+            "createBy": "@Resources.Resource.create_by",
+            "modifyDate": "@Resources.Resource.modify_date",
+            "modifyBy": "@Resources.Resource.modify_by",
+            "printer_name": "@Resources.Resource.printer_name",
+            "ip": "@Resources.Resource.ip",
+            "port": "@Resources.Resource.port",
+            "description": "@Resources.Resource.description",
+            "action": "@Resources.Resource.action",
+            "DeleteWarning": "@Resources.Resource.warehouse_delete_warning",
+            "ConfirmDeleteWarning": @Html.Raw(Json.Encode(Resources.Resource.confirm.ToString())), //mã hóa chuỗi tránh gây lỗi ký tự
+            "DeleteInfo": "@Resources.Resource.remove_unwanted",
+            "CancelInfo": "@Resources.Resource.CancelInfo",
+            "DeleteSuccess": "@Resources.Resource.delete_success",
+            "is_not_empty": "@Resources.Resource.is_not_empty",
+            "ip_invalid": "@Resources.Resource.ip_invalid",
+            "port_invalid": "@Resources.Resource.port_invalid",
+            "cannot_get_list_printer": "@Resources.Resource.cannot_get_list_printer",
+            "please_select_printer": "@Resources.Resource.please_select_printer",
+            "no_printer_found": "@Resources.Resource.no_printer_found",
+            "invalid_size_label": "@Resources.Resource.invalid_size_label",
+            "invalid_seperate_char": "@Resources.Resource.invalid_seperate_char",
+        }
+    </script>
+    <script src="~/assets/plugins/custom/draggable/draggable.bundle.js"></script>
+    <script src="~/Areas/WarehouseManagement/assets/js/Warehouse/BarcodeStructure.js"></script>
+    <script src="~/Areas/WarehouseManagement/assets/js/Warehouse/setupBarcode.js"></script>
+    <script src="~/Areas/WarehouseManagement/assets/js/Printing_Setup/printing_setup.js"></script>
+}

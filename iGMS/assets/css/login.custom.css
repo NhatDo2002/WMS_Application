@@ -1,0 +1,249 @@
+#aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 55%;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(30px);
+    border-radius: 0 30% 20% 0;
+    transition: border-radius .3s
+}
+
+#kt_body {
+    background: url('../../assets/media/login/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 20px;
+    font-family: Montserrat;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-form {
+    background: url('../../assets/media/login/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    transition: transform 4s ease-in-out;
+    animation: scale-up-large 4s ease-in-out alternate infinite;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-form svg{
+    transform: scale(0.5)
+}
+
+.form-container {
+    display: flex;
+    width: 70%;
+    height: 60%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    transition: transform 2s ease-in
+}
+
+.image-layer {
+    position: relative;
+}
+
+.formm-image-main {
+    width: 400px;
+    animation: scale-up 3s ease-in-out alternate infinite;
+}
+
+.formm-image {
+    position: absolute;
+    left: 0;
+    width: 400px;
+}
+
+.coin {
+    animation: scale-down 2s ease-in-out alternate infinite;
+}
+
+.cloud {
+    animation: left-right 2s ease-in-out alternate infinite;
+}
+
+.dots {
+    animation: scale-up 2s ease-in-out alternate infinite;
+}
+
+.spring {
+    animation: scale-down 2s ease-in-out alternate infinite;
+}
+
+.stars {
+    animation: scale-down 2s ease-in-out alternate infinite;
+}
+
+.warehouse {
+    animation: up-down 2s ease-in-out alternate infinite;
+}
+
+@keyframes left-right {
+    to {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes up-down {
+    to {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes scale-down {
+    to {
+        transform: scale(0.95);
+    }
+}
+
+@keyframes scale-up {
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes scale-up-large {
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.featured-words {
+    text-align: center;
+    color: #fff;
+    width: 80%;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: -3px;
+}
+
+.bold-words {
+    text-align: center;
+    color: transparent;
+    background: rgb(28,52,104);
+    background: linear-gradient(135deg, rgba(28,52,104,1) 7%, rgba(224,37,37,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    width: auto;
+    font-size: 25px;
+    font-weight: 1000;
+}
+
+svg path {
+    fill: transparent;
+    stroke: #1C3468;
+    stroke-width: 5px;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: textAnimation 4s ease-in-out 1 forwards;
+}
+
+#HP.show .form-container {
+    transform: scale(0);
+}
+
+@keyframes textAnimation {
+    from{
+        stroke-dashoffset: 50;
+    }
+
+    to {
+        fill: #1C3468;
+        stroke-dashoffset: 0;
+        stroke: none;
+    }
+}
+
+#col2 {
+    position: relative;
+    width: 45%;
+    padding: 20px;
+    display: flex;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 4vw;
+    transition: .3s;
+    height: 100%;
+}
+
+.form-title {
+    margin: 40px 0;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.form-inputs {
+    width: 100%;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-field {
+    width: 100%;
+    height: 55px;
+    padding: 0 15px;
+    margin: 10px 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+::placeholder {
+    color: #fff;
+    font-size: 15px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 35%;
+    right: 15px;
+    transform: translate(-50%);
+    color: #fff;
+}
+
+@media (max-width: 892px) {
+    .form-container {
+        width: 400px;
+    }
+
+    #aside {
+        display: none;
+    }
+
+    #col2 {
+        width: 100%;
+    }
+}
